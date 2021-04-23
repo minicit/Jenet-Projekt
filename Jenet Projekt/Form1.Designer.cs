@@ -29,13 +29,32 @@ namespace Jenet_Projekt
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.panelGame = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // panelGame
+            // 
+            this.panelGame.Location = new System.Drawing.Point(13, 13);
+            this.panelGame.Name = "panelGame";
+            this.panelGame.Size = new System.Drawing.Size(789, 425);
+            this.panelGame.TabIndex = 0;
+            this.panelGame.Paint += new System.Windows.Forms.PaintEventHandler(this.panelGame_Paint);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1102, 450);
+            this.Controls.Add(this.panelGame);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panelGame;
     }
 }
 
