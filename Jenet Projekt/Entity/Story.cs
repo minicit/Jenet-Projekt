@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Jenet_Projekt.Entity
 {
      Virologe:
+     {
      "Es ist 8:00 Uhr morgens an einem sonnigen Montag. Du bist Karl Leiserbach, berühmter Virologe und erster Ansprechpartner bei Pandemien."
      "Du sitzt am gedeckten Frühstückstisch und genießt deinen ersten Kaffee des Tages."
      "Plötzlich klingelt das Telefon und als du den Hörer abnimmst, hörst du die Stimme des"
@@ -15,6 +16,23 @@ namespace Jenet_Projekt.Entity
      "Du greifst dir sofort dein Desinfektionsmittel und deinen Mundschutz und machst dich auf den Weg, um das Virus zu bekämpfen."
      "Als du aus der Tür trittst, siehst du bereits in der Ferne das erste Virus, auf dem Weg in dein beschauliches Dorf.
      "KANNST DU DIE WELT RETTEN?"
+     
+     Level-2-Stadt:
+     "Du hast erfolgreich das erste Virus bekämpft und gelangst in die nächstgrößere Stadt."
+     "Mittlerweile ist die Inzidenz weiter gestiegen und du siehst dich nun mehr Viren gegenüber."
+     
+     Level-3-Berlin:
+     "Nachdem du die vorherige Stadt vom Virus säubern konntest, erfährst du von Angelo Merte, dass die lage in Berlin sehr ernst ist."
+     "Also machst du dich auf dem Weg in die Hauptstadt, wo du dich nicht nur dem Virus, sondern auch Corona-Leugnern, stellen musst"
+     "Diese sind der Meinung, dass das alles nur eine Erfindung der Regierung wäre, um uns zu kontrollieren."
+     
+     Level-4-USA:
+     "Angelo Merte dankt dir für deine tolle Arbeit in Berlin. Sie berichtet dir von der katastrophalen Lage in den USA"
+     "und dass Joe Biden, der Präsident der USA, sie angefleht hat der USA den Helden von Berlin, dich, zu schicken."
+     "Du beschließt den langen Flug auf dich zu nehmen und begibst dich zum Flughafen."
+     
+     
+     }
     
      
      Normalbürger:
@@ -36,5 +54,8 @@ namespace Jenet_Projekt.Entity
       "Das lässt du dir natürlich nicht gefallen! Du beschließt also, nach Berlin zu fahren, um die Regeirung zu stürzen."
       "Als du aus der Tür trittst, siehst du bereits in der Ferne den ersten Regierungs-Mitarbeiter als Virus verkleidet, auf dem Weg in dein beschauliches Dorf."
       "KANNST DU DIE REGIERUNG STÜRZEN?"
+           
+       
+       "
 
 }
