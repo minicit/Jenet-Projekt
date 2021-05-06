@@ -18,14 +18,14 @@ namespace Jenet_Projekt.Entity
     
      
      Normalbürger:
-      "Es ist 8:00 Uhr morgens an einem sonnigen Montag. Du bist Max Mustermann, ein ganz normaler, langweiliger Bürger"
-      "mit ganz normalem, langweiligen Job und einem ganz normalen, langweiligen Leben."
-      "Du beißt gerade in dein Marmeladenbrötchen, als du die Stimme des Bundeskanzlers Angelo Merte in den Nachrichten hörst."
-      "Er berichtet von einem neuen Virus namens Corona, welcher die ganze Welt befallen hat."
-      "In deinem Kopf bildet sich eine verrückte Idee. Du beschließt aus deinem ganz normalem, langweiligen Leben auszubrechen"
-      "und die Welt zu retten. Im Küchenschrank findest du noch Desinfektionsmittel und ziehst damit los."
-      "Als du aus der Tür trittst, siehst du bereits in der Ferne das erste Virus, auf dem Weg in dein beschauliches Dorf.
-      "KANNST DU DIE WELT RETTEN?"
+     "Es ist 8:00 Uhr morgens an einem sonnigen Montag. Du bist Max Mustermann, ein ganz normaler, langweiliger Bürger"
+     "mit ganz normalem, langweiligen Job und einem ganz normalen, langweiligen Leben."
+     "Du beißt gerade in dein Marmeladenbrötchen, als du die Stimme des Bundeskanzlers Angelo Merte in den Nachrichten hörst."
+     "Er berichtet von einem neuen Virus namens Corona, welcher die ganze Welt befallen hat."
+     "In deinem Kopf bildet sich eine verrückte Idee. Du beschließt aus deinem ganz normalem, langweiligen Leben auszubrechen"
+     "und die Welt zu retten. Im Küchenschrank findest du noch Desinfektionsmittel und ziehst damit los."
+     "Als du aus der Tür trittst, siehst du bereits in der Ferne das erste Virus, auf dem Weg in dein beschauliches Dorf.
+     "KANNST DU DIE WELT RETTEN?"
       
     
       Coronaleugner:
@@ -34,7 +34,7 @@ namespace Jenet_Projekt.Entity
       "Anhängern geteilt, um ihnen klar zu machen, dass tauben nur kameras sind, um uns zu überprüfen."
       "Plötzlich erhältst du eine Nachricht von einem deiner Anhänger, dass die Regierung plant, uns mit einem Virus als Ausrede zuhause einzusperren."
       "Das lässt du dir natürlich nicht gefallen! Du beschließt also, nach Berlin zu fahren, um die Regeirung zu stürzen."
-      "Als du aus der Tür trittst, siehst du bereits in der Ferne den ersten Regierungs-Mitarbeiter als Virus verkleidet, auf dem Weg ind ein ebschauliches Dorf."
+      "Als du aus der Tür trittst, siehst du bereits in der Ferne den ersten Regierungs-Mitarbeiter als Virus verkleidet, auf dem Weg in dein beschauliches Dorf."
       "KANNST DU DIE REGIERUNG STÜRZEN?"
 
 }
