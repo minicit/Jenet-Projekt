@@ -31,7 +31,13 @@ namespace Jenet_Projekt.Entity
      "und dass Joe Biden, der Präsident der USA, ihn angefleht hat der USA den Helden von Berlin, dich, zu schicken."
      "Du beschließt den langen Flug auf dich zu nehmen und begibst dich zum Flughafen."
      
-     
+     Level-5-Neuseeland (Bonuslevel):
+     "Vollkommen erschöpft kommst du in Neuseeland an und bist völlig erstaunt, dass hier keine Viren vorzufinden sind."
+     "Die Einwohner berichten dir davon, dass das land von beginn an die Grenzen dicht gemacht hat und sobald wenige Fälle auftraten,"
+     "einen harten Lockdown vollzogen. Du beschließt dich hier für einige Zeit auszuruhen, bis du wieder bei Kräften bist."
+          
+     Level-6-Wuhan (Endkampf):
+     "
      }
     
      
