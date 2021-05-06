@@ -85,15 +85,20 @@ namespace Jenet_Projekt.Entity
       
     
       Coronaleugner:
+     {
       "Es ist 8:00 morgens an einem sonnigen Montag. Du bist Attila Hildfrau, deutschlandweit bekannt für deine Verschwörungstheorien"
       "und stolzer Besitzer einer großen Telegram-Gruppe. Du bist zufrieden, denn du hast gerade deine neueste Theorie mit deinen"
       "Anhängern geteilt, um ihnen klar zu machen, dass tauben nur kameras sind, um uns zu überprüfen."
       "Plötzlich erhältst du eine Nachricht von einem deiner Anhänger, dass die Regierung plant, uns mit einem Virus als Ausrede zuhause einzusperren."
-      "Das lässt du dir natürlich nicht gefallen! Du beschließt also, nach Berlin zu fahren, um die Regeirung zu stürzen."
+      "Das lässt du dir natürlich nicht gefallen! Du beschließt also, nach Berlin zu fahren, um die Regierung zu stürzen."
       "Als du aus der Tür trittst, siehst du bereits in der Ferne den ersten Regierungs-Mitarbeiter als Virus verkleidet, auf dem Weg in dein beschauliches Dorf."
-      "KANNST DU DIE REGIERUNG STÜRZEN?"
-           
+      "KANNST DU DIE REGIERUNG STÜRZEN?"         
        
-       "
+      Level-2-Stadt:
+      "Du hast erfolgreich den ersten als Virus verkleideteten Regierungsbeamten besiegt und erreichst die nächstgrößere Stadt."
+      "Wie du schon erwartet hast, erwarten dich hier mehr Regierungsbeamte mit ihren hässlichen Virus-Kostümen."
+      "Erschreckend für dich ist, dass es viele Menschen gibt, die den Lügen der Regierung glauben."
+      "Du taufst sie auf den Namen Schlafschafe."
+     }
 
 }
