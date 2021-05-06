@@ -27,8 +27,8 @@ namespace Jenet_Projekt.Entity
      "Diese sind der Meinung, dass das alles nur eine Erfindung der Regierung wäre, um uns zu kontrollieren."
      
      Level-4-USA:
-     "Angelo Merte dankt dir für deine tolle Arbeit in Berlin. Sie berichtet dir von der katastrophalen Lage in den USA"
-     "und dass Joe Biden, der Präsident der USA, sie angefleht hat der USA den Helden von Berlin, dich, zu schicken."
+     "Angelo Merte dankt dir für deine tolle Arbeit in Berlin. Aber er berichtet dir von der katastrophalen Lage in den USA"
+     "und dass Joe Biden, der Präsident der USA, ihn angefleht hat der USA den Helden von Berlin, dich, zu schicken."
      "Du beschließt den langen Flug auf dich zu nehmen und begibst dich zum Flughafen."
      
      
