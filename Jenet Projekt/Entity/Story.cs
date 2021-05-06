@@ -99,6 +99,21 @@ namespace Jenet_Projekt.Entity
       "Wie du schon erwartet hast, erwarten dich hier mehr Regierungsbeamte mit ihren hässlichen Virus-Kostümen."
       "Erschreckend für dich ist, dass es viele Menschen gibt, die den Lügen der Regierung glauben."
       "Du taufst sie auf den Namen Schlafschafe."
+           
+      Level-3-Berlin:
+      "Voller Freude siehst du, dass Berlin voller Kamerade von dir ist, die wie du erkannt haben, dass das alles nur"
+      "eine große Verschwörung der Regeirung ist. Gemeinsam stellt ihr euch den Regierungsbeamten und stürmt den Reichstag."
+      "Lediglich 2 als Virus verkleidete Polizisten stellen sich ihnen entgegen.
+           
+      Level-4-USA:
+      "Nach deinem glorreichen Sieg in Berlin klingelt dein Handy und dein guter Freund Donald Trompete beglückwunscht dich zu deinem Sieg."
+      "Er bittet dich in die USA zu fliegen, um auch dort die Verschwörung aufzudecken."
+      "Du machst dich sofort auf den Weg."
+           
+      Level-5-Neuseeland:
+      "Nachdem du die USA von der Verschwörung überzeugen konntest, begibst du dich nach Neuseeland."
+      "Hier siehst du dich deiner bisherig schwersten gegenüber, denn das ganze Land ist davon überzeugt, dass die Pandemie real ist"
+      "und hält sich an alle Vorgaben der Regierung."
      }
 
 }
