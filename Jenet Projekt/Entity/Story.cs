@@ -37,11 +37,16 @@ namespace Jenet_Projekt.Entity
      "einen harten Lockdown vollzogen. Du beschließt dich hier für einige Zeit auszuruhen, bis du wieder bei Kräften bist."
           
      Level-6-Wuhan (Endkampf):
-     "
+     "Nach einiger Recherche hast du herausgefunden, dass die Pandemie in China in Wuhan ihren Ursprung hatte."
+     "Du beschließt dich dorthin zu begeben, um dem ganzen ein Ende zu setzen."
+     "Wenn du es schaffst den Ursprungs-Virus zu besiegen, ist die Welt endlich gerettet und kann normal weiterleben."
+     "Dein Name wäre für immer in den Geschichtsbüchern verewigt."
+     "Sammel deine Kräfte und gib alles. Viel Glück!"
      }
     
      
      Normalbürger:
+     {
      "Es ist 8:00 Uhr morgens an einem sonnigen Montag. Du bist Max Mustermann, ein ganz normaler, langweiliger Bürger"
      "mit ganz normalem, langweiligen Job und einem ganz normalen, langweiligen Leben."
      "Du beißt gerade in dein Marmeladenbrötchen, als du die Stimme des Bundeskanzlers Angelo Merte in den Nachrichten hörst."
@@ -50,6 +55,33 @@ namespace Jenet_Projekt.Entity
      "und die Welt zu retten. Im Küchenschrank findest du noch Desinfektionsmittel und ziehst damit los."
      "Als du aus der Tür trittst, siehst du bereits in der Ferne das erste Virus, auf dem Weg in dein beschauliches Dorf.
      "KANNST DU DIE WELT RETTEN?"
+    
+     Level-2-Stadt:
+     "Du hast erfolgreich das erste Virus bekämpft und gelangst in die nächstgrößere Stadt."
+     "Mittlerweile ist die Inzidenz weiter gestiegen und du siehst dich nun mehr Viren gegenüber."
+     
+     Level-3-Berlin:
+     "Nachdem du die vorherige Stadt vom Virus säubern konntest, erfährst du von Angelo Merte, dass die lage in Berlin sehr ernst ist."
+     "Also machst du dich auf dem Weg in die Hauptstadt, wo du dich nicht nur dem Virus, sondern auch Corona-Leugnern, stellen musst"
+     "Diese sind der Meinung, dass das alles nur eine Erfindung der Regierung wäre, um uns zu kontrollieren."
+     
+     Level-4-USA:
+     "Angelo Merte, Deutschlands Bundeskanzler empfängt dich in Berlin und dankt dir für deine tolle Arbeit in Berlin. Aber er berichtet dir von der katastrophalen Lage in den USA"
+     "und dass Joe Biden, der Präsident der USA, ihn angefleht hat der USA den Helden von Berlin, dich, zu schicken."
+     "Du beschließt den langen Flug auf dich zu nehmen und begibst dich zum Flughafen."
+     
+     Level-5-Neuseeland (Bonuslevel):
+     "Vollkommen erschöpft kommst du in Neuseeland an und bist völlig erstaunt, dass hier keine Viren vorzufinden sind."
+     "Die Einwohner berichten dir davon, dass das land von beginn an die Grenzen dicht gemacht hat und sobald wenige Fälle auftraten,"
+     "einen harten Lockdown vollzogen. Du beschließt dich hier für einige Zeit auszuruhen, bis du wieder bei Kräften bist."
+          
+     Level-6-Wuhan (Endkampf):
+     "Nach einiger Recherche hast du herausgefunden, dass die Pandemie in China in Wuhan ihren Ursprung hatte."
+     "Du beschließt dich dorthin zu begeben, um dem ganzen ein Ende zu setzen."
+     "Wenn du es schaffst den Ursprungs-Virus zu besiegen, ist die Welt endlich gerettet und kann normal weiterleben."
+     "Dein Name wäre für immer in den Geschichtsbüchern verewigt."
+     "Sammel deine Kräfte und gib alles. Viel Glück!"    
+     }
       
     
       Coronaleugner:
