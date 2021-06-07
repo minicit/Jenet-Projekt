@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Combat.cs" />
     <Compile Include="Entity\GameEntity.cs" />
     <Compile Include="Entity\Spieler.cs" />
     <Compile Include="Entity\Virus.cs" />

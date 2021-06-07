@@ -22,6 +22,7 @@ namespace Jenet_Projekt
         private int fieldsize = 125; //Größe eines Feldes in px 
         private SpriteHelper spriteHelper = new SpriteHelper();
         private GameEntity player = new GameEntity(GameEntity.Klassen.Normalbürger, "Test");
+        private GameEntity[] enemy;
         private int currentStage;
         private int invX = 3;
         private int invY = 4;
@@ -29,12 +30,14 @@ namespace Jenet_Projekt
         {
             InitializeComponent();
             panelGame.Hide();
+            enemy = new GameEntity[5];
+            enemy[0] = new GameEntity(GameEntity.Klassen.Virus, "Virus");
             //panelMap.BackgroundImage = Resources.Resource1.MapBackground;
         }
 
-        private void gameStart()
+        private void gameStart(int stage)
         {
-            initGrid(1);
+            initGrid(stage);
             drawMap();
         }
 
@@ -53,6 +56,7 @@ namespace Jenet_Projekt
             {
                 case 1:
                     player.setcoords(7, 4);
+                    enemy[0].setcoords(1, 1);
                     currentStage = 1;
                     setBackground(currentStage);
                     grid[7, 4] = 1;
@@ -127,7 +131,7 @@ namespace Jenet_Projekt
         {
             panelMain.Hide();
             panelGame.Show();
-            gameStart();
+            gameStart(1);
         }
 
         private void drawEntity(Graphics g, Bitmap bild, int locationX, int locationY)
@@ -158,9 +162,26 @@ namespace Jenet_Projekt
                 
                     
             }
+            moveEnemy();
+            foreach (var item in enemy)
+            {
+                if (item != null)
+                {
+                    if ((int)distance(player.getx(), player.gety(), item.getx(), item.gety()) == 1)
+                    {
+                        Combat fight = new Combat();
+                        GameEntity.Klassen winner = fight.begin(item, player);
+                    }
+                }
+            }
+            
             g.Dispose();
         }
 
+        private void moveEnemy()
+        {
+
+        }
         private void panelMap_MouseClick(object sender, MouseEventArgs e)
         { 
             movePlayer(e.X / fieldsize, e.Y / fieldsize); 
