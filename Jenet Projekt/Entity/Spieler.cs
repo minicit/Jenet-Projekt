@@ -12,5 +12,6 @@ namespace Jenet_Projekt.Entity
         {
 
         }
+
     }
 }
