@@ -30,28 +30,16 @@ namespace Jenet_Projekt
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panelMain = new System.Windows.Forms.Panel();
             this.panelGame = new System.Windows.Forms.Panel();
-            this.panelMap = new System.Windows.Forms.Panel();
             this.panelInv = new System.Windows.Forms.Panel();
-            this.panelStart = new System.Windows.Forms.Panel();
-            this.panelHighscore = new System.Windows.Forms.Panel();
-            this.panelCredits = new System.Windows.Forms.Panel();
-            this.panelMain.SuspendLayout();
+            this.panelMap = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.btnCredits = new System.Windows.Forms.Button();
+            this.btnHighscore = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.panelGame.SuspendLayout();
+            this.panelMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
-            this.panelMain.Controls.Add(this.panelStart);
-            this.panelMain.Controls.Add(this.panelHighscore);
-            this.panelMain.Controls.Add(this.panelCredits);
-            this.panelMain.Location = new System.Drawing.Point(0, 0);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(1600, 900);
-            this.panelMain.TabIndex = 0;
             // 
             // panelGame
             // 
@@ -64,50 +52,65 @@ namespace Jenet_Projekt
             this.panelGame.Size = new System.Drawing.Size(1600, 900);
             this.panelGame.TabIndex = 1;
             // 
-            // panelMap
-            // 
-            this.panelMap.BackColor = System.Drawing.Color.Blue;
-            this.panelMap.ForeColor = System.Drawing.Color.Coral;
-            this.panelMap.Location = new System.Drawing.Point(8, 8);
-            this.panelMap.Name = "panelMap";
-            this.panelMap.Size = new System.Drawing.Size(1250, 884);
-            this.panelMap.TabIndex = 2;
-            this.panelMap.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMap_Paint);
-            // 
             // panelInv
             // 
-            this.panelInv.BackColor = System.Drawing.Color.Blue;
+            this.panelInv.BackColor = System.Drawing.Color.DarkBlue;
             this.panelInv.ForeColor = System.Drawing.Color.Coral;
-            this.panelInv.Location = new System.Drawing.Point(1266, 8);
+            this.panelInv.Location = new System.Drawing.Point(1266, 13);
             this.panelInv.Name = "panelInv";
-            this.panelInv.Size = new System.Drawing.Size(325, 884);
+            this.panelInv.Size = new System.Drawing.Size(325, 875);
             this.panelInv.TabIndex = 3;
             this.panelInv.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInv_Paint);
             // 
-            // panelStart
+            // panelMap
             // 
-            this.panelStart.BackColor = System.Drawing.Color.Transparent;
-            this.panelStart.Location = new System.Drawing.Point(535, 454);
-            this.panelStart.Name = "panelStart";
-            this.panelStart.Size = new System.Drawing.Size(529, 95);
-            this.panelStart.TabIndex = 2;
-            this.panelStart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelStart_MouseClick);
+            this.panelMap.BackColor = System.Drawing.Color.Navy;
+            this.panelMap.ForeColor = System.Drawing.Color.Coral;
+            this.panelMap.Location = new System.Drawing.Point(10, 13);
+            this.panelMap.Name = "panelMap";
+            this.panelMap.Size = new System.Drawing.Size(1250, 875);
+            this.panelMap.TabIndex = 2;
+            this.panelMap.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelMap_MouseClick);
             // 
-            // panelHighscore
+            // panelMain
             // 
-            this.panelHighscore.BackColor = System.Drawing.Color.Transparent;
-            this.panelHighscore.Location = new System.Drawing.Point(535, 581);
-            this.panelHighscore.Name = "panelHighscore";
-            this.panelHighscore.Size = new System.Drawing.Size(529, 84);
-            this.panelHighscore.TabIndex = 3;
+            this.panelMain.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelMain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelMain.BackgroundImage")));
+            this.panelMain.Controls.Add(this.btnCredits);
+            this.panelMain.Controls.Add(this.btnHighscore);
+            this.panelMain.Controls.Add(this.btnStart);
+            this.panelMain.Location = new System.Drawing.Point(0, 0);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(1600, 900);
+            this.panelMain.TabIndex = 0;
             // 
-            // panelCredits
+            // btnCredits
             // 
-            this.panelCredits.BackColor = System.Drawing.Color.Transparent;
-            this.panelCredits.Location = new System.Drawing.Point(535, 700);
-            this.panelCredits.Name = "panelCredits";
-            this.panelCredits.Size = new System.Drawing.Size(529, 81);
-            this.panelCredits.TabIndex = 4;
+            this.btnCredits.Location = new System.Drawing.Point(539, 704);
+            this.btnCredits.Name = "btnCredits";
+            this.btnCredits.Size = new System.Drawing.Size(521, 82);
+            this.btnCredits.TabIndex = 2;
+            this.btnCredits.Text = "Credits";
+            this.btnCredits.UseVisualStyleBackColor = true;
+            // 
+            // btnHighscore
+            // 
+            this.btnHighscore.Location = new System.Drawing.Point(539, 584);
+            this.btnHighscore.Name = "btnHighscore";
+            this.btnHighscore.Size = new System.Drawing.Size(521, 83);
+            this.btnHighscore.TabIndex = 1;
+            this.btnHighscore.Text = "Highscore";
+            this.btnHighscore.UseVisualStyleBackColor = true;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Location = new System.Drawing.Point(539, 457);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(521, 89);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // Form1
             // 
@@ -116,11 +119,14 @@ namespace Jenet_Projekt
             this.ClientSize = new System.Drawing.Size(1601, 901);
             this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panelMain.ResumeLayout(false);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panelGame.ResumeLayout(false);
+            this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -131,9 +137,9 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Panel panelGame;
         private System.Windows.Forms.Panel panelInv;
         private System.Windows.Forms.Panel panelMap;
-        private System.Windows.Forms.Panel panelStart;
-        private System.Windows.Forms.Panel panelHighscore;
-        private System.Windows.Forms.Panel panelCredits;
+        private System.Windows.Forms.Button btnCredits;
+        private System.Windows.Forms.Button btnHighscore;
+        private System.Windows.Forms.Button btnStart;
     }
 }
 

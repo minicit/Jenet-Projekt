@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace Jenet_Projekt
 {
-    abstract class GameEntity
+    class GameEntity
     {
         private double health;
         private Klassen entityclass;
         private string username;
         private double[] modifiers = new double[3];
+        private int posx;
+        private int posy;
         public enum Modifiers
         {
             health,
@@ -24,6 +26,18 @@ namespace Jenet_Projekt
             Normalbürger,
             Coronaleugner,
             Virus
+        }
+
+        public int getx() { return posx; }
+        public int gety() { return posy; }
+
+        private void setx(int x) { posx = x; }
+        private void sety(int y) { posy = y; }
+
+        public void setcoords(int x, int y)
+        {
+            setx(x);
+            sety(y);
         }
 
         public GameEntity(Klassen Klasse, string name) {
