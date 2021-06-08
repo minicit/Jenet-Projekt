@@ -37,13 +37,16 @@ namespace Jenet_Projekt
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.CombatBox = new System.Windows.Forms.PictureBox();
             this.panelGame.SuspendLayout();
             this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CombatBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panelGame
             // 
             this.panelGame.BackColor = System.Drawing.Color.Aqua;
+            this.panelGame.Controls.Add(this.CombatBox);
             this.panelGame.Controls.Add(this.panelInv);
             this.panelGame.Controls.Add(this.panelMap);
             this.panelGame.ForeColor = System.Drawing.Color.Coral;
@@ -112,6 +115,15 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // CombatBox
+            // 
+            this.CombatBox.BackColor = System.Drawing.Color.Yellow;
+            this.CombatBox.Location = new System.Drawing.Point(10, 13);
+            this.CombatBox.Name = "CombatBox";
+            this.CombatBox.Size = new System.Drawing.Size(1250, 875);
+            this.CombatBox.TabIndex = 4;
+            this.CombatBox.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,6 +131,7 @@ namespace Jenet_Projekt
             this.ClientSize = new System.Drawing.Size(1601, 901);
             this.Controls.Add(this.panelGame);
             this.Controls.Add(this.panelMain);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
             this.Name = "Form1";
@@ -127,6 +140,7 @@ namespace Jenet_Projekt
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panelGame.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CombatBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,6 +154,7 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Button btnCredits;
         private System.Windows.Forms.Button btnHighscore;
         private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.PictureBox CombatBox;
     }
 }
 

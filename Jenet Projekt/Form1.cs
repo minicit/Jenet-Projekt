@@ -30,6 +30,7 @@ namespace Jenet_Projekt
         {
             InitializeComponent();
             panelGame.Hide();
+            CombatBox.Hide();
             enemy = new GameEntity[5];
             enemy[0] = new GameEntity(GameEntity.Klassen.Virus, "Virus");
             //panelMap.BackgroundImage = Resources.Resource1.MapBackground;
@@ -191,7 +192,7 @@ namespace Jenet_Projekt
         {
             if(e.KeyCode == Keys.Up)
             {
-                if(player.gety() - 1 >= 0) //missing collision
+                if(player.gety() - 1 >= 0) 
                 {
                     movePlayer(player.getx(), player.gety() - 1);
                 }

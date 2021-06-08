@@ -28,9 +28,9 @@ namespace Jenet_Projekt
         {
             switch (x)
             {
-                case 1:
-                    return Resources.Resource1.Hintergrund_base;
                 case 0:
+                    return Resources.Resource1.Hintergrund_base;
+                case 1:
                     return Resources.Resource1.MapBackground;
             }
             return null;
