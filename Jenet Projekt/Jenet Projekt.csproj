@@ -117,16 +117,10 @@
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\virologeSpriteTrans.png" />
-    <None Include="Resources\Titlescreen.png" />
     <None Include="Resources\MapBackground.png" />
     <None Include="Resources\Hintergrund base.png" />
     <None Include="Resources\Hintergrund_mapGrass.png" />
     <None Include="Resources\combatBackground.png" />
-    <None Include="Resources\combatBackgroundMitMenu.png" />
-    <None Include="Resources\drostenSprite.png" />
-    <None Include="Resources\drostenSpritemock.png" />
-    <None Include="Resources\GamePanelBackground.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>
