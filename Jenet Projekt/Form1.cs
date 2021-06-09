@@ -31,7 +31,7 @@ namespace Jenet_Projekt
         {
             InitializeComponent();
             panelGame.Hide();
-            combatPanel.Hide();
+            CombatBox.Hide();
             enemy = new GameEntity[5];
             enemy[0] = new GameEntity(GameEntity.Klassen.Virus, "Virus");
             //panelMap.BackgroundImage = Resources.Resource1.MapBackground;
