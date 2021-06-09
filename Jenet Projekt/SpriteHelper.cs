@@ -15,7 +15,7 @@ namespace Jenet_Projekt
             switch (grid[x, j])
             {
                 case 1:
-                    return Resources.Resource1.Sprite_0001;
+                    return Resources.Resource1.virologeSpriteTrans;
                 case 2:
                     return Resources.Resource1.Sprite_0002;
                 case 3:
@@ -33,7 +33,7 @@ namespace Jenet_Projekt
                 case GameEntity.Klassen.Normalbürger:
                     return Resources.Resource1.Sprite_0001;
                 case GameEntity.Klassen.Virologe:
-                    return Resources.Resource1.Sprite_0001;
+                    return Resources.Resource1.virologeSpriteTrans;
                 case GameEntity.Klassen.Virus:
                     return Resources.Resource1.Sprite_0002;
             }
@@ -45,7 +45,7 @@ namespace Jenet_Projekt
             switch (x)
             {
                 case 2:
-                    return Resources.Resource1.combatBackground;
+                    return Resources.Resource1.combatBackgroundMitMenu;
                 case 1:
                     return Resources.Resource1.Hintergrund_mapGrass;
                 case 0:

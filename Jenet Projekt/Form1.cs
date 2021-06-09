@@ -157,7 +157,7 @@ namespace Jenet_Projekt
                     grid[player.getx(), player.gety()] = 0;
                     grid[xMove, yMove] = 1;
                     refreshField(player.getx(), player.gety());
-                    drawEntity(g, Resources.Resource1.Sprite_0001, xMove, yMove);
+                    drawEntity(g, Resources.Resource1.virologeSpriteTrans, xMove, yMove);
                     player.setcoords(xMove, yMove);
                 }
                 
@@ -188,34 +188,42 @@ namespace Jenet_Projekt
             movePlayer(e.X / fieldsize, e.Y / fieldsize); 
         }
 
+        public bool combatActive()
+        {
+            return CombatBox.Visible;
+        }
+
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Up)
+            if (!combatActive())
             {
-                if(player.gety() - 1 >= 0) 
+                if (e.KeyCode == Keys.Up)
                 {
-                    movePlayer(player.getx(), player.gety() - 1);
+                    if (player.gety() - 1 >= 0)
+                    {
+                        movePlayer(player.getx(), player.gety() - 1);
+                    }
                 }
-            }
-            else if(e.KeyCode == Keys.Down)
-            {
-                if (player.gety() + 1 < 7)
+                else if (e.KeyCode == Keys.Down)
                 {
-                    movePlayer(player.getx(), player.gety() + 1);
+                    if (player.gety() + 1 < 7)
+                    {
+                        movePlayer(player.getx(), player.gety() + 1);
+                    }
                 }
-            }
-            else if(e.KeyCode == Keys.Left)
-            {
-                if (player.getx() - 1 >= 0)
+                else if (e.KeyCode == Keys.Left)
                 {
-                    movePlayer(player.getx() - 1, player.gety());
+                    if (player.getx() - 1 >= 0)
+                    {
+                        movePlayer(player.getx() - 1, player.gety());
+                    }
                 }
-            }
-            else if(e.KeyCode == Keys.Right)
-            {
-                if (player.getx() + 1 < 10)
+                else if (e.KeyCode == Keys.Right)
                 {
-                    movePlayer(player.getx() + 1, player.gety());
+                    if (player.getx() + 1 < 10)
+                    {
+                        movePlayer(player.getx() + 1, player.gety());
+                    }
                 }
             }
         }
