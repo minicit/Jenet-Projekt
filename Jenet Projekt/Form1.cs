@@ -30,7 +30,7 @@ namespace Jenet_Projekt
         {
             InitializeComponent();
             panelGame.Hide();
-            CombatBox.Hide();
+            combatPanel.Hide();
             enemy = new GameEntity[5];
             enemy[0] = new GameEntity(GameEntity.Klassen.Virus, "Virus");
             //panelMap.BackgroundImage = Resources.Resource1.MapBackground;
@@ -157,7 +157,7 @@ namespace Jenet_Projekt
                     grid[player.getx(), player.gety()] = 0;
                     grid[xMove, yMove] = 1;
                     refreshField(player.getx(), player.gety());
-                    drawEntity(g, Resources.Resource1.virologeSpriteTrans, xMove, yMove);
+                    drawEntity(g, Resources.Resource1.Sprite_0001, xMove, yMove);
                     player.setcoords(xMove, yMove);
                 }
                 
@@ -190,7 +190,7 @@ namespace Jenet_Projekt
 
         public bool combatActive()
         {
-            return CombatBox.Visible;
+            return combatPanel.Visible;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
