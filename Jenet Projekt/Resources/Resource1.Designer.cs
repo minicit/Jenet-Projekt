@@ -73,36 +73,6 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap combatBackgroundMitMenu {
-            get {
-                object obj = ResourceManager.GetObject("combatBackgroundMitMenu", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap forrestObst {
-            get {
-                object obj = ResourceManager.GetObject("forrestObst", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap forrestSprite {
-            get {
-                object obj = ResourceManager.GetObject("forrestSprite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Hintergrund_base {
             get {
                 object obj = ResourceManager.GetObject("Hintergrund_base", resourceCulture);
@@ -166,16 +136,6 @@ namespace Jenet_Projekt.Resources {
         internal static System.Drawing.Bitmap Sprite_0002 {
             get {
                 object obj = ResourceManager.GetObject("Sprite_0002", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap virologeSpriteTrans {
-            get {
-                object obj = ResourceManager.GetObject("virologeSpriteTrans", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
