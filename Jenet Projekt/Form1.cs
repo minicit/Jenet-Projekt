@@ -30,6 +30,8 @@ namespace Jenet_Projekt
         public Form1()
         {
             InitializeComponent();
+            panelMain.BackgroundImage = Resources.Resource1.Titlescreen;
+            panelGame.BackgroundImage = Resources.Resource1.GamePanelBackground;
             panelGame.Hide();
             combatPanel.Hide();
             enemy = new GameEntity[5];
