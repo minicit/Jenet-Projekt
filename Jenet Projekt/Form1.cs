@@ -23,6 +23,7 @@ namespace Jenet_Projekt
         private SpriteHelper spriteHelper = new SpriteHelper();
         private GameEntity player = new GameEntity(GameEntity.Klassen.Normalbürger, "Test");
         private GameEntity[] enemy;
+        private Combat fight = new Combat();
         private int currentStage;
         private int invX = 3;
         private int invY = 4;
@@ -104,7 +105,7 @@ namespace Jenet_Projekt
             int pixelX = locationX * fieldsize;
             int pixelY = locationY * fieldsize;
             Graphics g = panelMap.CreateGraphics();
-            Bitmap bmp = new Bitmap(spriteHelper.getBackground(currentStage)); 
+            Bitmap bmp = new Bitmap(spriteHelper.getBackground(currentStage));
             g.DrawImage(bmp, pixelX, pixelY, new Rectangle(pixelX, pixelY, fieldsize, fieldsize), GraphicsUnit.Pixel);
             g.Dispose();
         }
@@ -157,11 +158,11 @@ namespace Jenet_Projekt
                     grid[player.getx(), player.gety()] = 0;
                     grid[xMove, yMove] = 1;
                     refreshField(player.getx(), player.gety());
-                    drawEntity(g, Resources.Resource1.Sprite_0001, xMove, yMove);
+                    drawEntity(g, Resources.Resource1.virologeSpriteTrans, xMove, yMove);
                     player.setcoords(xMove, yMove);
                 }
-                
-                    
+
+
             }
             moveEnemy();
             foreach (var item in enemy)
@@ -170,12 +171,13 @@ namespace Jenet_Projekt
                 {
                     if ((int)distance(player.getx(), player.gety(), item.getx(), item.gety()) == 1)
                     {
-                        Combat fight = new Combat();
+
                         GameEntity.Klassen winner = fight.begin(item, player, combatPanel);
+                        drawMap();
                     }
                 }
             }
-            
+
             g.Dispose();
         }
 
@@ -184,8 +186,8 @@ namespace Jenet_Projekt
 
         }
         private void panelMap_MouseClick(object sender, MouseEventArgs e)
-        { 
-            movePlayer(e.X / fieldsize, e.Y / fieldsize); 
+        {
+            movePlayer(e.X / fieldsize, e.Y / fieldsize);
         }
 
         public bool combatActive()
@@ -226,6 +228,26 @@ namespace Jenet_Projekt
                     }
                 }
             }
+            else
+            {
+                if (e.KeyCode == Keys.NumPad1 || e.KeyCode == Keys.D1)
+                {
+                    fight.attack();
+                }
+                else if (e.KeyCode == Keys.NumPad2 || e.KeyCode == Keys.D2)
+                {
+                    fight.shield();
+                }
+                else if (e.KeyCode == Keys.NumPad3 || e.KeyCode == Keys.D3)
+                {
+                    fight.items();
+                }
+                else if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.D4)
+                {
+                    fight.run();
+                }
+            }
+
         }
     }
 }

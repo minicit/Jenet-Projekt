@@ -23,15 +23,15 @@ namespace Jenet_Projekt
             drawFight(g, enemy, player);
 
             g.Dispose();
-            combatPanel.Hide();
+            //combatPanel.Hide();
             combatActive = false;
             return GameEntity.Klassen.Virologe; //return enum type of winner
         }
 
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
         {
-            g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 100, 1000);
-            g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 55, 55);
+            g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 170, 600);
+            //g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 55, 55);
         }
 
         private void hit(Graphics g)
@@ -52,6 +52,26 @@ namespace Jenet_Projekt
         public void setCombatActive(bool active)
         {
             combatActive = active;
+        }
+
+        public void attack()
+        {
+            MessageBox.Show("atteck");
+        }
+
+        public void shield()
+        {
+            MessageBox.Show("shield");
+        }
+
+        public void items()
+        {
+            MessageBox.Show("shoe");
+        }
+
+        public void run()
+        {
+            MessageBox.Show("atteck");
         }
     }
 }
