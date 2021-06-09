@@ -23,7 +23,10 @@ namespace Jenet_Projekt
             drawFight(g, enemy, player);
 
             g.Dispose();
+            
+            //falls player oder virus health <1
             //combatPanel.Hide();
+
             combatActive = false;
             return GameEntity.Klassen.Virologe; //return enum type of winner
         }
@@ -31,7 +34,7 @@ namespace Jenet_Projekt
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
         {
             g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 170, 600);
-            //g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 55, 55);
+            g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950, 150);
         }
 
         private void hit(Graphics g)

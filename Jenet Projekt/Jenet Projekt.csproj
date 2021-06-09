@@ -117,6 +117,7 @@
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\virusSpriteTrans.png" />
     <None Include="Resources\virologeSpriteTrans.png" />
     <None Include="Resources\MapBackground.png" />
     <None Include="Resources\Hintergrund base.png" />
