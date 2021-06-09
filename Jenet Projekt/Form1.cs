@@ -30,7 +30,7 @@ namespace Jenet_Projekt
         {
             InitializeComponent();
             panelGame.Hide();
-            CombatBox.Hide();
+            combatPanel.Hide();
             enemy = new GameEntity[5];
             enemy[0] = new GameEntity(GameEntity.Klassen.Virus, "Virus");
             //panelMap.BackgroundImage = Resources.Resource1.MapBackground;
@@ -171,7 +171,7 @@ namespace Jenet_Projekt
                     if ((int)distance(player.getx(), player.gety(), item.getx(), item.gety()) == 1)
                     {
                         Combat fight = new Combat();
-                        GameEntity.Klassen winner = fight.begin(item, player, CombatBox);
+                        GameEntity.Klassen winner = fight.begin(item, player, combatPanel);
                     }
                 }
             }

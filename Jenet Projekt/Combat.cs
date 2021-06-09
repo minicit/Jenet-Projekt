@@ -12,12 +12,12 @@ namespace Jenet_Projekt
     class Combat
     {
         private SpriteHelper spriteHelper = new SpriteHelper();
-        public GameEntity.Klassen begin(GameEntity enemy, GameEntity player, PictureBox CombatBox)
+        public GameEntity.Klassen begin(GameEntity enemy, GameEntity player, Panel combatPanel)
         {
-            Graphics g = CombatBox.CreateGraphics();
-            CombatBox.BackgroundImage = spriteHelper.getBackground(2);
+            Graphics g = combatPanel.CreateGraphics();
+            combatPanel.BackgroundImage = spriteHelper.getBackground(2);
 
-            CombatBox.Show();
+            combatPanel.Show();
             drawFight(g, enemy, player);
 
             g.Dispose();
