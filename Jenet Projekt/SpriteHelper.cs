@@ -19,7 +19,7 @@ namespace Jenet_Projekt
                 case 2:
                     return Resources.Resource1.Sprite_0002;
                 case 3:
-                    return Resources.Resource1.Sprite_0002;
+                    return Resources.Resource1.forrestSprite;
             }
             return null;
         }
@@ -29,9 +29,9 @@ namespace Jenet_Projekt
             switch (player)
             {
                 case GameEntity.Klassen.Coronaleugner:
-                    return Resources.Resource1.Sprite_0001;
+                    return Resources.Resource1.leugnerSpriteTrans;
                 case GameEntity.Klassen.Normalbürger:
-                    return Resources.Resource1.Sprite_0001;
+                    return Resources.Resource1.normalboiSpriteTrans;
                 case GameEntity.Klassen.Virologe:
                     return Resources.Resource1.virologeSpriteTrans;
                 case GameEntity.Klassen.Virus:

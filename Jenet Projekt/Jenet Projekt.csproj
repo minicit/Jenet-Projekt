@@ -125,6 +125,10 @@
     <None Include="Resources\combatBackgroundMitMenu.png" />
     <None Include="Resources\drostenSprite.png" />
     <None Include="Resources\drostenSpritemock.png" />
+    <None Include="Resources\coronaLeugnerJetztaberTrans.png" />
+    <None Include="Resources\normalboiSpriteTrans.png" />
+    <None Include="Resources\forrestObst.png" />
+    <None Include="Resources\forrestSprite.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>
