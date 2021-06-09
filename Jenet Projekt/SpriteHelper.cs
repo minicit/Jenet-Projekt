@@ -24,12 +24,30 @@ namespace Jenet_Projekt
             return null;
         }
 
+        public Bitmap getCombatSprite(GameEntity.Klassen player)
+        {
+            switch (player)
+            {
+                case GameEntity.Klassen.Coronaleugner:
+                    return Resources.Resource1.Sprite_0001;
+                case GameEntity.Klassen.Normalbürger:
+                    return Resources.Resource1.Sprite_0001;
+                case GameEntity.Klassen.Virologe:
+                    return Resources.Resource1.Sprite_0001;
+                case GameEntity.Klassen.Virus:
+                    return Resources.Resource1.Sprite_0002;
+            }
+            return null;
+        }
+
         public Bitmap getBackground(int x)
         {
             switch (x)
             {
+                case 2:
+                    return Resources.Resource1.combatBackground;
                 case 1:
-                    return Resources.Resource1.Hintergrund_base;
+                    return Resources.Resource1.Hintergrund_mapGrass;
                 case 0:
                     return Resources.Resource1.MapBackground;
             }

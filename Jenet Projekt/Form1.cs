@@ -171,7 +171,7 @@ namespace Jenet_Projekt
                     if ((int)distance(player.getx(), player.gety(), item.getx(), item.gety()) == 1)
                     {
                         Combat fight = new Combat();
-                        GameEntity.Klassen winner = fight.begin(item, player);
+                        GameEntity.Klassen winner = fight.begin(item, player, CombatBox);
                     }
                 }
             }

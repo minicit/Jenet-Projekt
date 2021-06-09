@@ -63,9 +63,29 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap combatBackground {
+            get {
+                object obj = ResourceManager.GetObject("combatBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hintergrund_base {
             get {
                 object obj = ResourceManager.GetObject("Hintergrund_base", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hintergrund_mapGrass {
+            get {
+                object obj = ResourceManager.GetObject("Hintergrund_mapGrass", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

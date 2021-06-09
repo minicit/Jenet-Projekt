@@ -119,6 +119,8 @@
   <ItemGroup>
     <None Include="Resources\MapBackground.png" />
     <None Include="Resources\Hintergrund base.png" />
+    <None Include="Resources\Hintergrund_mapGrass.png" />
+    <None Include="Resources\combatBackground.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>

@@ -46,6 +46,11 @@ namespace Jenet_Projekt
             setStartupModifiers(Klasse);
         }
 
+        public Klassen getClass()
+        {
+            return entityclass;
+        }
+
         public void takeDamage(int amount)
         {
             health -= amount * modifiers[(int)Modifiers.damageTaken];
