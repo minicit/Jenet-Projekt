@@ -31,23 +31,22 @@ namespace Jenet_Projekt
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelGame = new System.Windows.Forms.Panel();
-            this.CombatBox = new System.Windows.Forms.PictureBox();
             this.panelInv = new System.Windows.Forms.Panel();
             this.panelMap = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.combatPanel = new System.Windows.Forms.Panel();
             this.btnEndlos = new System.Windows.Forms.Button();
             this.panelGame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CombatBox)).BeginInit();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelGame
             // 
             this.panelGame.BackColor = System.Drawing.Color.Aqua;
-            this.panelGame.Controls.Add(this.CombatBox);
+            this.panelGame.Controls.Add(this.combatPanel);
             this.panelGame.Controls.Add(this.panelInv);
             this.panelGame.Controls.Add(this.panelMap);
             this.panelGame.ForeColor = System.Drawing.Color.Coral;
@@ -59,9 +58,10 @@ namespace Jenet_Projekt
             // CombatBox
             // 
             this.CombatBox.BackColor = System.Drawing.Color.Yellow;
-            this.CombatBox.Location = new System.Drawing.Point(10, 13);
+            this.CombatBox.Location = new System.Drawing.Point(20, 25);
+            this.CombatBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CombatBox.Name = "CombatBox";
-            this.CombatBox.Size = new System.Drawing.Size(1250, 875);
+            this.CombatBox.Size = new System.Drawing.Size(2500, 1683);
             this.CombatBox.TabIndex = 4;
             this.CombatBox.TabStop = false;
             // 
@@ -100,40 +100,34 @@ namespace Jenet_Projekt
             // 
             // btnCredits
             // 
-            this.btnCredits.Location = new System.Drawing.Point(560, 761);
+            this.btnCredits.Location = new System.Drawing.Point(1078, 1354);
+            this.btnCredits.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCredits.Name = "btnCredits";
-            this.btnCredits.Size = new System.Drawing.Size(480, 120);
+            this.btnCredits.Size = new System.Drawing.Size(1042, 158);
             this.btnCredits.TabIndex = 2;
             this.btnCredits.Text = "Credits";
             this.btnCredits.UseVisualStyleBackColor = true;
             // 
             // btnHighscore
             // 
-            this.btnHighscore.Location = new System.Drawing.Point(560, 599);
+            this.btnHighscore.Location = new System.Drawing.Point(1078, 1123);
+            this.btnHighscore.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnHighscore.Name = "btnHighscore";
-            this.btnHighscore.Size = new System.Drawing.Size(480, 120);
+            this.btnHighscore.Size = new System.Drawing.Size(1042, 160);
             this.btnHighscore.TabIndex = 1;
             this.btnHighscore.Text = "Highscore";
             this.btnHighscore.UseVisualStyleBackColor = true;
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(560, 279);
+            this.btnStart.Location = new System.Drawing.Point(1078, 879);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(480, 120);
+            this.btnStart.Size = new System.Drawing.Size(1042, 171);
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // btnEndlos
-            // 
-            this.btnEndlos.Location = new System.Drawing.Point(560, 439);
-            this.btnEndlos.Name = "btnEndlos";
-            this.btnEndlos.Size = new System.Drawing.Size(480, 120);
-            this.btnEndlos.TabIndex = 3;
-            this.btnEndlos.Text = "Endlos";
-            this.btnEndlos.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -150,7 +144,6 @@ namespace Jenet_Projekt
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panelGame.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.CombatBox)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -166,7 +159,6 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Button btnHighscore;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.PictureBox CombatBox;
-        private System.Windows.Forms.Button btnEndlos;
     }
 }
 

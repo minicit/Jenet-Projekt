@@ -73,9 +73,9 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GamePanelBackground {
+        internal static System.Drawing.Bitmap combatBackgroundMitMenu {
             get {
-                object obj = ResourceManager.GetObject("GamePanelBackground", resourceCulture);
+                object obj = ResourceManager.GetObject("combatBackgroundMitMenu", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Titlescreen {
+        internal static System.Drawing.Bitmap virologeSpriteTrans {
             get {
-                object obj = ResourceManager.GetObject("Titlescreen", resourceCulture);
+                object obj = ResourceManager.GetObject("virologeSpriteTrans", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
