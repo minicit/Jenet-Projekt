@@ -23,7 +23,6 @@ namespace Jenet_Projekt
         private SpriteHelper spriteHelper = new SpriteHelper();
         private GameEntity player = new GameEntity(GameEntity.Klassen.Normalbürger, "Test");
         private GameEntity[] enemy;
-        private Combat fight = new Combat();
         private int currentStage;
         private int invX = 3;
         private int invY = 4;
@@ -171,9 +170,8 @@ namespace Jenet_Projekt
                 {
                     if ((int)distance(player.getx(), player.gety(), item.getx(), item.gety()) == 1)
                     {
-                        
+                        Combat fight = new Combat();
                         GameEntity.Klassen winner = fight.begin(item, player, combatPanel);
-                        drawMap();
                     }
                 }
             }
@@ -192,7 +190,7 @@ namespace Jenet_Projekt
 
         public bool combatActive()
         {
-            return combatPanel.Visible;
+            return CombatBox.Visible;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -228,26 +226,6 @@ namespace Jenet_Projekt
                     }
                 }
             }
-            else
-            {
-                if (e.KeyCode == Keys.NumPad1 || e.KeyCode == Keys.D1)
-                {
-                    fight.attack();
-                }
-                else if (e.KeyCode == Keys.NumPad2 || e.KeyCode == Keys.D2)
-                {
-                    fight.shield();
-                }
-                else if (e.KeyCode == Keys.NumPad3 || e.KeyCode == Keys.D3)
-                {
-                    fight.items();
-                }
-                else if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.D4)
-                {
-                    fight.run();
-                }
-            }
-
         }
     }
 }
