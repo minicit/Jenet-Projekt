@@ -66,8 +66,10 @@ namespace Jenet_Projekt
                     grid[7, 4] = 1;
                     grid[1, 1] = 2;
                     grid[5, 3] = 3;
-                    grid[4, 5] = 3;
+                    grid[4, 5] = 4;
                     grid[4, 3] = 3;
+                    grid[5, 2] = 3;
+                    grid[4, 2] = 3;
                     break;
 
                 case 2:

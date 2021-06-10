@@ -15,10 +15,12 @@ namespace Jenet_Projekt
             switch (grid[x, j])
             {
                 case 1:
-                    return Resources.Resource1.Sprite_0001;
+                    return Resources.Resource1.virologeSpriteTrans;
                 case 2:
-                    return Resources.Resource1.Sprite_0002;
+                    return Resources.Resource1.virusSpriteTrans;
                 case 3:
+                    return Resources.Resource1.forrestSprite;
+                case 4:
                     return Resources.Resource1.Sprite_0002;
             }
             return null;
