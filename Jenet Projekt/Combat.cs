@@ -14,7 +14,7 @@ namespace Jenet_Projekt
         private SpriteHelper spriteHelper = new SpriteHelper();
         private bool combatActive;
         private GameEntity enemy, player;
-        private int turn;
+        private int turn; //zug variable; 1:spieler, 2:Gegner, 3:Kampfende?
         public GameEntity.Klassen begin(GameEntity enemy, GameEntity player, Panel combatPanel)
         {
             this.enemy = enemy;
@@ -76,7 +76,7 @@ namespace Jenet_Projekt
             if (enemy.doesItHit(enemy, player))
                 player.takeDamageFrom(enemy);
             else
-                enemy.takeDamageFrom(enemy); //vllt?
+                enemy.takeDamageFrom(enemy); //vllt? quasi verwirrung ohne statusveränderung?
         }
 
         private void enemyShield()
