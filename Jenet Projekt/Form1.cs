@@ -90,12 +90,12 @@ namespace Jenet_Projekt
             {
                 for (int j = 0; j < 7; j++)
                 {
-                    if (grid[i, j] != 0)
+                    if (grid[i, j] != 0 && grid[i, j] != 1)
                         drawEntity(g, spriteHelper.getSprite(i, j, grid), i, j);
+                    if (grid[i, j] == 1)
+                        drawEntity(g, spriteHelper.getCombatSprite(player.getClass()), i, j);
                 }
             }
-
-
             g.Dispose();
         }
 
@@ -166,8 +166,6 @@ namespace Jenet_Projekt
                     drawEntity(g, spriteHelper.getCombatSprite(player.getClass()), xMove, yMove);
                     player.setcoords(xMove, yMove);
                 }
-
-
             }
             moveEnemy();
             foreach (var item in enemy)
@@ -182,7 +180,6 @@ namespace Jenet_Projekt
                     }
                 }
             }
-
             g.Dispose();
         }
 

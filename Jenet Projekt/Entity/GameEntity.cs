@@ -56,15 +56,21 @@ namespace Jenet_Projekt
             return entityclass;
         }
 
-        public void takeDamage(int amount)
+        public void takeDamageFrom(GameEntity attacker)
         {
             double shield = 0;
             if (defending)
                 shield = defence;
 
-            health -= (amount * modifiers[(int)Modifiers.damageTaken]) - shield;
+            health -= (attacker.attack * modifiers[(int)Modifiers.damageTaken]) - shield;
             defending = false;
         }
+
+        public void setShield(bool shield)
+        {
+            defending = shield;
+        }
+
         public void healDamage(int amount)
         {
             health += amount;
@@ -80,6 +86,11 @@ namespace Jenet_Projekt
         public void setModifier(Modifiers modifiers, double value)
         {
 
+        }
+
+        public double getHealth()
+        {
+            return health;
         }
 
         public void setStartupModifiers(Klassen Klasse) //Implement modifier selection

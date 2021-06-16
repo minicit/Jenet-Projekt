@@ -14,6 +14,7 @@ namespace Jenet_Projekt
         private SpriteHelper spriteHelper = new SpriteHelper();
         private bool combatActive;
         private GameEntity enemy, player;
+        private int turn;
         public GameEntity.Klassen begin(GameEntity enemy, GameEntity player, Panel combatPanel)
         {
             this.enemy = enemy;
@@ -31,7 +32,10 @@ namespace Jenet_Projekt
             //combatPanel.Hide();
 
             combatActive = false;
-            return GameEntity.Klassen.Virologe; //return enum type of winner
+            if(player.getHealth() <= 0)
+                return enemy.getClass(); //return enum type of winner
+            else
+                return enemy.getClass();
         }
 
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
@@ -61,8 +65,28 @@ namespace Jenet_Projekt
             combatActive = active;
         }
 
+        public void setTurn(int turn)
+        {
+            this.turn = turn;
+        }
+
+        private void enemyAttack()
+        {
+            enemy.setShield(false);
+            if (enemy.doesItHit(enemy, player))
+                player.takeDamageFrom(enemy);
+            else
+                enemy.takeDamageFrom(enemy); //vllt?
+        }
+
+        private void enemyShield()
+        {
+            enemy.setShield(true);
+        }
+
         public void attack()
         {
+            player.setShield(false);
             if (player.doesItHit(player, enemy))
                 MessageBox.Show("atteck");
             else
@@ -71,16 +95,19 @@ namespace Jenet_Projekt
 
         public void shield()
         {
+            player.setShield(true);
             MessageBox.Show("*spray desinfection spray like febreeze*");
         }
 
         public void items()
         {
             MessageBox.Show("shoe");
+            //wird ein Item eingesetzt muss shield auf false gesetzt werden
         }
 
         public void run()
         {
+            player.setShield(false);
             if (player.doesItHit(player, enemy))
                 MessageBox.Show("runn");
             else
