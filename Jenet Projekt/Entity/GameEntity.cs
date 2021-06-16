@@ -14,6 +14,11 @@ namespace Jenet_Projekt
         private double[] modifiers = new double[3];
         private int posx;
         private int posy;
+        private int speed; //speed: chance to hit, to get hit (get hit /3 ?), to flee
+        private double attack; // enemyHealth-attack
+        private double defence; // enemyAttack-defence
+        private bool defending = false; //wird für eine Runde gesetzt wenn Verteigen ausgewählt wird
+        Random rand = new Random();
         public enum Modifiers
         {
             health,
@@ -53,11 +58,23 @@ namespace Jenet_Projekt
 
         public void takeDamage(int amount)
         {
-            health -= amount * modifiers[(int)Modifiers.damageTaken];
+            double shield = 0;
+            if (defending)
+                shield = defence;
+
+            health -= (amount * modifiers[(int)Modifiers.damageTaken]) - shield;
+            defending = false;
         }
         public void healDamage(int amount)
         {
             health += amount;
+        }
+
+        public bool doesItHit(GameEntity attacker, GameEntity victim)
+        {
+            if ((((attacker.speed - victim.speed) * 10) + 5) > rand.Next(100))
+                return true;
+            return false;
         }
 
         public void setModifier(Modifiers modifiers, double value)
@@ -70,12 +87,28 @@ namespace Jenet_Projekt
             switch (Klasse)
             {
                 case Klassen.Virus:
+                    health = 20;
+                    speed = 4;
+                    attack = 2;
+                    defence = 2;
                     break;
                 case Klassen.Virologe:
+                    health = 100;
+                    speed = 10;
+                    attack = 10;
+                    defence = 5;
                     break;
                 case Klassen.Normalbürger:
+                    health = 50;
+                    speed = 10;
+                    attack = 5;
+                    defence = 5;
                     break;
                 case Klassen.Coronaleugner:
+                    health = 20;
+                    speed = 10;
+                    attack = 3;
+                    defence = 3;
                     break;
             }
         }

@@ -13,8 +13,11 @@ namespace Jenet_Projekt
     {
         private SpriteHelper spriteHelper = new SpriteHelper();
         private bool combatActive;
+        private GameEntity enemy, player;
         public GameEntity.Klassen begin(GameEntity enemy, GameEntity player, Panel combatPanel)
         {
+            this.enemy = enemy;
+            this.player = player;
             combatActive = true;
             Graphics g = combatPanel.CreateGraphics();
             combatPanel.BackgroundImage = spriteHelper.getBackground(2);
@@ -35,6 +38,7 @@ namespace Jenet_Projekt
         {
             g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 170, 600);
             g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950, 150);
+
         }
 
         private void hit(Graphics g)
@@ -59,12 +63,15 @@ namespace Jenet_Projekt
 
         public void attack()
         {
-            MessageBox.Show("atteck");
+            if (player.doesItHit(player, enemy))
+                MessageBox.Show("atteck");
+            else
+                MessageBox.Show("misssd");
         }
 
         public void shield()
         {
-            MessageBox.Show("shield");
+            MessageBox.Show("*spray desinfection spray like febreeze*");
         }
 
         public void items()
@@ -74,7 +81,10 @@ namespace Jenet_Projekt
 
         public void run()
         {
-            MessageBox.Show("atteck");
+            if (player.doesItHit(player, enemy))
+                MessageBox.Show("runn");
+            else
+                MessageBox.Show("you decided to stay. Why?");
         }
     }
 }

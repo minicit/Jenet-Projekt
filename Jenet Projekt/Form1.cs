@@ -51,7 +51,8 @@ namespace Jenet_Projekt
             // Wert 0 = frei
             // Wert 1 = Spieler
             // Wert 2 = Virus
-            // Wert 3 = Hindernis
+            // Wert 3 = Wald
+            // Wert 4 = Berge
             // Bsp : grid[1,2] = 3; setzt ein Hindernis an die Position X = 1 / Y = 2
             // Erlaubte Positionen X : 0 - 9 
             // Erlaubte Positionen Y : 0 - 6
@@ -162,7 +163,7 @@ namespace Jenet_Projekt
                     grid[player.getx(), player.gety()] = 0;
                     grid[xMove, yMove] = 1;
                     refreshField(player.getx(), player.gety());
-                    drawEntity(g, Resources.Resource1.virologeSpriteTrans, xMove, yMove);
+                    drawEntity(g, spriteHelper.getCombatSprite(player.getClass()), xMove, yMove);
                     player.setcoords(xMove, yMove);
                 }
 
