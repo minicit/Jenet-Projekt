@@ -31,6 +31,7 @@ namespace Jenet_Projekt
             //falls player oder virus health <1
             //combatPanel.Hide();
 
+            //enterCombat();
             combatActive = false;
             if(player.getHealth() <= 0)
                 return enemy.getClass(); //return enum type of winner
@@ -43,6 +44,14 @@ namespace Jenet_Projekt
             g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 170, 600);
             g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950, 150);
 
+        }
+
+        private void enterCombat()
+        {
+            while(turn != 3)
+            {
+
+            }
         }
 
         private void hit(Graphics g)
