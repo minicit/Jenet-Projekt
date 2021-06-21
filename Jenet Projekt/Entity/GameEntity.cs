@@ -8,7 +8,7 @@ namespace Jenet_Projekt
 {
     class GameEntity
     {
-        private double health;
+        private double health, maxHealth;
         private Klassen entityclass;
         private string username;
         private double[] modifiers = new double[3];
@@ -71,6 +71,11 @@ namespace Jenet_Projekt
             defending = shield;
         }
 
+        public int getSpeed()
+        {
+            return speed;
+        }
+
         public void healDamage(int amount)
         {
             health += amount;
@@ -93,30 +98,39 @@ namespace Jenet_Projekt
             return health;
         }
 
+        public double getMaxHealth()
+        {
+            return maxHealth;
+        }
+
         public void setStartupModifiers(Klassen Klasse) //Implement modifier selection
         {
             switch (Klasse)
             {
                 case Klassen.Virus:
-                    health = 20;
+                    maxHealth = 20;
+                    health = maxHealth;
                     speed = 4;
                     attack = 2;
                     defence = 2;
                     break;
                 case Klassen.Virologe:
-                    health = 100;
+                    maxHealth = 100;
+                    health = maxHealth;
                     speed = 10;
                     attack = 10;
                     defence = 5;
                     break;
                 case Klassen.Normalbürger:
-                    health = 50;
+                    maxHealth = 50;
+                    health = maxHealth;
                     speed = 10;
                     attack = 5;
                     defence = 5;
                     break;
                 case Klassen.Coronaleugner:
-                    health = 20;
+                    maxHealth = 20;
+                    health = maxHealth;
                     speed = 10;
                     attack = 3;
                     defence = 3;

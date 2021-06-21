@@ -15,6 +15,7 @@ namespace Jenet_Projekt
         private bool combatActive;
         private GameEntity enemy, player;
         private int turn; //zug variable; 1:spieler, 2:Gegner, 3:Kampfende?
+        Random rand = new Random();
         public GameEntity.Klassen begin(GameEntity enemy, GameEntity player, Panel combatPanel)
         {
             this.enemy = enemy;
@@ -48,9 +49,32 @@ namespace Jenet_Projekt
 
         private void enterCombat()
         {
-            while(turn != 3)
+            while(enemy.getHealth()>0 || player.getHealth() > 0)
             {
+                if (player.getSpeed() > enemy.getSpeed())
+                {
+                    //player turn
+                    //enemy turn
+                    enemyAction();
+                }
+                else
+                {
+                    //enemy turn
+                    enemyAction();
+                    //player turn
+                }
+            }
+        }
 
+        private void enemyAction()
+        {
+            if(((enemy.getHealth()/enemy.getMaxHealth())*100) > rand.Next(100))
+            {
+                enemyShield();
+            }
+            else
+            {
+                enemyAttack();
             }
         }
 
