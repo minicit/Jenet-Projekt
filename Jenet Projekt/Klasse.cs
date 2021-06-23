@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Jenet_Projekt
 {
-    abstract class Klasse
+    public class Klasse
     {
         Klassen Entityclass;
 

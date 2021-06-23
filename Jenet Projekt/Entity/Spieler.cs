@@ -8,7 +8,7 @@ namespace Jenet_Projekt.Entity
 {
     class Spieler : GameEntity
     {
-        public Spieler(Klassen klasse, string name) : base(klasse, name)
+        public Spieler(Klasse.Klassen klasse, string name) : base(klasse, name)
         {
 
         }

@@ -15,27 +15,36 @@ using System.Windows.Forms;
 //panelInv
 namespace Jenet_Projekt
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
+        private static Main instance;
 
         int[,] grid = new int[10, 7]; // Array speichert Positionen in der Karte
         private int fieldsize = 125; //Größe eines Feldes in px 
         private SpriteHelper spriteHelper = new SpriteHelper();
-        private GameEntity player = new GameEntity(GameEntity.Klassen.Normalbürger, "Test");
+        private GameEntity player = new GameEntity(Klasse.Klassen.Normalbürger, "Test");
         private GameEntity[] enemy;
         private Combat fight = new Combat();
+        private int currentfighter;
         private int currentStage;
         private int invX = 3;
         private int invY = 4;
-        public Form1()
+        Eventcaller subject = new Eventcaller();
+        CombatObserver observer = new CombatObserver();
+        
+        public Main()
         {
             InitializeComponent();
+
+            instance = this;
+
+            subject.Attach(observer);
             panelMain.BackgroundImage = Resources.Resource1.Titlescreen;
             panelGame.BackgroundImage = Resources.Resource1.GamePanelBackground;
             panelGame.Hide();
             combatPanel.Hide();
             enemy = new GameEntity[5];
-            enemy[0] = new GameEntity(GameEntity.Klassen.Virus, "Virus");
+            enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
             //panelMap.BackgroundImage = Resources.Resource1.MapBackground;
         }
 
@@ -45,6 +54,14 @@ namespace Jenet_Projekt
             drawMap();
         }
 
+        public static Main getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new Main();
+            }
+            return instance;
+        }
         private void initGrid(int gridNo)
         {
             //Schreibt Startpositionen der Gegner / Spieler / Hindernisse in das Array
@@ -168,15 +185,15 @@ namespace Jenet_Projekt
                 }
             }
             moveEnemy();
-            foreach (var item in enemy)
+            for(int i = 0; i < 5; i++)
             {
-                if (item != null)
+                if (enemy[i] != null)
                 {
-                    if ((int)distance(player.getx(), player.gety(), item.getx(), item.gety()) == 1)
+                    if ((int)distance(player.getx(), player.gety(), enemy[i].getx(), enemy[i].gety()) == 1)
                     {
-
-                        GameEntity.Klassen winner = fight.begin(item, player, combatPanel);
-                        drawMap();
+                        currentfighter = i;
+                        fight.begin(enemy[i], player, combatPanel,subject, progressBarPlayer,progressBarEnemy);
+                        break;
                     }
                 }
             }
@@ -195,6 +212,46 @@ namespace Jenet_Projekt
         public bool combatActive()
         {
             return combatPanel.Visible;
+        }
+
+        public void combatFinished(GameEntity winner)
+        {
+            if (winner.getClass() != Klasse.Klassen.Virus)
+            {
+                MessageBox.Show(winner.getName() + "HAS FUCKED THE OTHER HOE");
+                grid[enemy[currentfighter].getx(), enemy[currentfighter].gety()] = 0;
+                enemy[currentfighter] = null;
+                progressBarEnemy.Value = 0;
+
+                if (!enemiesleft())
+                {
+                    startNextStage();
+                }
+                
+            }
+        }
+
+        private void startNextStage()
+        {
+            fight = null;
+            combatPanel.Hide();
+            drawMap();
+        }
+
+        public void addtoList(string ay)
+        {
+            listBox1.Items.Insert(0, ay);
+        }
+
+        private bool enemiesleft()
+        {
+            bool yoink = false;
+            foreach (var item in enemy)
+            {
+                if (item != null)
+                    yoink = true;
+            }
+            return yoink;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -252,4 +309,6 @@ namespace Jenet_Projekt
 
         }
     }
+
+
 }

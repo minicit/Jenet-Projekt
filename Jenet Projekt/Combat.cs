@@ -15,29 +15,27 @@ namespace Jenet_Projekt
         private bool combatActive;
         private GameEntity enemy, player;
         private int turn; //zug variable; 1:spieler, 2:Gegner, 3:Kampfende?
-        Random rand = new Random();
-        public GameEntity.Klassen begin(GameEntity enemy, GameEntity player, Panel combatPanel)
+        private Random rand = new Random();
+        private ProgressBar playerbar, enemybar;
+        private Eventcaller subject;
+        public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar)
         {
-            this.enemy = enemy;
-            this.player = player;
+            this.enemy = emy;
+            this.player = ply;
+            this.playerbar = playerbar;
+            this.enemybar = enemybar;
+            this.subject = subject;
             combatActive = true;
             Graphics g = combatPanel.CreateGraphics();
             combatPanel.BackgroundImage = spriteHelper.getBackground(2);
-
             combatPanel.Show();
+
+            playerbar.Maximum = (int)player.getMaxHealth();
+            enemybar.Maximum = (int)enemy.getMaxHealth();
+            playerbar.Value = (int)player.getHealth();
+            enemybar.Value = (int)enemy.getHealth();
             drawFight(g, enemy, player);
-
             g.Dispose();
-            
-            //falls player oder virus health <1
-            //combatPanel.Hide();
-
-            //enterCombat();
-            combatActive = false;
-            if(player.getHealth() <= 0)
-                return enemy.getClass(); //return enum type of winner
-            else
-                return enemy.getClass();
         }
 
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
@@ -47,34 +45,17 @@ namespace Jenet_Projekt
 
         }
 
-        private void enterCombat()
-        {
-            while(enemy.getHealth()>0 || player.getHealth() > 0)
-            {
-                if (player.getSpeed() > enemy.getSpeed())
-                {
-                    //player turn
-                    //enemy turn
-                    enemyAction();
-                }
-                else
-                {
-                    //enemy turn
-                    enemyAction();
-                    //player turn
-                }
-            }
-        }
-
         private void enemyAction()
         {
             if(((enemy.getHealth()/enemy.getMaxHealth())*100) > rand.Next(100))
             {
                 enemyShield();
+                MessageBox.Show("shielded!");
             }
             else
             {
                 enemyAttack();
+                MessageBox.Show("ATTAAACK");
             }
         }
 
@@ -88,42 +69,61 @@ namespace Jenet_Projekt
             g.DrawImage(Resources.Resource1.Sprite_0001, 600, 400);
         }
 
-        public bool getCombatActive()
-        {
-            return combatActive;
-        }
+        public bool getCombatActive() { return combatActive; }
 
-        public void setCombatActive(bool active)
-        {
-            combatActive = active;
-        }
+        public void setCombatActive(bool active) { combatActive = active; }
 
-        public void setTurn(int turn)
-        {
-            this.turn = turn;
-        }
+        public void setTurn(int turn) { this.turn = turn; }
+
+        public int getTurn() { return turn; }
 
         private void enemyAttack()
         {
-            enemy.setShield(false);
+            //enemy.setShield(false);
             if (enemy.doesItHit(enemy, player))
+            {
                 player.takeDamageFrom(enemy);
+                if (player.getHealth() > 0)
+                    playerbar.Value = (int)player.getHealth();
+            }
             else
                 enemy.takeDamageFrom(enemy); //vllt? quasi verwirrung ohne statusveränderung?
         }
 
         private void enemyShield()
         {
-            enemy.setShield(true);
+            //enemy.setShield(true);
         }
 
         public void attack()
         {
-            player.setShield(false);
-            if (player.doesItHit(player, enemy))
-                MessageBox.Show("atteck");
+            if (player.getSpeed() >= enemy.getSpeed())
+            {
+                player.setShield(false);
+                if (player.doesItHit(player, enemy))
+                {
+                    enemy.takeDamageFrom(player);
+                    if(enemy.getHealth() > 0)
+                        enemybar.Value = (int)enemy.getHealth();
+                }
+                else
+                    MessageBox.Show("misssd");
+                enemyAction();
+            }
             else
-                MessageBox.Show("misssd");
+            {
+                enemyAction();
+                player.setShield(false);
+                if (player.doesItHit(player, enemy))
+                {
+                    enemy.takeDamageFrom(player);
+                    if(enemy.getHealth() > 0)
+                        enemybar.Value = (int)enemy.getHealth();
+                }
+                else
+                    MessageBox.Show("misssd");
+            }
+            combatOverCheck();
         }
 
         public void shield()
@@ -140,11 +140,25 @@ namespace Jenet_Projekt
 
         public void run()
         {
-            player.setShield(false);
+            //player.setShield(false);
             if (player.doesItHit(player, enemy))
                 MessageBox.Show("runn");
             else
                 MessageBox.Show("you decided to stay. Why?");
+        }
+
+        private void combatOverCheck()
+        {
+            if (enemy.getHealth() <= 0)
+            {
+                setCombatActive(false);
+                subject.PlayerWon(player);
+            }
+            if (player.getHealth() <= 0)
+            {
+                setCombatActive(false);
+                subject.EnemyWon(enemy);
+            }
         }
     }
 }

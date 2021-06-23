@@ -1,7 +1,7 @@
 ﻿
 namespace Jenet_Projekt
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,23 @@ namespace Jenet_Projekt
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelGame = new System.Windows.Forms.Panel();
             this.combatPanel = new System.Windows.Forms.Panel();
             this.panelInv = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.progressBarEnemy = new System.Windows.Forms.ProgressBar();
+            this.progressBarPlayer = new System.Windows.Forms.ProgressBar();
             this.panelMap = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.buttonEndlos = new System.Windows.Forms.Button();
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panelGame.SuspendLayout();
+            this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,12 +72,49 @@ namespace Jenet_Projekt
             // panelInv
             // 
             this.panelInv.BackColor = System.Drawing.Color.DarkBlue;
+            this.panelInv.Controls.Add(this.listBox1);
+            this.panelInv.Controls.Add(this.label2);
+            this.panelInv.Controls.Add(this.label1);
+            this.panelInv.Controls.Add(this.progressBarEnemy);
+            this.panelInv.Controls.Add(this.progressBarPlayer);
             this.panelInv.ForeColor = System.Drawing.Color.Coral;
             this.panelInv.Location = new System.Drawing.Point(1266, 13);
             this.panelInv.Name = "panelInv";
             this.panelInv.Size = new System.Drawing.Size(325, 875);
             this.panelInv.TabIndex = 3;
             this.panelInv.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInv_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 538);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Enemy Health";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 475);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Player Health";
+            // 
+            // progressBarEnemy
+            // 
+            this.progressBarEnemy.Location = new System.Drawing.Point(3, 557);
+            this.progressBarEnemy.Name = "progressBarEnemy";
+            this.progressBarEnemy.Size = new System.Drawing.Size(318, 23);
+            this.progressBarEnemy.TabIndex = 1;
+            // 
+            // progressBarPlayer
+            // 
+            this.progressBarPlayer.Location = new System.Drawing.Point(3, 494);
+            this.progressBarPlayer.Name = "progressBarPlayer";
+            this.progressBarPlayer.Size = new System.Drawing.Size(318, 23);
+            this.progressBarPlayer.TabIndex = 0;
             // 
             // panelMap
             // 
@@ -133,7 +176,16 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // Form1
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(4, 587);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBox1.Size = new System.Drawing.Size(317, 121);
+            this.listBox1.TabIndex = 4;
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -143,11 +195,13 @@ namespace Jenet_Projekt
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.KeyPreview = true;
-            this.Name = "Form1";
+            this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panelGame.ResumeLayout(false);
+            this.panelInv.ResumeLayout(false);
+            this.panelInv.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -164,6 +218,11 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Panel combatPanel;
         private System.Windows.Forms.Button buttonEndlos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBarEnemy;
+        private System.Windows.Forms.ProgressBar progressBarPlayer;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

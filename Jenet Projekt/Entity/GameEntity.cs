@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Jenet_Projekt
 {
-    class GameEntity
+    public class GameEntity
     {
         private double health, maxHealth;
-        private Klassen entityclass;
+        private Klasse.Klassen entityclass;
         private string username;
         private double[] modifiers = new double[3];
         private int posx;
@@ -25,13 +25,13 @@ namespace Jenet_Projekt
             damageTaken,
             damageDealt
         }
-        public enum Klassen
-        {
-            Virologe,
-            Normalbürger,
-            Coronaleugner,
-            Virus
-        }
+        //public enum Klassen
+        //{
+        //    Virologe,
+        //    Normalbürger,
+        //    Coronaleugner,
+        //    Virus
+        //}
 
         public int getx() { return posx; }
         public int gety() { return posy; }
@@ -45,13 +45,13 @@ namespace Jenet_Projekt
             sety(y);
         }
 
-        public GameEntity(Klassen Klasse, string name) {
+        public GameEntity(Klasse.Klassen Klasse, string name) {
             entityclass = Klasse;
             username = name;
             setStartupModifiers(Klasse);
         }
 
-        public Klassen getClass()
+        public Klasse.Klassen getClass()
         {
             return entityclass;
         }
@@ -62,28 +62,23 @@ namespace Jenet_Projekt
             if (defending)
                 shield = defence;
 
-            health -= (attacker.attack * modifiers[(int)Modifiers.damageTaken]) - shield;
+            health -= attacker.attack - shield;
+            Main.getInstance().addtoList(attacker.getName().ToString() + " did damage to " + this.getName().ToString());
             defending = false;
         }
 
-        public void setShield(bool shield)
-        {
-            defending = shield;
-        }
+        public void setShield(bool val) { defending = val; }
 
-        public int getSpeed()
-        {
-            return speed;
-        }
+        public int getSpeed() { return speed; }
 
-        public void healDamage(int amount)
+        public void heal(int amount)
         {
             health += amount;
         }
 
         public bool doesItHit(GameEntity attacker, GameEntity victim)
         {
-            if ((((attacker.speed - victim.speed) * 10) + 5) > rand.Next(100))
+            if ((((attacker.speed - victim.speed) * 10) + 5) > rand.Next(20,100))
                 return true;
             return false;
         }
@@ -93,42 +88,36 @@ namespace Jenet_Projekt
 
         }
 
-        public double getHealth()
-        {
-            return health;
-        }
+        public double getHealth() { return health; }
 
-        public double getMaxHealth()
-        {
-            return maxHealth;
-        }
+        public double getMaxHealth() { return maxHealth; }
 
-        public void setStartupModifiers(Klassen Klasse) //Implement modifier selection
+        public void setStartupModifiers(Klasse.Klassen x) //Implement modifier selection
         {
-            switch (Klasse)
+            switch (x)
             {
-                case Klassen.Virus:
+                case Klasse.Klassen.Virus:
                     maxHealth = 20;
                     health = maxHealth;
                     speed = 4;
                     attack = 2;
                     defence = 2;
                     break;
-                case Klassen.Virologe:
+                case Klasse.Klassen.Virologe:
                     maxHealth = 100;
                     health = maxHealth;
                     speed = 10;
                     attack = 10;
                     defence = 5;
                     break;
-                case Klassen.Normalbürger:
+                case Klasse.Klassen.Normalbürger:
                     maxHealth = 50;
                     health = maxHealth;
                     speed = 10;
                     attack = 5;
                     defence = 5;
                     break;
-                case Klassen.Coronaleugner:
+                case Klasse.Klassen.Coronaleugner:
                     maxHealth = 20;
                     health = maxHealth;
                     speed = 10;
@@ -137,5 +126,7 @@ namespace Jenet_Projekt
                     break;
             }
         }
+
+        public string getName() { return username; }
     }
 }

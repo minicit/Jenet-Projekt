@@ -9,7 +9,7 @@ namespace Jenet_Projekt.Entity
     class Virus : GameEntity
     {
 
-        public Virus(Klassen klasse, string name) : base(klasse, name)
+        public Virus(Klasse.Klassen klasse, string name) : base(klasse, name)
         {
 
         }
