@@ -33,23 +33,24 @@ namespace Jenet_Projekt
             this.panelGame = new System.Windows.Forms.Panel();
             this.combatPanel = new System.Windows.Forms.Panel();
             this.panelInv = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.progressBarEnemy = new System.Windows.Forms.ProgressBar();
             this.progressBarPlayer = new System.Windows.Forms.ProgressBar();
             this.panelMap = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.tbNameInput = new System.Windows.Forms.TextBox();
+            this.btnClassVirologe = new System.Windows.Forms.Button();
+            this.btnClassNormal = new System.Windows.Forms.Button();
+            this.btnClassLeugner = new System.Windows.Forms.Button();
             this.buttonEndlos = new System.Windows.Forms.Button();
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClassLeugner = new System.Windows.Forms.Button();
-            this.btnClassNormal = new System.Windows.Forms.Button();
-            this.btnClassVirologe = new System.Windows.Forms.Button();
-            this.tbNameInput = new System.Windows.Forms.TextBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
             this.panelGame.SuspendLayout();
             this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -79,6 +80,7 @@ namespace Jenet_Projekt
             // panelInv
             // 
             this.panelInv.BackColor = System.Drawing.Color.DarkBlue;
+            this.panelInv.Controls.Add(this.lblName);
             this.panelInv.Controls.Add(this.listBox1);
             this.panelInv.Controls.Add(this.label2);
             this.panelInv.Controls.Add(this.label1);
@@ -90,6 +92,15 @@ namespace Jenet_Projekt
             this.panelInv.Size = new System.Drawing.Size(325, 875);
             this.panelInv.TabIndex = 3;
             this.panelInv.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInv_Paint);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(4, 587);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBox1.Size = new System.Drawing.Size(317, 121);
+            this.listBox1.TabIndex = 4;
             // 
             // label2
             // 
@@ -147,6 +158,67 @@ namespace Jenet_Projekt
             this.panelMain.Size = new System.Drawing.Size(1600, 900);
             this.panelMain.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnConfirm);
+            this.panel1.Controls.Add(this.tbNameInput);
+            this.panel1.Controls.Add(this.btnClassVirologe);
+            this.panel1.Controls.Add(this.btnClassNormal);
+            this.panel1.Controls.Add(this.btnClassLeugner);
+            this.panel1.Location = new System.Drawing.Point(525, 237);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(543, 322);
+            this.panel1.TabIndex = 4;
+            this.panel1.Visible = false;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(161, 257);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(207, 46);
+            this.btnConfirm.TabIndex = 4;
+            this.btnConfirm.Text = "Bestätigen";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // tbNameInput
+            // 
+            this.tbNameInput.Location = new System.Drawing.Point(22, 169);
+            this.tbNameInput.Name = "tbNameInput";
+            this.tbNameInput.Size = new System.Drawing.Size(100, 20);
+            this.tbNameInput.TabIndex = 3;
+            // 
+            // btnClassVirologe
+            // 
+            this.btnClassVirologe.Location = new System.Drawing.Point(22, 110);
+            this.btnClassVirologe.Name = "btnClassVirologe";
+            this.btnClassVirologe.Size = new System.Drawing.Size(134, 41);
+            this.btnClassVirologe.TabIndex = 2;
+            this.btnClassVirologe.Text = "Virologe";
+            this.btnClassVirologe.UseVisualStyleBackColor = true;
+            this.btnClassVirologe.Click += new System.EventHandler(this.btnClassVirologe_Click);
+            // 
+            // btnClassNormal
+            // 
+            this.btnClassNormal.Location = new System.Drawing.Point(22, 63);
+            this.btnClassNormal.Name = "btnClassNormal";
+            this.btnClassNormal.Size = new System.Drawing.Size(134, 41);
+            this.btnClassNormal.TabIndex = 1;
+            this.btnClassNormal.Text = "Normalbürger";
+            this.btnClassNormal.UseVisualStyleBackColor = true;
+            this.btnClassNormal.Click += new System.EventHandler(this.btnClassNormal_Click);
+            // 
+            // btnClassLeugner
+            // 
+            this.btnClassLeugner.Location = new System.Drawing.Point(22, 13);
+            this.btnClassLeugner.Name = "btnClassLeugner";
+            this.btnClassLeugner.Size = new System.Drawing.Size(134, 44);
+            this.btnClassLeugner.TabIndex = 0;
+            this.btnClassLeugner.Text = "Coronaleugner";
+            this.btnClassLeugner.UseVisualStyleBackColor = true;
+            this.btnClassLeugner.Click += new System.EventHandler(this.btnClassLeugner_Click);
+            // 
             // buttonEndlos
             // 
             this.buttonEndlos.Location = new System.Drawing.Point(560, 439);
@@ -184,75 +256,13 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // listBox1
+            // lblName
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(4, 587);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBox1.Size = new System.Drawing.Size(317, 121);
-            this.listBox1.TabIndex = 4;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.btnConfirm);
-            this.panel1.Controls.Add(this.tbNameInput);
-            this.panel1.Controls.Add(this.btnClassVirologe);
-            this.panel1.Controls.Add(this.btnClassNormal);
-            this.panel1.Controls.Add(this.btnClassLeugner);
-            this.panel1.Location = new System.Drawing.Point(525, 237);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(543, 322);
-            this.panel1.TabIndex = 4;
-            this.panel1.Visible = false;
-            // 
-            // btnClassLeugner
-            // 
-            this.btnClassLeugner.Location = new System.Drawing.Point(22, 13);
-            this.btnClassLeugner.Name = "btnClassLeugner";
-            this.btnClassLeugner.Size = new System.Drawing.Size(134, 44);
-            this.btnClassLeugner.TabIndex = 0;
-            this.btnClassLeugner.Text = "Coronaleugner";
-            this.btnClassLeugner.UseVisualStyleBackColor = true;
-            this.btnClassLeugner.Click += new System.EventHandler(this.btnClassLeugner_Click);
-            // 
-            // btnClassNormal
-            // 
-            this.btnClassNormal.Location = new System.Drawing.Point(22, 63);
-            this.btnClassNormal.Name = "btnClassNormal";
-            this.btnClassNormal.Size = new System.Drawing.Size(134, 41);
-            this.btnClassNormal.TabIndex = 1;
-            this.btnClassNormal.Text = "Normalbürger";
-            this.btnClassNormal.UseVisualStyleBackColor = true;
-            this.btnClassNormal.Click += new System.EventHandler(this.btnClassNormal_Click);
-            // 
-            // btnClassVirologe
-            // 
-            this.btnClassVirologe.Location = new System.Drawing.Point(22, 110);
-            this.btnClassVirologe.Name = "btnClassVirologe";
-            this.btnClassVirologe.Size = new System.Drawing.Size(134, 41);
-            this.btnClassVirologe.TabIndex = 2;
-            this.btnClassVirologe.Text = "Virologe";
-            this.btnClassVirologe.UseVisualStyleBackColor = true;
-            this.btnClassVirologe.Click += new System.EventHandler(this.btnClassVirologe_Click);
-            // 
-            // tbNameInput
-            // 
-            this.tbNameInput.Location = new System.Drawing.Point(22, 169);
-            this.tbNameInput.Name = "tbNameInput";
-            this.tbNameInput.Size = new System.Drawing.Size(100, 20);
-            this.tbNameInput.TabIndex = 3;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Location = new System.Drawing.Point(161, 257);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(207, 46);
-            this.btnConfirm.TabIndex = 4;
-            this.btnConfirm.Text = "Bestätigen";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(226, 474);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(0, 13);
+            this.lblName.TabIndex = 5;
             // 
             // Main
             // 
@@ -300,6 +310,7 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Button btnClassVirologe;
         private System.Windows.Forms.Button btnClassNormal;
         private System.Windows.Forms.Button btnClassLeugner;
+        private System.Windows.Forms.Label lblName;
     }
 }
 
