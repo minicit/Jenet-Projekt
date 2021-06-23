@@ -27,7 +27,7 @@ namespace Jenet_Projekt
             this.subject = subject;
             combatActive = true;
             Graphics g = combatPanel.CreateGraphics();
-            combatPanel.BackgroundImage = spriteHelper.getBackground(2);
+            combatPanel.BackgroundImage = spriteHelper.getBackground(-1);
             combatPanel.Show();
 
             playerbar.Maximum = (int)player.getMaxHealth();
@@ -85,9 +85,10 @@ namespace Jenet_Projekt
                 player.takeDamageFrom(enemy);
                 if (player.getHealth() > 0)
                     playerbar.Value = (int)player.getHealth();
+
             }
-            else
-                enemy.takeDamageFrom(enemy); //vllt? quasi verwirrung ohne statusveränderung?
+            //else
+            //    enemy.takeDamageFrom(enemy); //vllt? quasi verwirrung ohne statusveränderung?
         }
 
         private void enemyShield()

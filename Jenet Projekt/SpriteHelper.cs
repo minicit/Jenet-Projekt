@@ -46,8 +46,10 @@ namespace Jenet_Projekt
         {
             switch (x)
             {
-                case 2:
+                case -1:
                     return Resources.Resource1.combatBackgroundMitMenu;
+                case 2:
+                    return Resources.Resource1.Hintergrund_mapGrass;
                 case 1:
                     return Resources.Resource1.Hintergrund_mapGrass;
                 case 0:

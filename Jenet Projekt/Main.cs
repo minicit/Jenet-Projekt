@@ -91,7 +91,18 @@ namespace Jenet_Projekt
                     break;
 
                 case 2:
-
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+                    player.setcoords(6, 3);
+                    enemy[0].setcoords(0, 0);
+                    currentStage = 2;
+                    setBackground(currentStage);
+                    grid[6, 3] = 1;
+                    grid[0, 0] = 2;
+                    grid[5, 3] = 3;
+                    grid[4, 5] = 4;
+                    grid[4, 3] = 4;
+                    grid[5, 2] = 3;
+                    grid[4, 2] = 3;
                     break;
 
                 case 3:
@@ -153,9 +164,7 @@ namespace Jenet_Projekt
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            panelMain.Hide();
-            panelGame.Show();
-            gameStart(1);
+            panel1.Show();
         }
 
         private void drawEntity(Graphics g, Bitmap bild, int locationX, int locationY)
@@ -191,8 +200,10 @@ namespace Jenet_Projekt
                 {
                     if ((int)distance(player.getx(), player.gety(), enemy[i].getx(), enemy[i].gety()) == 1)
                     {
+                        if (fight == null)
+                            fight = new Combat();
                         currentfighter = i;
-                        fight.begin(enemy[i], player, combatPanel,subject, progressBarPlayer,progressBarEnemy);
+                        fight.begin(enemy[i], player, combatPanel, subject, progressBarPlayer, progressBarEnemy);
                         break;
                     }
                 }
@@ -236,6 +247,7 @@ namespace Jenet_Projekt
             fight = null;
             combatPanel.Hide();
             drawMap();
+            gameStart(currentStage + 1);
         }
 
         public void addtoList(string ay)
@@ -307,6 +319,37 @@ namespace Jenet_Projekt
                 }
             }
 
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                player.setName(tbNameInput.Text);
+                panelMain.Hide();
+                panelGame.Show();
+                gameStart(1);
+            }
+            catch(Exception)
+            {
+                tbNameInput.Text = "";
+                btnStart_Click(this, e);
+            }
+        }
+
+        private void btnClassVirologe_Click(object sender, EventArgs e)
+        {
+            player.setClass(Klasse.Klassen.Virologe);
+        }
+
+        private void btnClassNormal_Click(object sender, EventArgs e)
+        {
+            player.setClass(Klasse.Klassen.Normalbürger);
+        }
+
+        private void btnClassLeugner_Click(object sender, EventArgs e)
+        {
+            player.setClass(Klasse.Klassen.Coronaleugner);
         }
     }
 

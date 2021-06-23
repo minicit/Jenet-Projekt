@@ -64,6 +64,7 @@ namespace Jenet_Projekt
 
             health -= attacker.attack - shield;
             Main.getInstance().addtoList(attacker.getName().ToString() + " did damage to " + this.getName().ToString());
+            Main.getInstance().addtoList(attacker.getHealth().ToString() + "Attacker health\n" + this.getHealth().ToString() + "Victim health");
             defending = false;
         }
 
@@ -78,7 +79,7 @@ namespace Jenet_Projekt
 
         public bool doesItHit(GameEntity attacker, GameEntity victim)
         {
-            if ((((attacker.speed - victim.speed) * 10) + 5) > rand.Next(20,100))
+            if ((attacker.speed / victim.speed) * 10 + rand.Next(40,60) > rand.Next(100))
                 return true;
             return false;
         }
@@ -86,6 +87,16 @@ namespace Jenet_Projekt
         public void setModifier(Modifiers modifiers, double value)
         {
 
+        }
+
+        public void setClass(Klasse.Klassen clazz)
+        {
+            entityclass = clazz;
+        }
+
+        public void setName(string name)
+        {
+            this.username = name;
         }
 
         public double getHealth() { return health; }
@@ -99,8 +110,8 @@ namespace Jenet_Projekt
                 case Klasse.Klassen.Virus:
                     maxHealth = 20;
                     health = maxHealth;
-                    speed = 4;
-                    attack = 2;
+                    speed = 7;
+                    attack = 8;
                     defence = 2;
                     break;
                 case Klasse.Klassen.Virologe:
@@ -114,14 +125,14 @@ namespace Jenet_Projekt
                     maxHealth = 50;
                     health = maxHealth;
                     speed = 10;
-                    attack = 5;
+                    attack = 3;
                     defence = 5;
                     break;
                 case Klasse.Klassen.Coronaleugner:
                     maxHealth = 20;
                     health = maxHealth;
                     speed = 10;
-                    attack = 3;
+                    attack = 1;
                     defence = 3;
                     break;
             }
