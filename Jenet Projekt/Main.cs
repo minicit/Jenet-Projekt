@@ -77,8 +77,8 @@ namespace Jenet_Projekt
             switch (gridNo)
             {
                 case 1:
-                    player.setcoords(6, 2);
-                    enemy[0].setcoords(6, 4);
+                    player.setcoords(5, 4);
+                    enemy[0].setcoords(5, 2);
                     currentStage = 1;
                     setBackground(currentStage);
                     /*for (int i = 0; i < 8; i++)
@@ -146,6 +146,8 @@ namespace Jenet_Projekt
                     grid[7, 6] = 3;
                     grid[8, 6] = 3;
                     grid[9, 6] = 3;
+                    grid[5, 2] = 2;
+                    grid[5, 4] = 1;
 
 
 
