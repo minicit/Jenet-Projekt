@@ -416,6 +416,12 @@ namespace Jenet_Projekt
         {
             player.setClass(Klasse.Klassen.Coronaleugner);
         }
+
+        private void btnHighscore_Click(object sender, EventArgs e)
+        {
+            // TODO: Set the correct highscore
+            new Highscore(this.player.getName(), 0).ShowDialog();
+        }
     }
 
 
