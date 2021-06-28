@@ -118,6 +118,7 @@
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Sprite-Pow.png" />
     <None Include="Resources\Titlescreen.png" />
     <None Include="Resources\virusSpriteTrans.png" />
     <None Include="Resources\virologeSpriteTrans.png" />
@@ -130,6 +131,9 @@
     <None Include="Resources\coronaLeugnerJetztaberTrans.png" />
     <None Include="Resources\combatBackgroundMitMenu.png" />
     <None Include="Resources\GamePanelBackground.png" />
+    <None Include="Resources\Missed.png" />
+    <None Include="Resources\OOF.png" />
+    <None Include="Resources\Schild.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>

@@ -133,9 +133,49 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Missed {
+            get {
+                object obj = ResourceManager.GetObject("Missed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap normalboiSpriteTrans {
             get {
                 object obj = ResourceManager.GetObject("normalboiSpriteTrans", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OOF {
+            get {
+                object obj = ResourceManager.GetObject("OOF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pow {
+            get {
+                object obj = ResourceManager.GetObject("Pow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Schild {
+            get {
+                object obj = ResourceManager.GetObject("Schild", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
