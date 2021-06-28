@@ -19,6 +19,7 @@ namespace Jenet_Projekt
         private ProgressBar playerbar, enemybar;
         private Eventcaller subject;
         private Panel combatPanel;
+        private int[] itemArray = new int[5];
         public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar)
         {
             this.enemy = emy;
@@ -38,6 +39,19 @@ namespace Jenet_Projekt
             enemybar.Value = (int)enemy.getHealth();
             drawFight(g, enemy, player);
             g.Dispose();
+        }
+
+        public void getItem(int type)
+        {
+            itemArray[type-1]++;
+        }
+
+        public void useItem(int type)
+        {
+            if (itemArray[type - 1] != 0)
+            {
+                itemArray[type - 1]--;
+            }
         }
 
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
@@ -146,6 +160,7 @@ namespace Jenet_Projekt
         public void items()
         {
             MessageBox.Show("shoe");
+            player.setShield(false);
             //wird ein Item eingesetzt muss shield auf false gesetzt werden
         }
 
