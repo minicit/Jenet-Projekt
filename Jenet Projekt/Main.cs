@@ -77,17 +77,78 @@ namespace Jenet_Projekt
             switch (gridNo)
             {
                 case 1:
-                    player.setcoords(7, 4);
-                    enemy[0].setcoords(1, 1);
+                    player.setcoords(6, 2);
+                    enemy[0].setcoords(6, 4);
                     currentStage = 1;
                     setBackground(currentStage);
-                    grid[7, 4] = 1;
+                    /*for (int i = 0; i < 8; i++)
+                    {
+                        grid[0, i] = 3;
+                        grid[7, i] = 3;
+                    }
+                    for (int i = 0; i < 10; i++)
+                    {
+                        grid[i, 0] = 3;
+                        grid[i, 1] = 3;
+                        grid[i, 8] = 3;
+                        grid[i, 9] = 3;
+                    }*/
+                    /*grid[7, 4] = 1;
                     grid[1, 1] = 2;
                     grid[5, 3] = 3;
                     grid[4, 5] = 4;
                     grid[4, 3] = 3;
                     grid[5, 2] = 3;
-                    grid[4, 2] = 3;
+                    grid[4, 2] = 3;*/
+                    grid[0, 0] = 3;
+                    grid[1, 0] = 3;
+                    grid[2, 0] = 3;
+                    grid[3, 0] = 3;
+                    grid[4, 0] = 3;
+                    grid[5, 0] = 3;
+                    grid[6, 0] = 3;
+                    grid[7, 0] = 3;
+                    grid[8, 0] = 3;
+                    grid[9, 0] = 3;
+                    grid[0, 1] = 3;
+                    grid[1, 1] = 3;
+                    grid[2, 1] = 3;
+                    grid[7, 1] = 3;
+                    grid[8, 1] = 3;
+                    grid[9, 1] = 3;
+                    grid[0, 2] = 3;
+                    grid[1, 2] = 3;
+                    grid[8, 2] = 3;
+                    grid[9, 2] = 3;
+                    grid[0, 3] = 3;
+                    grid[1, 3] = 3;
+                    grid[8, 3] = 3;
+                    grid[9, 3] = 3;
+                    grid[0, 4] = 3;
+                    grid[1, 4] = 3;
+                    grid[2, 4] = 3;
+                    grid[8, 4] = 3;
+                    grid[9, 4] = 3;
+                    grid[0, 5] = 3;
+                    grid[1, 5] = 3;
+                    grid[2, 5] = 3;
+                    grid[3, 5] = 3;
+                    grid[7, 5] = 3;
+                    grid[8, 5] = 3;
+                    grid[9, 5] = 3;
+                    grid[0, 6] = 3;
+                    grid[1, 6] = 3;
+                    grid[2, 6] = 3;
+                    grid[3, 6] = 3;
+                    grid[4, 6] = 3;
+                    grid[5, 6] = 3;
+                    grid[6, 6] = 3;
+                    grid[7, 6] = 3;
+                    grid[8, 6] = 3;
+                    grid[9, 6] = 3;
+
+
+
                     break;
 
                 case 2:
@@ -106,6 +167,7 @@ namespace Jenet_Projekt
                     break;
 
                 case 3:
+
 
                     break;
             }
