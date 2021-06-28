@@ -29,7 +29,7 @@ namespace Jenet_Projekt
         private void updateLbHighscores()
         {
             this.lbHighscores.Items.Clear();
-            foreach (KeyValuePair<string, int> highscore in this.highscores.OrderBy(highscore => highscore.Value))
+            foreach (KeyValuePair<string, int> highscore in this.highscores.OrderByDescending(highscore => highscore.Value))
             {
                 this.lbHighscores.Items.Add($"{highscore.Key}: {highscore.Value}");
             }
