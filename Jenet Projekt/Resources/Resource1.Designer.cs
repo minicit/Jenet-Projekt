@@ -73,6 +73,36 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Crocs {
+            get {
+                object obj = ResourceManager.GetObject("Crocs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Desinfektionsmittel {
+            get {
+                object obj = ResourceManager.GetObject("Desinfektionsmittel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Feuerzeug {
+            get {
+                object obj = ResourceManager.GetObject("Feuerzeug", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap forrestSprite {
             get {
                 object obj = ResourceManager.GetObject("forrestSprite", resourceCulture);
@@ -143,6 +173,16 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Mundschutz {
+            get {
+                object obj = ResourceManager.GetObject("Mundschutz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap normalboiSpriteTrans {
             get {
                 object obj = ResourceManager.GetObject("normalboiSpriteTrans", resourceCulture);
@@ -196,6 +236,16 @@ namespace Jenet_Projekt.Resources {
         internal static System.Drawing.Bitmap Sprite_0002 {
             get {
                 object obj = ResourceManager.GetObject("Sprite_0002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spritze {
+            get {
+                object obj = ResourceManager.GetObject("Spritze", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

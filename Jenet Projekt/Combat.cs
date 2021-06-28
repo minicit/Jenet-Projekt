@@ -19,7 +19,7 @@ namespace Jenet_Projekt
         private ProgressBar playerbar, enemybar;
         private Eventcaller subject;
         private Panel combatPanel;
-        private int[] itemArray = new int[5];
+        private int[] itemArray = new int[4];
         public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar)
         {
             this.enemy = emy;
@@ -48,8 +48,31 @@ namespace Jenet_Projekt
 
         public void useItem(int type)
         {
-            if (itemArray[type - 1] != 0)
+            if (itemArray[type] != 0)
             {
+                switch (type-1)
+                {
+                    case 0:
+                        MessageBox.Show("Mundschutz");
+                        fightSprite(Resources.Resource1.Mundschutz);
+                        enemy.setAttack(5);
+                        break;
+                    case 1:
+                        MessageBox.Show("Feuerzeug");
+                        fightSprite(Resources.Resource1.Feuerzeug);
+                        enemy.takeDamage(40);
+                        break;
+                    case 2:
+                        MessageBox.Show("Spritze");
+                        fightSprite(Resources.Resource1.Spritze);
+                        enemy.setAttack(1);
+                        break;
+                    case 3:
+                        MessageBox.Show("Croc");
+                        fightSprite(Resources.Resource1.Crocs);
+                        //kein effect ausser bei bossmonster
+                        break;
+                }
                 itemArray[type - 1]--;
             }
         }
@@ -129,6 +152,7 @@ namespace Jenet_Projekt
                     fightSprite(Resources.Resource1.Missed);
                 }
                 enemyAction();
+                enemy.setShield(false);
             }
             else
             {
@@ -146,6 +170,7 @@ namespace Jenet_Projekt
                     //MessageBox.Show("misssd");
                     fightSprite(Resources.Resource1.Missed);
                 }
+                enemy.setShield(false);
             }
             combatOverCheck();
         }
@@ -159,7 +184,7 @@ namespace Jenet_Projekt
 
         public void items()
         {
-            MessageBox.Show("shoe");
+            useItem(3);
             player.setShield(false);
             //wird ein Item eingesetzt muss shield auf false gesetzt werden
         }
