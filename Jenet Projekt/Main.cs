@@ -229,7 +229,7 @@ namespace Jenet_Projekt
         {
             if (winner.getClass() != Klasse.Klassen.Virus)
             {
-                MessageBox.Show(winner.getName() + "HAS FUCKED THE OTHER HOE");
+                MessageBox.Show(winner.getName() + " won the fight");
                 grid[enemy[currentfighter].getx(), enemy[currentfighter].gety()] = 0;
                 enemy[currentfighter] = null;
                 progressBarEnemy.Value = 0;
