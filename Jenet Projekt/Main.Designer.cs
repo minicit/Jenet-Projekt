@@ -51,6 +51,7 @@ namespace Jenet_Projekt
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.panelStory = new System.Windows.Forms.Panel();
             this.panelGame.SuspendLayout();
             this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -60,6 +61,7 @@ namespace Jenet_Projekt
             // panelGame
             // 
             this.panelGame.BackColor = System.Drawing.Color.Aqua;
+            this.panelGame.Controls.Add(this.panelStory);
             this.panelGame.Controls.Add(this.combatPanel);
             this.panelGame.Controls.Add(this.panelInv);
             this.panelGame.Controls.Add(this.panelMap);
@@ -87,9 +89,9 @@ namespace Jenet_Projekt
             this.panelInv.Controls.Add(this.progressBarEnemy);
             this.panelInv.Controls.Add(this.progressBarPlayer);
             this.panelInv.ForeColor = System.Drawing.Color.Coral;
-            this.panelInv.Location = new System.Drawing.Point(1266, 13);
+            this.panelInv.Location = new System.Drawing.Point(1265, 13);
             this.panelInv.Name = "panelInv";
-            this.panelInv.Size = new System.Drawing.Size(325, 875);
+            this.panelInv.Size = new System.Drawing.Size(326, 875);
             this.panelInv.TabIndex = 3;
             this.panelInv.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInv_Paint);
             // 
@@ -265,6 +267,15 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // panelStory
+            // 
+            this.panelStory.BackColor = System.Drawing.Color.Green;
+            this.panelStory.Location = new System.Drawing.Point(10, 13);
+            this.panelStory.Name = "panelStory";
+            this.panelStory.Size = new System.Drawing.Size(1250, 875);
+            this.panelStory.TabIndex = 5;
+            this.panelStory.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +323,7 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Button btnClassNormal;
         private System.Windows.Forms.Button btnClassLeugner;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Panel panelStory;
     }
 }
 

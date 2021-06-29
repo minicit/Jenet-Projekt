@@ -22,6 +22,8 @@ namespace Jenet_Projekt
                     return Resources.Resource1.forrestSprite;
                 case 4:
                     return Resources.Resource1.Sprite_0002;
+                case 5:
+                    return Resources.Resource1.Sprite_0002;
             }
             return null;
         }
