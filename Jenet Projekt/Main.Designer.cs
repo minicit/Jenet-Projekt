@@ -33,6 +33,7 @@ namespace Jenet_Projekt
             this.panelGame = new System.Windows.Forms.Panel();
             this.combatPanel = new System.Windows.Forms.Panel();
             this.panelInv = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,7 +51,6 @@ namespace Jenet_Projekt
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.lblName = new System.Windows.Forms.Label();
             this.panelGame.SuspendLayout();
             this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -92,6 +92,14 @@ namespace Jenet_Projekt
             this.panelInv.Size = new System.Drawing.Size(325, 875);
             this.panelInv.TabIndex = 3;
             this.panelInv.Paint += new System.Windows.Forms.PaintEventHandler(this.panelInv_Paint);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(226, 474);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(0, 13);
+            this.lblName.TabIndex = 5;
             // 
             // listBox1
             // 
@@ -245,6 +253,7 @@ namespace Jenet_Projekt
             this.btnHighscore.TabIndex = 2;
             this.btnHighscore.Text = "Highscore";
             this.btnHighscore.UseVisualStyleBackColor = true;
+            this.btnHighscore.Click += new System.EventHandler(this.btnHighscore_Click);
             // 
             // btnStart
             // 
@@ -255,14 +264,6 @@ namespace Jenet_Projekt
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(226, 474);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(0, 13);
-            this.lblName.TabIndex = 5;
             // 
             // Main
             // 
