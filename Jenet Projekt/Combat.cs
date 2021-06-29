@@ -43,7 +43,7 @@ namespace Jenet_Projekt
 
         public void getItem(int type)
         {
-            itemArray[type-1]++;
+            itemArray[type - 1] = itemArray[type - 1] + 1; 
             Main.getInstance().showItems(itemArray);
         }
 
@@ -71,7 +71,10 @@ namespace Jenet_Projekt
                     case 3:
                         MessageBox.Show("Croc");
                         fightSprite(Resources.Resource1.Crocs);
-                        //kein effect ausser bei bossmonster
+                        if (enemy.getClass() == Klasse.Klassen.Bat)
+                        {
+                            enemy.setHealth(0);
+                        }
                         break;
                 }
                 itemArray[type - 1]--;
@@ -91,12 +94,10 @@ namespace Jenet_Projekt
             if(((enemy.getHealth()/enemy.getMaxHealth())*100) > rand.Next(100))
             {
                 enemyShield();
-                //MessageBox.Show("shielded!");
             }
             else
             {
                 enemyAttack();
-                //MessageBox.Show("ATTAAACK");
             }
         }
 
@@ -126,8 +127,6 @@ namespace Jenet_Projekt
                     playerbar.Value = (int)player.getHealth();
                 fightSprite(Resources.Resource1.OOF);
             }
-            //else
-            //    enemy.takeDamageFrom(enemy); //vllt? quasi verwirrung ohne statusveränderung?
         }
 
         private void enemyShield()
@@ -150,7 +149,6 @@ namespace Jenet_Projekt
                 }
                 else
                 {
-                    //MessageBox.Show("misssd");
                     fightSprite(Resources.Resource1.Missed);
                 }
                 enemyAction();
@@ -169,7 +167,6 @@ namespace Jenet_Projekt
                 }
                 else
                 {
-                    //MessageBox.Show("misssd");
                     fightSprite(Resources.Resource1.Missed);
                 }
                 enemy.setShield(false);
@@ -180,15 +177,13 @@ namespace Jenet_Projekt
         public void shield()
         {
             player.setShield(true);
-            //MessageBox.Show("*spray desinfection spray like febreeze*");
             fightSprite(Resources.Resource1.Schild);
         }
 
         public void items()
         {
-            useItem(3);
+            useItem(3); //hier button input von user
             player.setShield(false);
-            //wird ein Item eingesetzt muss shield auf false gesetzt werden
         }
 
         public void run()

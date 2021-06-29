@@ -63,9 +63,39 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Brite_Virus {
+            get {
+                object obj = ResourceManager.GetObject("Brite_Virus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap China_Virus {
+            get {
+                object obj = ResourceManager.GetObject("China_Virus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap combatBackgroundMitMenu {
             get {
                 object obj = ResourceManager.GetObject("combatBackgroundMitMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cowboy_Virus {
+            get {
+                object obj = ResourceManager.GetObject("Cowboy_Virus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -126,6 +156,16 @@ namespace Jenet_Projekt.Resources {
         internal static System.Drawing.Bitmap GamePanelBackground {
             get {
                 object obj = ResourceManager.GetObject("GamePanelBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gebirge {
+            get {
+                object obj = ResourceManager.GetObject("Gebirge", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +293,49 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Sprite_Peng {
+            get {
+                object obj = ResourceManager.GetObject("Sprite_Peng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Spritze {
             get {
                 object obj = ResourceManager.GetObject("Spritze", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Straße_horizontal {
+            get {
+                object obj = ResourceManager.GetObject("Straße_horizontal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Straße_Kreuzung_Sprite {
+            get {
+                object obj = ResourceManager.GetObject("Straße_Kreuzung_Sprite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Straße_vertikal {
+            get {
+                object obj = ResourceManager.GetObject("Straße_vertikal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +356,16 @@ namespace Jenet_Projekt.Resources {
         internal static System.Drawing.Bitmap trans {
             get {
                 object obj = ResourceManager.GetObject("trans", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Verkleidetes_Virus {
+            get {
+                object obj = ResourceManager.GetObject("Verkleidetes_Virus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

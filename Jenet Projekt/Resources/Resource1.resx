@@ -190,4 +190,31 @@
   <data name="trans" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>trans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Brite_Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Brite-Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="China_Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>China-Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cowboy_Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Cowboy-Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gebirge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Gebirge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sprite_Peng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Sprite-Peng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Straße_horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Straße-horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Straße_Kreuzung_Sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Straße-Kreuzung-Sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Straße_vertikal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Straße-vertikal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verkleidetes_Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Verkleidetes-Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

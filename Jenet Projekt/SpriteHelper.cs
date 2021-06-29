@@ -23,7 +23,7 @@ namespace Jenet_Projekt
                 case 4:
                     return Resources.Resource1.Sprite_0002;
                 case 5:
-                    return Resources.Resource1.deepBatTrans;
+                    return Resources.Resource1.Gebirge;
                 case 69:
                     return Resources.Resource1.deepBatTrans;
                 case 16:

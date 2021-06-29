@@ -101,6 +101,8 @@ namespace Jenet_Projekt
 
         public double getHealth() { return health; }
 
+        public void setHealth(double health) { this.health = health; }
+
         public double getMaxHealth() { return maxHealth; }
 
         public void setAttack(double effect) { attack = effect; }

@@ -175,7 +175,7 @@ namespace Jenet_Projekt
                     grid[4, 2] = 3;
                     break;
 
-                case 1:
+                case 3:
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "CoVid");
                     enemy[1] = new GameEntity(Klasse.Klassen.Virus, "yeee");
                     enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Corona");
@@ -183,7 +183,7 @@ namespace Jenet_Projekt
                     enemy[0].setcoords(1, 7);
                     enemy[1].setcoords(6, 3);
                     enemy[2].setcoords(8, 3);
-                    currentStage = 1;
+                    currentStage = 3;
                     setBackground(currentStage);
                     for (int i = 0; i < 10; i++)
                     {
@@ -192,10 +192,28 @@ namespace Jenet_Projekt
                             grid[i, j] = 5;
                         }
                     }
-
-
-
-                    //break;
+                    break;
+                case 4:
+                    player.setcoords(5, 4);
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+                    enemy[0].setcoords(5, 2);
+                    currentStage = 4;
+                    setBackground(currentStage);
+                    break;
+                case 5:
+                    player.setcoords(5, 4);
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+                    enemy[0].setcoords(5, 2);
+                    currentStage = 5;
+                    setBackground(currentStage);
+                    break;
+                case 6:
+                    player.setcoords(5, 4);
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+                    enemy[0].setcoords(5, 2);
+                    currentStage = 6;
+                    setBackground(currentStage);
+                    break;
             }
         }
         private void drawMap()
@@ -281,6 +299,7 @@ namespace Jenet_Projekt
                         if (fight == null)
                             fight = new Combat();
                         currentfighter = i;
+                        fight.getItem(1);
                         fight.begin(enemy[i], player, combatPanel, subject, progressBarPlayer, progressBarEnemy);
                         break;
                     }
@@ -335,13 +354,29 @@ namespace Jenet_Projekt
 
         public void showItems(int[] itemArray)
         {
+            Graphics g = panelInv.CreateGraphics();
             for (int i = 0; i < itemArray.Length; i++)
             {
                 if (itemArray[i] != 0)
                 {
-
+                    switch (i)
+                    {
+                        case 0:
+                            g.DrawImage(Resources.Resource1.Mundschutz, 38, 38);
+                            break;
+                        case 1:
+                            g.DrawImage(Resources.Resource1.Feuerzeug, 38+125, 38);
+                            break;
+                        case 2:
+                            g.DrawImage(Resources.Resource1.Spritze, 38, 38+125);
+                            break;
+                        case 3:
+                            g.DrawImage(Resources.Resource1.Crocs, 38+125, 38+125);
+                            break;
+                    }
                 }
             }
+            g.Dispose();
         }
 
         private bool enemiesleft()
