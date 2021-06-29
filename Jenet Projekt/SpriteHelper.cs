@@ -56,6 +56,14 @@ namespace Jenet_Projekt
             {
                 case -1:
                     return Resources.Resource1.combatBackgroundMitMenu;
+                case 6:
+                    return Resources.Resource1.Hintergrund_mapGrass;
+                case 5:
+                    return Resources.Resource1.Hintergrund_mapGrass;
+                case 4:
+                    return Resources.Resource1.Hintergrund_mapGrass;
+                case 3:
+                    return Resources.Resource1.Hintergrund_mapGrass;
                 case 2:
                     return Resources.Resource1.Hintergrund_mapGrass;
                 case 1:

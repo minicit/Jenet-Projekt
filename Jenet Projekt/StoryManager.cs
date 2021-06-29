@@ -19,10 +19,12 @@ namespace Jenet_Projekt
                     case 2:
                         return Resources.ResourceStory.Coronaleugner_Story_2;
                     case 3:
+                        Main.getInstance().getItem(2);
                         return Resources.ResourceStory.Coronaleugner_Story_3;
                     case 4:
                         return Resources.ResourceStory.Coronaleugner_Story_4;
                     case 5:
+                        Main.getInstance().getItem(4);
                         return Resources.ResourceStory.Coronaleugner_Story_5;
                     case 6:
                         return Resources.ResourceStory.Coronaleugner_Story_6;
@@ -35,10 +37,13 @@ namespace Jenet_Projekt
                     case 2:
                         return Resources.ResourceStory.Normalbürger_Story_2;
                     case 3:
+                        Main.getInstance().getItem(2);
                         return Resources.ResourceStory.Normalbürger_Story_3;
                     case 4:
+                        Main.getInstance().getItem(1);
                         return Resources.ResourceStory.Normalbürger_Story_4;
                     case 5:
+                        Main.getInstance().getItem(4);
                         return Resources.ResourceStory.Normalbürger_Story_5;
                     case 6:
                         return Resources.ResourceStory.Normalbürger_Story_6;
@@ -47,14 +52,19 @@ namespace Jenet_Projekt
                 switch (x)
                 {
                     case 1:
+                        Main.getInstance().getItem(1);
                         return Resources.ResourceStory.Virologe_Story_1;
                     case 2:
+                        Main.getInstance().getItem(1);
                         return Resources.ResourceStory.Virologe_Story_2;
                     case 3:
+                        Main.getInstance().getItem(2);
                         return Resources.ResourceStory.Virologe_Story_3;
                     case 4:
+                        Main.getInstance().getItem(3);
                         return Resources.ResourceStory.Virologe_Story_4;
                     case 5:
+                        Main.getInstance().getItem(4);
                         return Resources.ResourceStory.Virologe_Story_5;
                     case 6:
                         return Resources.ResourceStory.Virologe_Story_6;

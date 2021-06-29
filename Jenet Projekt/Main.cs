@@ -34,7 +34,8 @@ namespace Jenet_Projekt
         Eventcaller subject = new Eventcaller();
         CombatObserver observer = new CombatObserver();
         StoryManager story = new StoryManager();
-        
+        private int[] itemArray = new int[4];
+
         public Main()
         {
             InitializeComponent();
@@ -176,7 +177,7 @@ namespace Jenet_Projekt
                     break;
 
                 case 3:
-                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "CoVid");
+                    /*enemy[0] = new GameEntity(Klasse.Klassen.Virus, "CoVid");
                     enemy[1] = new GameEntity(Klasse.Klassen.Virus, "yeee");
                     enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Corona");
                     player.setcoords(8, 5);
@@ -192,6 +193,12 @@ namespace Jenet_Projekt
                             grid[i, j] = 5;
                         }
                     }
+                    break;*/
+                    player.setcoords(5, 4);
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+                    enemy[0].setcoords(5, 2);
+                    currentStage = 4;
+                    setBackground(currentStage);
                     break;
                 case 4:
                     player.setcoords(5, 4);
@@ -299,8 +306,7 @@ namespace Jenet_Projekt
                         if (fight == null)
                             fight = new Combat();
                         currentfighter = i;
-                        fight.getItem(1);
-                        fight.begin(enemy[i], player, combatPanel, subject, progressBarPlayer, progressBarEnemy);
+                        fight.begin(enemy[i], player, combatPanel, subject, progressBarPlayer, progressBarEnemy, itemArray);
                         break;
                     }
                 }
@@ -350,6 +356,12 @@ namespace Jenet_Projekt
         public void addtoList(string ay)
         {
             listBox1.Items.Insert(0, ay);
+        }
+
+        public void getItem(int type)
+        {
+            itemArray[type - 1] = itemArray[type - 1] + 1;
+            Main.getInstance().showItems(itemArray);
         }
 
         public void showItems(int[] itemArray)

@@ -19,8 +19,8 @@ namespace Jenet_Projekt
         private ProgressBar playerbar, enemybar;
         private Eventcaller subject;
         private Panel combatPanel;
-        private int[] itemArray = new int[4];
-        public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar)
+        private int[] itemArray;
+        public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar, int[] itemArray)
         {
             this.enemy = emy;
             this.player = ply;
@@ -28,6 +28,7 @@ namespace Jenet_Projekt
             this.enemybar = enemybar;
             this.subject = subject;
             this.combatPanel = combatPanel;
+            this.itemArray = itemArray;
             combatActive = true;
             Graphics g = combatPanel.CreateGraphics();
             combatPanel.BackgroundImage = spriteHelper.getBackground(-1);
@@ -35,23 +36,26 @@ namespace Jenet_Projekt
 
             playerbar.Maximum = (int)player.getMaxHealth();
             enemybar.Maximum = (int)enemy.getMaxHealth();
-            playerbar.Value = (int)player.getHealth();
+            if ((int)player.getHealth() < 0)
+            {
+                playerbar.Value = 0;
+            }
+            else
+            {
+                playerbar.Value = (int)player.getHealth();
+            }
             enemybar.Value = (int)enemy.getHealth();
             drawFight(g, enemy, player);
             g.Dispose();
         }
 
-        public void getItem(int type)
-        {
-            itemArray[type - 1] = itemArray[type - 1] + 1; 
-            Main.getInstance().showItems(itemArray);
-        }
+        
 
         public void useItem(int type)
         {
             if (itemArray[type] != 0)
             {
-                switch (type-1)
+                switch (type - 1)
                 {
                     case 0:
                         MessageBox.Show("Mundschutz");
@@ -77,7 +81,7 @@ namespace Jenet_Projekt
                         }
                         break;
                 }
-                itemArray[type - 1]--;
+                itemArray[type - 1] = itemArray[type - 1] -1;
             }
             Main.getInstance().showItems(itemArray);
         }
