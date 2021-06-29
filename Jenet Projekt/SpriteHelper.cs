@@ -22,6 +22,12 @@ namespace Jenet_Projekt
                     return Resources.Resource1.forrestSprite;
                 case 4:
                     return Resources.Resource1.Sprite_0002;
+                case 5:
+                    return Resources.Resource1.deepBatTrans;
+                case 69:
+                    return Resources.Resource1.deepBatTrans;
+                case 16:
+                    return Resources.Resource1.trans;
             }
             return null;
         }
@@ -38,6 +44,8 @@ namespace Jenet_Projekt
                     return Resources.Resource1.virologeSpriteTrans;
                 case Klasse.Klassen.Virus:
                     return Resources.Resource1.virusSpriteTrans;
+                case Klasse.Klassen.Bat:
+                    return Resources.Resource1.deepBatTrans;
             }
             return null;
         }

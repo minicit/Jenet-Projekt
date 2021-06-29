@@ -44,6 +44,7 @@ namespace Jenet_Projekt
         public void getItem(int type)
         {
             itemArray[type-1]++;
+            Main.getInstance().showItems(itemArray);
         }
 
         public void useItem(int type)
@@ -75,6 +76,7 @@ namespace Jenet_Projekt
                 }
                 itemArray[type - 1]--;
             }
+            Main.getInstance().showItems(itemArray);
         }
 
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)

@@ -127,6 +127,7 @@
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\trans.png" />
     <None Include="Resources\spritze-Item.png" />
     <None Include="Resources\Sprite-Pow.png" />
     <None Include="Resources\Titlescreen.png" />
@@ -148,6 +149,8 @@
     <None Include="Resources\Desinfektionsmittel.png" />
     <None Include="Resources\Desinfektionsmittel-Feuerzeug.png" />
     <None Include="Resources\Mundschutz.png" />
+    <None Include="Resources\deepBatTrans.png" />
+    <None Include="Resources\deepBatRightSize.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>

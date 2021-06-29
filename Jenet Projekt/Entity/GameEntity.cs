@@ -139,6 +139,13 @@ namespace Jenet_Projekt
                     attack = 1;
                     defence = 3;
                     break;
+                case Klasse.Klassen.Bat:
+                    maxHealth = 1000;
+                    health = maxHealth;
+                    speed = 20;
+                    attack = 20;
+                    defence = 10;
+                    break;
             }
         }
 

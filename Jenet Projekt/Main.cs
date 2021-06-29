@@ -173,10 +173,10 @@ namespace Jenet_Projekt
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "CoVid");
                     enemy[1] = new GameEntity(Klasse.Klassen.Virus, "yeee");
                     enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Corona");
-                    player.setcoords(10, 8);
+                    player.setcoords(8, 5);
                     enemy[0].setcoords(1, 7);
                     enemy[1].setcoords(6, 3);
-                    enemy[2].setcoords(10, 5);
+                    enemy[2].setcoords(8, 3);
                     currentStage = 1;
                     setBackground(currentStage);
                     for (int i = 0; i < 10; i++)
@@ -335,6 +335,17 @@ namespace Jenet_Projekt
         public void addtoList(string ay)
         {
             listBox1.Items.Insert(0, ay);
+        }
+
+        public void showItems(int[] itemArray)
+        {
+            for (int i = 0; i < itemArray.Length; i++)
+            {
+                if (itemArray[i] != 0)
+                {
+
+                }
+            }
         }
 
         private bool enemiesleft()

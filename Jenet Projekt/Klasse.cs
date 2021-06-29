@@ -15,7 +15,8 @@ namespace Jenet_Projekt
             Virologe,
             Normalbürger,
             Coronaleugner,
-            Virus
+            Virus,
+            Bat
         }
         public void setClass(Klassen k)
         {
