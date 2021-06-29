@@ -474,7 +474,7 @@ namespace Jenet_Projekt
                 player.setName(tbNameInput.Text);
                 panelMain.Hide();
                 panelGame.Show();
-                lblName.Text = player.getClass().ToString() + player.getName();
+                lblName.Text = player.getClass().ToString() + " " + player.getName();
                 gameStart(1);
             }
             catch(Exception)
