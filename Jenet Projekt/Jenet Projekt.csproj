@@ -81,6 +81,11 @@
     <Compile Include="Observers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ResourceStory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceStory.resx</DependentUpon>
+    </Compile>
     <Compile Include="Spielfeld.cs" />
     <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -88,6 +93,7 @@
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
     <Compile Include="SpriteHelper.cs" />
+    <Compile Include="StoryManager.cs" />
     <EmbeddedResource Include="Highscore.resx">
       <DependentUpon>Highscore.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,10 +130,19 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ResourceStory.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceStory.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\trans.png" />
+    <None Include="Resources\Virologe Story 1.png" />
+    <None Include="Resources\Virologe Story 2.png" />
+    <None Include="Resources\Virologe Story 3.png" />
+    <None Include="Resources\Virologe Story 4.png" />
+    <None Include="Resources\Virologe Story 5.png" />
+    <None Include="Resources\Virologe Story 6.png" />
     <None Include="Resources\spritze-Item.png" />
     <None Include="Resources\Sprite-Pow.png" />
     <None Include="Resources\Titlescreen.png" />
@@ -149,6 +164,18 @@
     <None Include="Resources\Desinfektionsmittel.png" />
     <None Include="Resources\Desinfektionsmittel-Feuerzeug.png" />
     <None Include="Resources\Mundschutz.png" />
+    <None Include="Resources\Coronaleugner Story 1.png" />
+    <None Include="Resources\Normalbürger Story 6.png" />
+    <None Include="Resources\Normalbürger Story 5.png" />
+    <None Include="Resources\Normalbürger Story 4.png" />
+    <None Include="Resources\Normalbürger Story 3.png" />
+    <None Include="Resources\Normalbürger Story 2.png" />
+    <None Include="Resources\Normalbürger Story 1.png" />
+    <None Include="Resources\Coronaleugner Story 6.png" />
+    <None Include="Resources\Coronaleugner Story 5.png" />
+    <None Include="Resources\Coronaleugner Story 4.png" />
+    <None Include="Resources\Coronaleugner Story 3.png" />
+    <None Include="Resources\Coronaleugner Story 2.png" />
     <None Include="Resources\deepBatTrans.png" />
     <None Include="Resources\deepBatRightSize.png" />
     <Content Include="Resources\Sprite-0001.png" />

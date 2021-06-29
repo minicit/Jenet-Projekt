@@ -26,11 +26,14 @@ namespace Jenet_Projekt
         private GameEntity[] enemy;
         private Combat fight = new Combat();
         private int currentfighter;
-        private int currentStage;
+        private int currentStage = 0;
         private int invX = 3;
         private int invY = 4;
+        private int currentStory = 1;
+        private bool storyActive = false;
         Eventcaller subject = new Eventcaller();
         CombatObserver observer = new CombatObserver();
+        StoryManager story = new StoryManager();
         
         public Main()
         {
@@ -50,8 +53,10 @@ namespace Jenet_Projekt
 
         private void gameStart(int stage)
         {
-            initGrid(stage);
-            drawMap();
+            panelStory.BackgroundImage = story.getStory(currentStory, player.getClass());
+            currentStory++;
+            storyActive = true;
+            panelStory.Show();
         }
 
         public static Main getInstance()
@@ -77,8 +82,9 @@ namespace Jenet_Projekt
             Array.Clear(grid, 0, grid.Length);
             switch (gridNo)
             {
-                case 3:
+                case 1:
                     player.setcoords(5, 4);
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
                     enemy[0].setcoords(5, 2);
                     currentStage = 1;
                     setBackground(currentStage);
@@ -189,7 +195,7 @@ namespace Jenet_Projekt
 
 
 
-                    break;
+                    //break;
             }
         }
         private void drawMap()
@@ -227,20 +233,10 @@ namespace Jenet_Projekt
         private void panelInv_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = panelInv.CreateGraphics();
-            int startpunktx = 0;
-            int startpunkty = 0;
-            for (int j = 0; j < invX; j++)
-            {
-                for (int i = 0; i < invY; i++)
-                {
-                    g.DrawRectangle(Pens.Black, startpunktx, startpunkty, panelInv.ClientSize.Width / invY, panelInv.ClientSize.Height / 8);
-                    startpunktx += panelInv.ClientSize.Width / invY;
-                }
-                startpunktx = 0;
-                startpunkty += (panelInv.ClientSize.Height / 8) - 1;
-            }
-            //g.DrawLine(Pens.Black, 0, panel1.ClientSize.Height, panel1.ClientSize.Width, panel1.ClientSize.Height);
-            //panel1.Refresh();
+            Pen p = new Pen(Color.Black, 5);
+            g.DrawRectangle(p, 38, 38, 250 , 250);
+            g.DrawLine(p, 163, 38, 163, 288);
+            g.DrawLine(p, 38, 163, 288, 163);
             g.Dispose();
         }
 
@@ -328,7 +324,7 @@ namespace Jenet_Projekt
         {
             fight = null;
             combatPanel.Hide();
-            drawMap();
+            //drawMap();
             gameStart(currentStage + 1);
         }
 
@@ -361,7 +357,8 @@ namespace Jenet_Projekt
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!combatActive())
+
+            if (!combatActive() && !storyActive)
             {
                 if (e.KeyCode == Keys.Up)
                 {
@@ -391,6 +388,7 @@ namespace Jenet_Projekt
                         movePlayer(player.getx() + 1, player.gety());
                     }
                 }
+                
             }
             else
             {
@@ -410,6 +408,14 @@ namespace Jenet_Projekt
                 {
                     fight.run();
                 }
+            }
+            if (storyActive && e.KeyCode == Keys.Space)
+            {
+                panelStory.Hide();
+                storyActive = false;
+                currentStage++;
+                initGrid(currentStage);
+                drawMap();
             }
 
         }
