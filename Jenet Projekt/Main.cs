@@ -70,13 +70,14 @@ namespace Jenet_Projekt
             // Wert 2 = Virus
             // Wert 3 = Wald
             // Wert 4 = Berge
+            // Wert 5 = Haus
             // Bsp : grid[1,2] = 3; setzt ein Hindernis an die Position X = 1 / Y = 2
             // Erlaubte Positionen X : 0 - 9 
             // Erlaubte Positionen Y : 0 - 6
             Array.Clear(grid, 0, grid.Length);
             switch (gridNo)
             {
-                case 1:
+                case 3:
                     player.setcoords(5, 4);
                     enemy[0].setcoords(5, 2);
                     currentStage = 1;
@@ -168,7 +169,24 @@ namespace Jenet_Projekt
                     grid[4, 2] = 3;
                     break;
 
-                case 3:
+                case 1:
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "CoVid");
+                    enemy[1] = new GameEntity(Klasse.Klassen.Virus, "yeee");
+                    enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Corona");
+                    player.setcoords(10, 8);
+                    enemy[0].setcoords(1, 7);
+                    enemy[1].setcoords(6, 3);
+                    enemy[2].setcoords(10, 5);
+                    currentStage = 1;
+                    setBackground(currentStage);
+                    for (int i = 0; i < 10; i++)
+                    {
+                        for (int j = 0; j < 7; j++)
+                        {
+                            grid[i, j] = 5;
+                        }
+                    }
+
 
 
                     break;
