@@ -8,13 +8,13 @@ namespace Jenet_Projekt.Entity
 {
      Virologe:
      {
-     "Es ist 8:00 Uhr morgens an einem sonnigen Montag. Du bist Karl Leiserbach, berühmter Virologe und erster Ansprechpartner bei Pandemien."
+     "Es ist 8:00 Uhr morgens an einem sonnigen Montag. Du bist Karl Leiserbach, berühmter Virologe und erster Ansprechpartner im Falle einer Pandemie."
      "Du sitzt am gedeckten Frühstückstisch und genießt deinen ersten Kaffee des Tages."
      "Plötzlich klingelt das Telefon und als du den Hörer abnimmst, hörst du die Stimme des"
-     "Bundeskanzlers Angelo Merte, welcher dir voller Panik in der Stimme"
-     "von einem neuen Virus namens Corona berichtet, das sich rasend schnell auf der Welt ausbreitet."
+     "Bundeskanzlers Angelo Merte, welcher dir mit panischer Stimme"
+     "von einem neuen Virus namens Corona berichtet, der sich rasend schnell auf der Welt ausbreitet."
      "Du greifst dir sofort dein Desinfektionsmittel und deinen Mundschutz und machst dich auf den Weg, um das Virus zu bekämpfen."
-     "Als du aus der Tür trittst, siehst du bereits in der Ferne das erste Virus, auf dem Weg in dein beschauliches Dorf.
+     "Als du aus der Tür trittst, siehst du bereits in der Ferne das erste Virus, auf dem Weg in dein beschauliches Dorf."
      "KANNST DU DIE WELT RETTEN?"
      
      Level-2-Stadt:
@@ -22,8 +22,8 @@ namespace Jenet_Projekt.Entity
      "Mittlerweile ist die Inzidenz weiter gestiegen und du siehst dich nun mehr Viren gegenüber."
      
      Level-3-Berlin:
-     "Nachdem du die vorherige Stadt vom Virus säubern konntest, erfährst du von Angelo Merte, dass die lage in Berlin sehr ernst ist."
-     "Also machst du dich auf dem Weg in die Hauptstadt, wo du dich nicht nur dem Virus, sondern auch Corona-Leugnern, stellen musst"
+     "Nachdem du die vorherige Stadt vom Virus säubern konntest, erfährst du von Angelo Merte, dass die Lage in Berlin sehr ernst ist."
+     "Also machst du dich auf den Weg in die Hauptstadt, wo du dich nicht nur dem Virus, sondern auch Corona-Leugnern, stellen musst"
      "Diese sind der Meinung, dass das alles nur eine Erfindung der Regierung wäre, um uns zu kontrollieren."
      
      Level-4-USA:
@@ -101,7 +101,7 @@ namespace Jenet_Projekt.Entity
       "Du taufst sie auf den Namen Schlafschafe."
            
       Level-3-Berlin:
-      "Voller Freude siehst du, dass Berlin voller Kamerade von dir ist, die wie du erkannt haben, dass das alles nur"
+      "Voller Freude siehst du, dass Berlin voller Kameraden von dir ist, die wie du erkannt haben, dass das alles nur"
       "eine große Verschwörung der Regeirung ist. Gemeinsam stellt ihr euch den Regierungsbeamten und stürmt den Reichstag."
       "Lediglich 2 als Virus verkleidete Polizisten stellen sich ihnen entgegen.
            

@@ -103,6 +103,10 @@ namespace Jenet_Projekt
 
         public double getMaxHealth() { return maxHealth; }
 
+        public void setAttack(double effect) { attack = effect; }
+
+        public void takeDamage(double effectDamage) { health -= effectDamage; }
+
         public void setStartupModifiers(Klasse.Klassen x) //Implement modifier selection
         {
             switch (x)

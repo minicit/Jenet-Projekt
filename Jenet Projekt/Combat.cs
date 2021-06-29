@@ -18,6 +18,8 @@ namespace Jenet_Projekt
         private Random rand = new Random();
         private ProgressBar playerbar, enemybar;
         private Eventcaller subject;
+        private Panel combatPanel;
+        private int[] itemArray = new int[4];
         public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar)
         {
             this.enemy = emy;
@@ -25,6 +27,7 @@ namespace Jenet_Projekt
             this.playerbar = playerbar;
             this.enemybar = enemybar;
             this.subject = subject;
+            this.combatPanel = combatPanel;
             combatActive = true;
             Graphics g = combatPanel.CreateGraphics();
             combatPanel.BackgroundImage = spriteHelper.getBackground(-1);
@@ -36,6 +39,42 @@ namespace Jenet_Projekt
             enemybar.Value = (int)enemy.getHealth();
             drawFight(g, enemy, player);
             g.Dispose();
+        }
+
+        public void getItem(int type)
+        {
+            itemArray[type-1]++;
+        }
+
+        public void useItem(int type)
+        {
+            if (itemArray[type] != 0)
+            {
+                switch (type-1)
+                {
+                    case 0:
+                        MessageBox.Show("Mundschutz");
+                        fightSprite(Resources.Resource1.Mundschutz);
+                        enemy.setAttack(5);
+                        break;
+                    case 1:
+                        MessageBox.Show("Feuerzeug");
+                        fightSprite(Resources.Resource1.Feuerzeug);
+                        enemy.takeDamage(40);
+                        break;
+                    case 2:
+                        MessageBox.Show("Spritze");
+                        fightSprite(Resources.Resource1.Spritze);
+                        enemy.setAttack(1);
+                        break;
+                    case 3:
+                        MessageBox.Show("Croc");
+                        fightSprite(Resources.Resource1.Crocs);
+                        //kein effect ausser bei bossmonster
+                        break;
+                }
+                itemArray[type - 1]--;
+            }
         }
 
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
@@ -50,23 +89,21 @@ namespace Jenet_Projekt
             if(((enemy.getHealth()/enemy.getMaxHealth())*100) > rand.Next(100))
             {
                 enemyShield();
-                MessageBox.Show("shielded!");
+                //MessageBox.Show("shielded!");
             }
             else
             {
                 enemyAttack();
-                MessageBox.Show("ATTAAACK");
+                //MessageBox.Show("ATTAAACK");
             }
         }
 
-        private void hit(Graphics g)
+        private void fightSprite(Bitmap sprite)
         {
-            g.DrawImage(Resources.Resource1.Sprite_0001, 600, 400);
-        }
-
-        private void oof(Graphics g)
-        {
-            g.DrawImage(Resources.Resource1.Sprite_0001, 600, 400);
+            Graphics g = combatPanel.CreateGraphics();
+            g.DrawImage(sprite, 600, 400);
+            System.Threading.Thread.Sleep(1000);
+            g.DrawImage(spriteHelper.getBackground(-1), new Rectangle(600, 400, sprite.Width, sprite.Height), new Rectangle(476, 200, sprite.Width, sprite.Height), GraphicsUnit.Point);
         }
 
         public bool getCombatActive() { return combatActive; }
@@ -85,7 +122,7 @@ namespace Jenet_Projekt
                 player.takeDamageFrom(enemy);
                 if (player.getHealth() > 0)
                     playerbar.Value = (int)player.getHealth();
-
+                fightSprite(Resources.Resource1.OOF);
             }
             //else
             //    enemy.takeDamageFrom(enemy); //vllt? quasi verwirrung ohne statusveränderung?
@@ -93,7 +130,8 @@ namespace Jenet_Projekt
 
         private void enemyShield()
         {
-            //enemy.setShield(true);
+            enemy.setShield(true);
+            fightSprite(Resources.Resource1.Schild);
         }
 
         public void attack()
@@ -104,12 +142,17 @@ namespace Jenet_Projekt
                 if (player.doesItHit(player, enemy))
                 {
                     enemy.takeDamageFrom(player);
-                    if(enemy.getHealth() > 0)
+                    if (enemy.getHealth() > 0)
                         enemybar.Value = (int)enemy.getHealth();
+                    fightSprite(Resources.Resource1.Pow);
                 }
                 else
-                    MessageBox.Show("misssd");
+                {
+                    //MessageBox.Show("misssd");
+                    fightSprite(Resources.Resource1.Missed);
+                }
                 enemyAction();
+                enemy.setShield(false);
             }
             else
             {
@@ -118,11 +161,16 @@ namespace Jenet_Projekt
                 if (player.doesItHit(player, enemy))
                 {
                     enemy.takeDamageFrom(player);
-                    if(enemy.getHealth() > 0)
+                    if (enemy.getHealth() > 0)
                         enemybar.Value = (int)enemy.getHealth();
+                    fightSprite(Resources.Resource1.Pow);
                 }
                 else
-                    MessageBox.Show("misssd");
+                {
+                    //MessageBox.Show("misssd");
+                    fightSprite(Resources.Resource1.Missed);
+                }
+                enemy.setShield(false);
             }
             combatOverCheck();
         }
@@ -130,12 +178,14 @@ namespace Jenet_Projekt
         public void shield()
         {
             player.setShield(true);
-            MessageBox.Show("*spray desinfection spray like febreeze*");
+            //MessageBox.Show("*spray desinfection spray like febreeze*");
+            fightSprite(Resources.Resource1.Schild);
         }
 
         public void items()
         {
-            MessageBox.Show("shoe");
+            useItem(3);
+            player.setShield(false);
             //wird ein Item eingesetzt muss shield auf false gesetzt werden
         }
 

@@ -70,24 +70,88 @@ namespace Jenet_Projekt
             // Wert 2 = Virus
             // Wert 3 = Wald
             // Wert 4 = Berge
+            // Wert 5 = Haus
             // Bsp : grid[1,2] = 3; setzt ein Hindernis an die Position X = 1 / Y = 2
             // Erlaubte Positionen X : 0 - 9 
             // Erlaubte Positionen Y : 0 - 6
             Array.Clear(grid, 0, grid.Length);
             switch (gridNo)
             {
-                case 1:
-                    player.setcoords(7, 4);
-                    enemy[0].setcoords(1, 1);
+                case 3:
+                    player.setcoords(5, 4);
+                    enemy[0].setcoords(5, 2);
                     currentStage = 1;
                     setBackground(currentStage);
-                    grid[7, 4] = 1;
+                    /*for (int i = 0; i < 8; i++)
+                    {
+                        grid[0, i] = 3;
+                        grid[7, i] = 3;
+                    }
+                    for (int i = 0; i < 10; i++)
+                    {
+                        grid[i, 0] = 3;
+                        grid[i, 1] = 3;
+                        grid[i, 8] = 3;
+                        grid[i, 9] = 3;
+                    }*/
+                    /*grid[7, 4] = 1;
                     grid[1, 1] = 2;
                     grid[5, 3] = 3;
                     grid[4, 5] = 4;
                     grid[4, 3] = 3;
                     grid[5, 2] = 3;
-                    grid[4, 2] = 3;
+                    grid[4, 2] = 3;*/
+                    grid[0, 0] = 3;
+                    grid[1, 0] = 3;
+                    grid[2, 0] = 3;
+                    grid[3, 0] = 3;
+                    grid[4, 0] = 3;
+                    grid[5, 0] = 3;
+                    grid[6, 0] = 3;
+                    grid[7, 0] = 3;
+                    grid[8, 0] = 3;
+                    grid[9, 0] = 3;
+                    grid[0, 1] = 3;
+                    grid[1, 1] = 3;
+                    grid[2, 1] = 3;
+                    grid[7, 1] = 3;
+                    grid[8, 1] = 3;
+                    grid[9, 1] = 3;
+                    grid[0, 2] = 3;
+                    grid[1, 2] = 3;
+                    grid[8, 2] = 3;
+                    grid[9, 2] = 3;
+                    grid[0, 3] = 3;
+                    grid[1, 3] = 3;
+                    grid[8, 3] = 3;
+                    grid[9, 3] = 3;
+                    grid[0, 4] = 3;
+                    grid[1, 4] = 3;
+                    grid[2, 4] = 3;
+                    grid[8, 4] = 3;
+                    grid[9, 4] = 3;
+                    grid[0, 5] = 3;
+                    grid[1, 5] = 3;
+                    grid[2, 5] = 3;
+                    grid[3, 5] = 3;
+                    grid[7, 5] = 3;
+                    grid[8, 5] = 3;
+                    grid[9, 5] = 3;
+                    grid[0, 6] = 3;
+                    grid[1, 6] = 3;
+                    grid[2, 6] = 3;
+                    grid[3, 6] = 3;
+                    grid[4, 6] = 3;
+                    grid[5, 6] = 3;
+                    grid[6, 6] = 3;
+                    grid[7, 6] = 3;
+                    grid[8, 6] = 3;
+                    grid[9, 6] = 3;
+                    grid[5, 2] = 2;
+                    grid[5, 4] = 1;
+
+
+
                     break;
 
                 case 2:
@@ -105,7 +169,25 @@ namespace Jenet_Projekt
                     grid[4, 2] = 3;
                     break;
 
-                case 3:
+                case 1:
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "CoVid");
+                    enemy[1] = new GameEntity(Klasse.Klassen.Virus, "yeee");
+                    enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Corona");
+                    player.setcoords(10, 8);
+                    enemy[0].setcoords(1, 7);
+                    enemy[1].setcoords(6, 3);
+                    enemy[2].setcoords(10, 5);
+                    currentStage = 1;
+                    setBackground(currentStage);
+                    for (int i = 0; i < 10; i++)
+                    {
+                        for (int j = 0; j < 7; j++)
+                        {
+                            grid[i, j] = 5;
+                        }
+                    }
+
+
 
                     break;
             }
@@ -351,6 +433,12 @@ namespace Jenet_Projekt
         private void btnClassLeugner_Click(object sender, EventArgs e)
         {
             player.setClass(Klasse.Klassen.Coronaleugner);
+        }
+
+        private void btnHighscore_Click(object sender, EventArgs e)
+        {
+            // TODO: Set the correct highscore
+            new Highscore(this.player.getName(), 0).ShowDialog();
         }
     }
 
