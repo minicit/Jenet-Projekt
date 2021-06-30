@@ -29,6 +29,7 @@ namespace Jenet_Projekt
         public void CombatMusic()
         {
             SoundPlayer player = new SoundPlayer(Resources.Sounds.CombatMusic);
+            player.PlayLooping();
         }
         public void OnHit()
         {

@@ -362,6 +362,8 @@ namespace Jenet_Projekt
 
         public void combatFinished(GameEntity winner)
         {
+            soundManager.Stop();
+            soundManager.GameMusic();
             if (winner.getClass() != Klasse.Klassen.Virus)
             {
                 MessageBox.Show(winner.getName() + " won the fight");
@@ -392,6 +394,8 @@ namespace Jenet_Projekt
 
         public void playerRan()
         {
+            soundManager.Stop();
+            soundManager.GameMusic();
             fight = null;
             combatPanel.Hide();
             drawMap();
