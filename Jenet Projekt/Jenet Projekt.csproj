@@ -208,6 +208,9 @@
     <None Include="Resources\Backgrounds\Hintergrund_neuseeland.png" />
     <None Include="Resources\Sprites\haus.png" />
     <None Include="Resources\Sprites\kiwiTrans.png" />
+    <None Include="Resources\Backgrounds\Hintergrund_berlinCity.png" />
+    <None Include="Resources\Backgrounds\Hintergrund_merica.png" />
+    <None Include="Resources\Backgrounds\Hintergrund_stadt.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>
