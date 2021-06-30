@@ -57,7 +57,7 @@ namespace Jenet_Projekt
         {
             if (itemArray[type] != 0)
             {
-                switch (type - 1)
+                switch (type)
                 {
                     case 0:
                         MessageBox.Show("Mundschutz");
@@ -83,7 +83,7 @@ namespace Jenet_Projekt
                         }
                         break;
                 }
-                itemArray[type - 1] = itemArray[type - 1] -1;
+                itemArray[type] -= 1;
             }
             Main.getInstance().showItems(itemArray);
         }
@@ -211,7 +211,8 @@ namespace Jenet_Projekt
 
         public void items()
         {
-            using (var form = new UseItem()){
+            using (var form = new UseItem(itemArray)){
+                form.ShowDialog();
                 useItem(form.returnvalue);
             }
 
