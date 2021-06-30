@@ -12,7 +12,7 @@ namespace Jenet_Projekt
     class Combat
     {
         private SpriteHelper spriteHelper = new SpriteHelper();
-        private bool combatActive;
+        private bool combatActive, playerRan;
         private GameEntity enemy, player;
         private int turn; //zug variable; 1:spieler, 2:Gegner, 3:Kampfende?
         private Random rand = new Random();
@@ -20,8 +20,10 @@ namespace Jenet_Projekt
         private Eventcaller subject;
         private Panel combatPanel;
         private int[] itemArray;
+        private bool stuffHappening = false;
         public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar, int[] itemArray)
         {
+            playerRan = false;
             this.enemy = emy;
             this.player = ply;
             this.playerbar = playerbar;
@@ -49,7 +51,7 @@ namespace Jenet_Projekt
             g.Dispose();
         }
 
-        
+        public bool getStuff() { return stuffHappening; }
 
         public void useItem(int type)
         {
@@ -64,12 +66,12 @@ namespace Jenet_Projekt
                         break;
                     case 1:
                         MessageBox.Show("Feuerzeug");
-                        fightSprite(Resources.Resource1.Feuerzeug);
+                        fightSprite(Resources.Resource1.Desinfektionsmittel_Feuerzeug);
                         enemy.takeDamage(40);
                         break;
                     case 2:
                         MessageBox.Show("Spritze");
-                        fightSprite(Resources.Resource1.Spritze);
+                        fightSprite(Resources.Resource1.spritze_Item);
                         enemy.setAttack(1);
                         break;
                     case 3:
@@ -88,14 +90,20 @@ namespace Jenet_Projekt
 
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
         {
-            g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 170, 600);
-            g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950, 150);
-
+            g.DrawImage(spriteHelper.getCombatSprite(player.getClass(), player.getClass()), 170, 600);
+            if (enemy.getClass() == Klasse.Klassen.Bat)
+            {
+                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass(), player.getClass()), 950-250, 40);
+            }
+            else
+            {
+                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass(),player.getClass()), 950, 150);
+            }
         }
 
         private void enemyAction()
         {
-            if(((enemy.getHealth()/enemy.getMaxHealth())*100) > rand.Next(100))
+            if(((enemy.getHealth()/enemy.getMaxHealth())*90) > rand.Next(100))
             {
                 enemyShield();
             }
@@ -109,7 +117,9 @@ namespace Jenet_Projekt
         {
             Graphics g = combatPanel.CreateGraphics();
             g.DrawImage(sprite, 600, 400);
+            stuffHappening = true;
             System.Threading.Thread.Sleep(1000);
+            stuffHappening = false;
             g.DrawImage(spriteHelper.getBackground(-1), new Rectangle(600, 400, sprite.Width, sprite.Height), new Rectangle(476, 200, sprite.Width, sprite.Height), GraphicsUnit.Point);
         }
 
@@ -123,14 +133,21 @@ namespace Jenet_Projekt
 
         private void enemyAttack()
         {
-            //enemy.setShield(false);
+            enemy.setShield(false);
             if (enemy.doesItHit(enemy, player))
             {
                 player.takeDamageFrom(enemy);
                 if (player.getHealth() > 0)
                     playerbar.Value = (int)player.getHealth();
+                else
+                    playerbar.Value = 0;
                 fightSprite(Resources.Resource1.OOF);
             }
+            else
+            {
+                fightSprite(Resources.Resource1.Missed);
+            }
+            
         }
 
         private void enemyShield()
@@ -149,7 +166,9 @@ namespace Jenet_Projekt
                     enemy.takeDamageFrom(player);
                     if (enemy.getHealth() > 0)
                         enemybar.Value = (int)enemy.getHealth();
-                    fightSprite(Resources.Resource1.Pow);
+                    else
+                        enemybar.Value = 0;
+                    fightSprite(Resources.Resource1.Sprite_Pow);
                 }
                 else
                 {
@@ -166,8 +185,15 @@ namespace Jenet_Projekt
                 {
                     enemy.takeDamageFrom(player);
                     if (enemy.getHealth() > 0)
-                        enemybar.Value = (int)enemy.getHealth();
-                    fightSprite(Resources.Resource1.Pow);
+                    {
+                        try { enemybar.Value = (int)enemy.getHealth(); }
+                        catch (Exception e) 
+                        {
+                            enemybar.Value = enemybar.Maximum;
+                        }
+                    }
+                    //hier gibt es einen Fehler bei Bats
+                    fightSprite(Resources.Resource1.Sprite_Pow);
                 }
                 else
                 {
@@ -186,17 +212,24 @@ namespace Jenet_Projekt
 
         public void items()
         {
-            useItem(3); //hier button input von user
+            useItem(3); //hier button input von user 1-4
             player.setShield(false);
         }
 
         public void run()
         {
-            //player.setShield(false);
+            player.setShield(false);
             if (player.doesItHit(player, enemy))
-                MessageBox.Show("runn");
+            {
+                playerRan = true;
+                fightSprite(Resources.Resource1.Desinfektionsmittel);
+            }
             else
-                MessageBox.Show("you decided to stay. Why?");
+            {
+                fightSprite(Resources.Resource1.OOF);
+                enemyAction();
+            }
+            combatOverCheck();
         }
 
         private void combatOverCheck()
@@ -206,11 +239,18 @@ namespace Jenet_Projekt
                 setCombatActive(false);
                 subject.PlayerWon(player);
             }
-            if (player.getHealth() <= 0)
+            else if (player.getHealth() <= 0)
             {
                 setCombatActive(false);
                 subject.EnemyWon(enemy);
             }
+            else if (playerRan)
+            {
+                setCombatActive(false);
+                subject.PlayerRan();
+                playerRan = false;
+            }
+
         }
     }
 }

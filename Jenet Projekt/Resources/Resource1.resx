@@ -118,103 +118,121 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Hintergrund_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Hintergrund base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Hintergrund_mapGrass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Hintergrund_mapGrass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MapBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>MapBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sprite_0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Sprite-0001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Sprite_0002" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Sprite-0002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="combatBackgroundMitMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>combatBackgroundMitMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="forrestSprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>forrestSprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="leugnerSpriteTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>coronaLeugnerJetztaberTrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="normalboiSpriteTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>normalboiSpriteTrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="virologeSpriteTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>virologeSpriteTrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="virusSpriteTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>virusSpriteTrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="GamePanelBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>GamePanelBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Titlescreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Titlescreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Missed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Missed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OOF" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>OOF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Pow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Sprite-Pow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Schild" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Schild.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Crocs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Crocs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Desinfektionsmittel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Desinfektionsmittel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Feuerzeug" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Desinfektionsmittel-Feuerzeug.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Mundschutz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Mundschutz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Spritze" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>spritze-Item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="deepBatTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>deepBatRightSize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="trans" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>trans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="batRound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\batround.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Brite_Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Brite-Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\brite-virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="China_Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>China-Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\china-virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="combatBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\combatbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="combatBackgroundMitMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\combatbackgroundmitmenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coronaLeugnerJetztaberTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\coronaleugnerjetztabertrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cowboy_Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Cowboy-Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\cowboy-virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Crocs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\crocs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deepBatRightSize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\deepbatrightsize.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deepBatTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\deepbattrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Desinfektionsmittel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\desinfektionsmittel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Desinfektionsmittel_Feuerzeug" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\desinfektionsmittel-feuerzeug.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="forrestSprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\forrestsprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GamePanelBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\gamepanelbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gebirge" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Gebirge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\gebirge.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="haus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\haus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hintergrund_base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\hintergrund base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hintergrund_mapGrass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\hintergrund_mapgrass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hintergrund_neuseeland" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\hintergrund_neuseeland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hochhaus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Sprites\Hochhaus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kiwiTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\kiwitrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MapBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\mapbackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Missed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\missed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Mundschutz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\mundschutz.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="normalboiSpriteTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\normalboispritetrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="OOF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\oof.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Schild" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\schild.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sprite_0001" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprite-0001.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sprite_0002" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprite-0002.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sprite_Peng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Sprite-Peng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\sprite-peng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sprite_Pow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\sprite-pow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spritze_Item" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\spritze-item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Straße_horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Straße-horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\straße-horizontal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Straße_Kreuzung_Sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Straße-Kreuzung-Sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\straße-kreuzung-sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Straße_vertikal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Straße-vertikal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\straße-vertikal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Titlescreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>backgrounds\titlescreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Verkleidetes_Virus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Verkleidetes-Virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>sprites\verkleidetes-virus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="virologeSpriteTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\virologespritetrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="virusSpriteTrans" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>sprites\virusspritetrans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

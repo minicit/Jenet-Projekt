@@ -31,6 +31,7 @@ namespace Jenet_Projekt
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelGame = new System.Windows.Forms.Panel();
+            this.panelStory = new System.Windows.Forms.Panel();
             this.combatPanel = new System.Windows.Forms.Panel();
             this.panelInv = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@ namespace Jenet_Projekt
             this.panelMap = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.backbtn = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.tbNameInput = new System.Windows.Forms.TextBox();
             this.btnClassVirologe = new System.Windows.Forms.Button();
@@ -51,7 +53,6 @@ namespace Jenet_Projekt
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.panelStory = new System.Windows.Forms.Panel();
             this.panelGame.SuspendLayout();
             this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -70,6 +71,15 @@ namespace Jenet_Projekt
             this.panelGame.Name = "panelGame";
             this.panelGame.Size = new System.Drawing.Size(1600, 900);
             this.panelGame.TabIndex = 1;
+            // 
+            // panelStory
+            // 
+            this.panelStory.BackColor = System.Drawing.Color.Green;
+            this.panelStory.Location = new System.Drawing.Point(10, 13);
+            this.panelStory.Name = "panelStory";
+            this.panelStory.Size = new System.Drawing.Size(1250, 875);
+            this.panelStory.TabIndex = 5;
+            this.panelStory.Visible = false;
             // 
             // combatPanel
             // 
@@ -171,6 +181,7 @@ namespace Jenet_Projekt
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.backbtn);
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.tbNameInput);
             this.panel1.Controls.Add(this.btnClassVirologe);
@@ -181,6 +192,16 @@ namespace Jenet_Projekt
             this.panel1.Size = new System.Drawing.Size(543, 322);
             this.panel1.TabIndex = 4;
             this.panel1.Visible = false;
+            // 
+            // backbtn
+            // 
+            this.backbtn.Location = new System.Drawing.Point(455, 13);
+            this.backbtn.Name = "backbtn";
+            this.backbtn.Size = new System.Drawing.Size(75, 23);
+            this.backbtn.TabIndex = 5;
+            this.backbtn.Text = "Zurück";
+            this.backbtn.UseVisualStyleBackColor = true;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
             // 
             // btnConfirm
             // 
@@ -237,6 +258,7 @@ namespace Jenet_Projekt
             this.buttonEndlos.TabIndex = 1;
             this.buttonEndlos.Text = "Endlos";
             this.buttonEndlos.UseVisualStyleBackColor = true;
+            this.buttonEndlos.Click += new System.EventHandler(this.buttonEndlos_Click);
             // 
             // btnCredits
             // 
@@ -246,6 +268,7 @@ namespace Jenet_Projekt
             this.btnCredits.TabIndex = 3;
             this.btnCredits.Text = "Credits";
             this.btnCredits.UseVisualStyleBackColor = true;
+            this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
             // 
             // btnHighscore
             // 
@@ -267,15 +290,6 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // panelStory
-            // 
-            this.panelStory.BackColor = System.Drawing.Color.Green;
-            this.panelStory.Location = new System.Drawing.Point(10, 13);
-            this.panelStory.Name = "panelStory";
-            this.panelStory.Size = new System.Drawing.Size(1250, 875);
-            this.panelStory.TabIndex = 5;
-            this.panelStory.Visible = false;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,7 +302,7 @@ namespace Jenet_Projekt
             this.KeyPreview = true;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Corona Quest";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panelGame.ResumeLayout(false);
             this.panelInv.ResumeLayout(false);
@@ -324,6 +338,7 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Button btnClassLeugner;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel panelStory;
+        private System.Windows.Forms.Button backbtn;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,6 +36,7 @@ namespace Jenet_Projekt
         CombatObserver observer = new CombatObserver();
         StoryManager story = new StoryManager();
         private int[] itemArray = new int[4];
+        private SoundManager soundManager = new SoundManager();
 
         public Main()
         {
@@ -42,6 +44,7 @@ namespace Jenet_Projekt
 
             instance = this;
 
+            soundManager.MainMenuMusic();
             subject.Attach(observer);
             panelMain.BackgroundImage = Resources.Resource1.Titlescreen;
             panelGame.BackgroundImage = Resources.Resource1.GamePanelBackground;
@@ -77,149 +80,222 @@ namespace Jenet_Projekt
             // Wert 3 = Wald
             // Wert 4 = Berge
             // Wert 5 = Haus
+            // Wert 10 = Kiwis
+            // Wert 11 = Hochhaus
             // Bsp : grid[1,2] = 3; setzt ein Hindernis an die Position X = 1 / Y = 2
             // Erlaubte Positionen X : 0 - 9 
             // Erlaubte Positionen Y : 0 - 6
             Array.Clear(grid, 0, grid.Length);
             switch (gridNo)
             {
-                case 1:
+                case 1: //Tutorial
                     player.setcoords(5, 4);
-                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
                     enemy[0].setcoords(5, 2);
                     currentStage = 1;
                     setBackground(currentStage);
-                    /*for (int i = 0; i < 8; i++)
                     {
-                        grid[0, i] = 3;
-                        grid[7, i] = 3;
+                        grid[0, 0] = 3;
+                        grid[1, 0] = 3;
+                        grid[2, 0] = 3;
+                        grid[3, 0] = 3;
+                        grid[4, 0] = 3;
+                        grid[5, 0] = 3;
+                        grid[6, 0] = 3;
+                        grid[7, 0] = 3;
+                        grid[8, 0] = 3;
+                        grid[9, 0] = 3;
+                        grid[0, 1] = 3;
+                        grid[1, 1] = 3;
+                        grid[2, 1] = 3;
+                        grid[7, 1] = 3;
+                        grid[8, 1] = 3;
+                        grid[9, 1] = 3;
+                        grid[0, 2] = 3;
+                        grid[1, 2] = 3;
+                        grid[8, 2] = 3;
+                        grid[9, 2] = 3;
+                        grid[0, 3] = 3;
+                        grid[1, 3] = 3;
+                        grid[8, 3] = 3;
+                        grid[9, 3] = 3;
+                        grid[0, 4] = 3;
+                        grid[1, 4] = 3;
+                        grid[2, 4] = 3;
+                        grid[8, 4] = 3;
+                        grid[9, 4] = 3;
+                        grid[0, 5] = 3;
+                        grid[1, 5] = 3;
+                        grid[2, 5] = 3;
+                        grid[3, 5] = 3;
+                        grid[7, 5] = 3;
+                        grid[8, 5] = 3;
+                        grid[9, 5] = 3;
+                        grid[0, 6] = 3;
+                        grid[1, 6] = 3;
+                        grid[2, 6] = 3;
+                        grid[3, 6] = 3;
+                        grid[4, 6] = 3;
+                        grid[5, 6] = 3;
+                        grid[6, 6] = 3;
+                        grid[7, 6] = 3;
+                        grid[8, 6] = 3;
+                        grid[9, 6] = 3;
+                        grid[5, 2] = 2;
+                        grid[5, 4] = 1;
                     }
-                    for (int i = 0; i < 10; i++)
-                    {
-                        grid[i, 0] = 3;
-                        grid[i, 1] = 3;
-                        grid[i, 8] = 3;
-                        grid[i, 9] = 3;
-                    }*/
-                    /*grid[7, 4] = 1;
-                    grid[1, 1] = 2;
-                    grid[5, 3] = 3;
-                    grid[4, 5] = 4;
-                    grid[4, 3] = 3;
-                    grid[5, 2] = 3;
-                    grid[4, 2] = 3;*/
-                    grid[0, 0] = 3;
-                    grid[1, 0] = 3;
-                    grid[2, 0] = 3;
-                    grid[3, 0] = 3;
-                    grid[4, 0] = 3;
-                    grid[5, 0] = 3;
-                    grid[6, 0] = 3;
-                    grid[7, 0] = 3;
-                    grid[8, 0] = 3;
-                    grid[9, 0] = 3;
-                    grid[0, 1] = 3;
-                    grid[1, 1] = 3;
-                    grid[2, 1] = 3;
-                    grid[7, 1] = 3;
-                    grid[8, 1] = 3;
-                    grid[9, 1] = 3;
-                    grid[0, 2] = 3;
-                    grid[1, 2] = 3;
-                    grid[8, 2] = 3;
-                    grid[9, 2] = 3;
-                    grid[0, 3] = 3;
-                    grid[1, 3] = 3;
-                    grid[8, 3] = 3;
-                    grid[9, 3] = 3;
-                    grid[0, 4] = 3;
-                    grid[1, 4] = 3;
-                    grid[2, 4] = 3;
-                    grid[8, 4] = 3;
-                    grid[9, 4] = 3;
-                    grid[0, 5] = 3;
-                    grid[1, 5] = 3;
-                    grid[2, 5] = 3;
-                    grid[3, 5] = 3;
-                    grid[7, 5] = 3;
-                    grid[8, 5] = 3;
-                    grid[9, 5] = 3;
-                    grid[0, 6] = 3;
-                    grid[1, 6] = 3;
-                    grid[2, 6] = 3;
-                    grid[3, 6] = 3;
-                    grid[4, 6] = 3;
-                    grid[5, 6] = 3;
-                    grid[6, 6] = 3;
-                    grid[7, 6] = 3;
-                    grid[8, 6] = 3;
-                    grid[9, 6] = 3;
-                    grid[5, 2] = 2;
-                    grid[5, 4] = 1;
-
-
-
                     break;
 
-                case 2:
-                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
-                    player.setcoords(6, 3);
-                    enemy[0].setcoords(0, 0);
-                    currentStage = 2;
-                    setBackground(currentStage);
-                    grid[6, 3] = 1;
-                    grid[0, 0] = 2;
-                    grid[5, 3] = 3;
-                    grid[4, 5] = 4;
-                    grid[4, 3] = 4;
-                    grid[5, 2] = 3;
-                    grid[4, 2] = 3;
-                    break;
-
-                case 3:
-                    /*enemy[0] = new GameEntity(Klasse.Klassen.Virus, "CoVid");
-                    enemy[1] = new GameEntity(Klasse.Klassen.Virus, "yeee");
-                    enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Corona");
-                    player.setcoords(8, 5);
-                    enemy[0].setcoords(1, 7);
-                    enemy[1].setcoords(6, 3);
-                    enemy[2].setcoords(8, 3);
-                    currentStage = 3;
-                    setBackground(currentStage);
-                    for (int i = 0; i < 10; i++)
+                case 3: //Stadt
                     {
-                        for (int j = 0; j < 7; j++)
+                        enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus 1");
+                        //enemy[1] = new GameEntity(Klasse.Klassen.Virus, "Virus 2");
+                        //enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Virus 3");
+                        //enemy[3] = new GameEntity(Klasse.Klassen.Virus, "Virus 4");
+
+                        enemy[0].setcoords(0, 2);
+                        //enemy[1].setcoords(5, 0);
+                        //enemy[2].setcoords(5, 3);
+                        //enemy[3].setcoords(7, 5);
+
+                        player.setcoords(9, 3);
+
+                        currentStage = 2;
+                        setBackground(currentStage);
+
+                        for (int i = 0; i < 4; i++)
                         {
-                            grid[i, j] = 5;
+                            for (int j = 4; j < 7; j++)
+                            {
+                                grid[i, j] = 3;
+                            }
                         }
+
+                        grid[2, 0] = 7;
+                        grid[2, 1] = 8;
+                        grid[3, 1] = 6;
+                        grid[4, 1] = 8;
+                        grid[4, 0] = 7;
+
+                        grid[7, 0] = 7;
+                        grid[7, 1] = 7;
+                        grid[7, 2] = 8;
+                        grid[8, 2] = 6;
+                        grid[9, 2] = 6;
+
+                        grid[0, 3] = 6;
+                        grid[1, 3] = 6;
+                        grid[2, 3] = 8;
+                        grid[2, 4] = 8;
+                        grid[3, 4] = 8;
+                        grid[3, 5] = 8;
+                        grid[4, 5] = 8;
+                        grid[4, 6] = 8;
+
+                        grid[3, 0] = 9;
+                        grid[8, 0] = 9;
+                        grid[9, 0] = 9;
+
+                        grid[6, 1] = 9;
+                        grid[8, 1] = 9;
+
+                        grid[6, 4] = 9;
+                        grid[9, 4] = 9;
+
+                        grid[2, 6] = 9;
+                        grid[5, 6] = 9;
+                        grid[8, 6] = 9;
+
+                        grid[0, 2] = 2;
+                        //grid[5, 0] = 2;
+                        //grid[5, 3] = 2;
+                        //grid[7, 5] = 2;
+
+                        grid[9, 3] = 1;
+
+                        break;
                     }
-                    break;*/
+
+                case 2: //Berlin
+                    {
+                        player.setcoords(4, 0);
+                        grid[4, 0] = 1;
+                        enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+                        enemy[1] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+                        enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+                        
+                        for (int i = 0; i < 7; i++)
+                            grid[0, i] = 11;
+                        for (int i = 0; i < 6; i++)
+                            grid[9, i] = 11;
+                        for (int i = 0; i < 9; i++)
+                        {
+                            for (int j = 0; j < 7; j++)
+                            {
+                                if (i != 4 && !(i <= 8 && j == 2) && !(i == 1 && j > 0 && j < 6) && !(i == 8 && j > 1) && !(j == 6 && (i == 7 || i == 9)) )
+                                {
+                                    grid[i, j] = 11;
+                                }
+                            }
+                        }
+                        grid[1, 0] = 2;
+                        grid[1, 6] = 2;
+                        grid[6, 6] = 2;
+                    }
+                    break;
+                case 4: //'Murica
                     player.setcoords(5, 4);
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
                     enemy[0].setcoords(5, 2);
                     currentStage = 4;
                     setBackground(currentStage);
                     break;
-                case 4:
-                    player.setcoords(5, 4);
-                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
-                    enemy[0].setcoords(5, 2);
-                    currentStage = 4;
-                    setBackground(currentStage);
-                    break;
-                case 5:
-                    player.setcoords(5, 4);
-                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
-                    enemy[0].setcoords(5, 2);
+
+                case 5://Neu Seeland
+                    player.setcoords(1, 3);
+                    grid[1, 3] = 1;
+                    grid[1, 2] = 10;
+                    grid[2, 2] = 10;
+                    grid[2, 3] = 10;
+                    grid[2, 4] = 10;
+                    grid[1, 4] = 10;
                     currentStage = 5;
                     setBackground(currentStage);
                     break;
-                case 6:
-                    player.setcoords(5, 4);
-                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
-                    enemy[0].setcoords(5, 2);
+
+                case 6: //endboss level
+                    player.setcoords(5, 6);
+                    enemy[0] = new GameEntity(Klasse.Klassen.Bat, "OhDearLordPleaseNo");
+                    enemy[0].setcoords(4, 3);
+                    
                     currentStage = 6;
                     setBackground(currentStage);
+                    grid[5,6] = 1;
+                    grid[1, 1] = 69;
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        grid[i, 0] = 4;
+                    }
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        grid[0, i] = 4;
+                        grid[9, i] = 4;
+                    }
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        grid[i, 5] = 4;
+                        grid[i, 6] = 4;
+                    }
+
+                    for (int i = 6; i < 9; i++)
+                    {
+                        grid[i, 5] = 4;
+                        grid[i, 6] = 4;
+                    }
+
                     break;
             }
         }
@@ -232,9 +308,9 @@ namespace Jenet_Projekt
                 for (int j = 0; j < 7; j++)
                 {
                     if (grid[i, j] != 0 && grid[i, j] != 1)
-                        drawEntity(g, spriteHelper.getSprite(i, j, grid), i, j);
+                        drawEntity(g, spriteHelper.getSprite(i, j, grid, player.getClass(), currentStage), i, j);
                     if (grid[i, j] == 1)
-                        drawEntity(g, spriteHelper.getCombatSprite(player.getClass()), i, j);
+                        drawEntity(g, spriteHelper.getCombatSprite(player.getClass(), player.getClass()), i, j);
                 }
             }
             g.Dispose();
@@ -274,6 +350,8 @@ namespace Jenet_Projekt
         {
             locationX *= fieldsize;
             locationY *= fieldsize;
+            if (bild == null)
+                bild = Resources.Resource1.Sprite_0001;
             g.DrawImage(bild, locationX, locationY);
         }
 
@@ -292,7 +370,7 @@ namespace Jenet_Projekt
                     grid[player.getx(), player.gety()] = 0;
                     grid[xMove, yMove] = 1;
                     refreshField(player.getx(), player.gety());
-                    drawEntity(g, spriteHelper.getCombatSprite(player.getClass()), xMove, yMove);
+                    drawEntity(g, spriteHelper.getCombatSprite(player.getClass(), player.getClass()), xMove, yMove);
                     player.setcoords(xMove, yMove);
                 }
             }
@@ -306,6 +384,8 @@ namespace Jenet_Projekt
                         if (fight == null)
                             fight = new Combat();
                         currentfighter = i;
+                        soundManager.Stop();
+                        soundManager.CombatMusic();
                         fight.begin(enemy[i], player, combatPanel, subject, progressBarPlayer, progressBarEnemy, itemArray);
                         break;
                     }
@@ -330,6 +410,8 @@ namespace Jenet_Projekt
 
         public void combatFinished(GameEntity winner)
         {
+            soundManager.Stop();
+            soundManager.GameMusic();
             if (winner.getClass() != Klasse.Klassen.Virus)
             {
                 MessageBox.Show(winner.getName() + " won the fight");
@@ -341,8 +423,36 @@ namespace Jenet_Projekt
                 {
                     startNextStage();
                 }
+                else
+                {
+                    fight = null;
+                    combatPanel.Hide();
+                    drawMap();
+                }
                 
             }
+            else
+            {
+                fight = null;
+                currentStage = 0;
+                currentStory = 1;
+                listBox1.Items.Clear();
+                player = new GameEntity(Klasse.Klassen.Normalbürger, "Test");
+                combatPanel.Hide();
+                panelGame.Hide();
+                panelMain.Show();
+                panel1.Hide();
+                MessageBox.Show("You lose");
+            }
+        }
+
+        public void playerRan()
+        {
+            soundManager.Stop();
+            soundManager.GameMusic();
+            fight = null;
+            combatPanel.Hide();
+            drawMap();
         }
 
         private void startNextStage()
@@ -377,10 +487,10 @@ namespace Jenet_Projekt
                             g.DrawImage(Resources.Resource1.Mundschutz, 38, 38);
                             break;
                         case 1:
-                            g.DrawImage(Resources.Resource1.Feuerzeug, 38+125, 38);
+                            g.DrawImage(Resources.Resource1.Desinfektionsmittel_Feuerzeug, 38+125, 38);
                             break;
                         case 2:
-                            g.DrawImage(Resources.Resource1.Spritze, 38, 38+125);
+                            g.DrawImage(Resources.Resource1.spritze_Item, 38, 38+125);
                             break;
                         case 3:
                             g.DrawImage(Resources.Resource1.Crocs, 38+125, 38+125);
@@ -407,54 +517,61 @@ namespace Jenet_Projekt
 
             if (!combatActive() && !storyActive)
             {
-                if (e.KeyCode == Keys.Up)
+                if (currentStage != 5 && e.KeyCode == Keys.Up)
                 {
                     if (player.gety() - 1 >= 0)
                     {
                         movePlayer(player.getx(), player.gety() - 1);
                     }
                 }
-                else if (e.KeyCode == Keys.Down)
+                else if (currentStage != 5 && e.KeyCode == Keys.Down)
                 {
                     if (player.gety() + 1 < 7)
                     {
                         movePlayer(player.getx(), player.gety() + 1);
                     }
                 }
-                else if (e.KeyCode == Keys.Left)
+                else if (currentStage != 5 && e.KeyCode == Keys.Left)
                 {
                     if (player.getx() - 1 >= 0)
                     {
                         movePlayer(player.getx() - 1, player.gety());
                     }
                 }
-                else if (e.KeyCode == Keys.Right)
+                else if (currentStage != 5 && e.KeyCode == Keys.Right)
                 {
                     if (player.getx() + 1 < 10)
                     {
                         movePlayer(player.getx() + 1, player.gety());
                     }
                 }
-                
+                if (currentStage == 5 && (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down))
+                {
+                    startNextStage();
+                }
             }
             else
             {
-                if (e.KeyCode == Keys.NumPad1 || e.KeyCode == Keys.D1)
-                {
-                    fight.attack();
-                }
-                else if (e.KeyCode == Keys.NumPad2 || e.KeyCode == Keys.D2)
-                {
-                    fight.shield();
-                }
-                else if (e.KeyCode == Keys.NumPad3 || e.KeyCode == Keys.D3)
-                {
-                    fight.items();
-                }
-                else if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.D4)
-                {
-                    fight.run();
-                }
+                if(fight != null)
+                    if (!fight.getStuff())
+                    {
+                        if (e.KeyCode == Keys.NumPad1 || e.KeyCode == Keys.D1)
+                        {
+                            fight.attack();
+                        }
+                        else if (e.KeyCode == Keys.NumPad2 || e.KeyCode == Keys.D2)
+                        {
+                            fight.shield();
+                        }
+                        else if (e.KeyCode == Keys.NumPad3 || e.KeyCode == Keys.D3)
+                        {
+                            fight.items();
+                        }
+                        else if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.D4)
+                        {
+                            fight.run();
+                        }
+                    }
             }
             if (storyActive && e.KeyCode == Keys.Space)
             {
@@ -463,6 +580,7 @@ namespace Jenet_Projekt
                 currentStage++;
                 initGrid(currentStage);
                 drawMap();
+                
             }
 
         }
@@ -472,9 +590,13 @@ namespace Jenet_Projekt
             try
             {
                 player.setName(tbNameInput.Text);
+                
                 panelMain.Hide();
+                panel1.Hide();
                 panelGame.Show();
                 lblName.Text = player.getClass().ToString() + " " + player.getName();
+                soundManager.Stop();
+                soundManager.GameMusic();
                 gameStart(1);
             }
             catch(Exception)
@@ -503,6 +625,21 @@ namespace Jenet_Projekt
         {
             // TODO: Set the correct highscore
             new Highscore(this.player.getName(), 0).ShowDialog();
+        }
+
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
+        }
+
+        private void btnCredits_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Erstellt von Nils, Johanna, Alex, Daniel, Max und Kristoph");
+        }
+
+        private void buttonEndlos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

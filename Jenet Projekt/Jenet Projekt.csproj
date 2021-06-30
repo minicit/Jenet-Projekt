@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -86,6 +87,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceStory.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Sounds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sounds.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SoundManager.cs" />
     <Compile Include="Spielfeld.cs" />
     <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +116,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resources\Sounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
@@ -129,6 +141,7 @@
     <EmbeddedResource Include="Resources\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ResourceStory.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -137,56 +150,64 @@
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Verkleidetes-Virus.png" />
-    <None Include="Resources\Straße-vertikal.png" />
-    <None Include="Resources\Straße-Kreuzung-Sprite.png" />
-    <None Include="Resources\Straße-horizontal.png" />
-    <None Include="Resources\Sprite-Peng.png" />
-    <None Include="Resources\Virologe Story 1.png" />
-    <None Include="Resources\Virologe Story 2.png" />
-    <None Include="Resources\Virologe Story 3.png" />
-    <None Include="Resources\Virologe Story 4.png" />
-    <None Include="Resources\Virologe Story 5.png" />
-    <None Include="Resources\Virologe Story 6.png" />
-    <None Include="Resources\spritze-Item.png" />
-    <None Include="Resources\Sprite-Pow.png" />
-    <None Include="Resources\Titlescreen.png" />
-    <None Include="Resources\virusSpriteTrans.png" />
-    <None Include="Resources\virologeSpriteTrans.png" />
-    <None Include="Resources\MapBackground.png" />
-    <None Include="Resources\Hintergrund base.png" />
-    <None Include="Resources\Hintergrund_mapGrass.png" />
-    <None Include="Resources\combatBackground.png" />
-    <None Include="Resources\forrestSprite.png" />
-    <None Include="Resources\normalboiSpriteTrans.png" />
-    <None Include="Resources\coronaLeugnerJetztaberTrans.png" />
-    <None Include="Resources\combatBackgroundMitMenu.png" />
-    <None Include="Resources\GamePanelBackground.png" />
-    <None Include="Resources\Missed.png" />
-    <None Include="Resources\OOF.png" />
-    <None Include="Resources\Schild.png" />
-    <None Include="Resources\Crocs.png" />
-    <None Include="Resources\Desinfektionsmittel.png" />
-    <None Include="Resources\Desinfektionsmittel-Feuerzeug.png" />
-    <None Include="Resources\Mundschutz.png" />
-    <None Include="Resources\Coronaleugner Story 1.png" />
-    <None Include="Resources\Normalbürger Story 6.png" />
-    <None Include="Resources\Normalbürger Story 5.png" />
-    <None Include="Resources\Normalbürger Story 4.png" />
-    <None Include="Resources\Normalbürger Story 3.png" />
-    <None Include="Resources\Normalbürger Story 2.png" />
-    <None Include="Resources\Normalbürger Story 1.png" />
-    <None Include="Resources\Coronaleugner Story 6.png" />
-    <None Include="Resources\Coronaleugner Story 5.png" />
-    <None Include="Resources\Coronaleugner Story 4.png" />
-    <None Include="Resources\Coronaleugner Story 3.png" />
-    <None Include="Resources\Coronaleugner Story 2.png" />
-    <None Include="Resources\deepBatTrans.png" />
-    <None Include="Resources\deepBatRightSize.png" />
-    <None Include="Resources\Brite-Virus.png" />
-    <None Include="Resources\China-Virus.png" />
-    <None Include="Resources\Cowboy-Virus.png" />
-    <None Include="Resources\Gebirge.png" />
+    <None Include="Resources\Sprites\Hochhaus.png" />
+    <None Include="Resources\Sprites\Verkleidetes-Virus.png" />
+    <None Include="Resources\Sprites\Straße-vertikal.png" />
+    <None Include="Resources\Sprites\Straße-Kreuzung-Sprite.png" />
+    <None Include="Resources\Sprites\Straße-horizontal.png" />
+    <None Include="Resources\Sprites\Sprite-Peng.png" />
+    <None Include="Resources\Story\Virologe Story 1.png" />
+    <None Include="Resources\Story\Virologe Story 2.png" />
+    <None Include="Resources\Story\Virologe Story 3.png" />
+    <None Include="Resources\Story\Virologe Story 4.png" />
+    <None Include="Resources\Story\Virologe Story 5.png" />
+    <None Include="Resources\Story\Virologe Story 6.png" />
+    <None Include="Resources\Sprites\spritze-Item.png" />
+    <None Include="Resources\Sprites\Sprite-Pow.png" />
+    <None Include="Resources\Backgrounds\Titlescreen.png" />
+    <None Include="Resources\Sprites\virusSpriteTrans.png" />
+    <None Include="Resources\Sprites\virologeSpriteTrans.png" />
+    <None Include="Resources\Backgrounds\MapBackground.png" />
+    <None Include="Resources\Backgrounds\Hintergrund base.png" />
+    <None Include="Resources\Backgrounds\Hintergrund_mapGrass.png" />
+    <None Include="Resources\Backgrounds\combatBackground.png" />
+    <None Include="Resources\Sprites\forrestSprite.png" />
+    <None Include="Resources\Sprites\normalboiSpriteTrans.png" />
+    <None Include="Resources\Sprites\coronaLeugnerJetztaberTrans.png" />
+    <None Include="Resources\Backgrounds\combatBackgroundMitMenu.png" />
+    <None Include="Resources\Backgrounds\GamePanelBackground.png" />
+    <None Include="Resources\Sprites\Missed.png" />
+    <None Include="Resources\Sprites\OOF.png" />
+    <None Include="Resources\Sprites\Schild.png" />
+    <None Include="Resources\Sprites\Crocs.png" />
+    <None Include="Resources\Sprites\Desinfektionsmittel.png" />
+    <None Include="Resources\Sprites\Desinfektionsmittel-Feuerzeug.png" />
+    <None Include="Resources\Sprites\Mundschutz.png" />
+    <None Include="Resources\Story\Coronaleugner Story 1.png" />
+    <None Include="Resources\Story\Normalbürger Story 6.png" />
+    <None Include="Resources\Story\Normalbürger Story 5.png" />
+    <None Include="Resources\Story\Normalbürger Story 4.png" />
+    <None Include="Resources\Story\Normalbürger Story 3.png" />
+    <None Include="Resources\Story\Normalbürger Story 2.png" />
+    <None Include="Resources\Story\Normalbürger Story 1.png" />
+    <None Include="Resources\Story\Coronaleugner Story 6.png" />
+    <None Include="Resources\Story\Coronaleugner Story 5.png" />
+    <None Include="Resources\Story\Coronaleugner Story 4.png" />
+    <None Include="Resources\Story\Coronaleugner Story 3.png" />
+    <None Include="Resources\Story\Coronaleugner Story 2.png" />
+    <None Include="Resources\Sprites\deepBatTrans.png" />
+    <None Include="Resources\Sprites\deepBatRightSize.png" />
+    <None Include="Resources\Sprites\Brite-Virus.png" />
+    <None Include="Resources\Sprites\China-Virus.png" />
+    <None Include="Resources\Sprites\Cowboy-Virus.png" />
+    <None Include="Resources\Sprites\Gebirge.png" />
+    <None Include="Resources\Backgrounds\batRound.png" />
+    <None Include="Resources\Sounds\CombatMusic.wav" />
+    <None Include="Resources\Sounds\GameMusic.wav" />
+    <None Include="Resources\Sounds\MainMenuMusic.wav" />
+    <None Include="Resources\Backgrounds\Hintergrund_neuseeland.png" />
+    <None Include="Resources\Sprites\haus.png" />
+    <None Include="Resources\Sprites\kiwiTrans.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>
