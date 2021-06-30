@@ -363,6 +363,16 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap sheriffKiwiTrans {
+            get {
+                object obj = ResourceManager.GetObject("sheriffKiwiTrans", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Sprite_0001 {
             get {
                 object obj = ResourceManager.GetObject("Sprite_0001", resourceCulture);
