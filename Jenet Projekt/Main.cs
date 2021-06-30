@@ -573,6 +573,16 @@ namespace Jenet_Projekt
         {
             panel1.Hide();
         }
+
+        private void btnCredits_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Erstellt von Nils, Johanna, Alex, Daniel, Max und Kristoph");
+        }
+
+        private void buttonEndlos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
