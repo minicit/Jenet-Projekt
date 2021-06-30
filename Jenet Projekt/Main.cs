@@ -342,7 +342,7 @@ namespace Jenet_Projekt
                 for (int j = 0; j < 7; j++)
                 {
                     if (grid[i, j] != 0 && grid[i, j] != 1)
-                        drawEntity(g, spriteHelper.getSprite(i, j, grid, player.getClass(), currentStage), i, j);
+                        drawEntity(g, spriteHelper.getSprite(i, j, grid, player.getClass()), i, j);
                     if (grid[i, j] == 1)
                         drawEntity(g, spriteHelper.getCombatSprite(player.getClass(), player.getClass()), i, j);
                 }
@@ -640,6 +640,8 @@ namespace Jenet_Projekt
             }
         }
 
+        public int getCurrentStage() { return currentStage; }
+
         private void btnClassVirologe_Click(object sender, EventArgs e)
         {
             player.setClass(Klasse.Klassen.Virologe);
@@ -668,7 +670,7 @@ namespace Jenet_Projekt
 
         private void btnCredits_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Erstellt von Nils, Johanna, Alex, Daniel, Max und Kristoph");
+            MessageBox.Show("Erstellt von Nils, Johanna, Alex, Daniel, Max und Kristoph", "Credits");
         }
 
         private void buttonEndlos_Click(object sender, EventArgs e)
