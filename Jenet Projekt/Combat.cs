@@ -101,7 +101,7 @@ namespace Jenet_Projekt
             g.DrawImage(spriteHelper.getCombatSprite(player.getClass(), player.getClass()), 170, 600);
             if (enemy.getClass() == Klasse.Klassen.Bat)
             {
-                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass(), player.getClass()), 950-250, 40);
+                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass(), player.getClass()), 950-300, 0);
             }
             else
             {

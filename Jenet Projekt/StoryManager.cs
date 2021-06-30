@@ -24,10 +24,11 @@ namespace Jenet_Projekt
                     case 4:
                         return Resources.ResourceStory.Coronaleugner_Story_4;
                     case 5:
-                        Main.getInstance().getItem(4);
                         return Resources.ResourceStory.Coronaleugner_Story_5;
                     case 6:
                         return Resources.ResourceStory.Coronaleugner_Story_6;
+                    case 7:
+                        return Resources.ResourceStory.Coronaleugner_Story_7;
                 }
             if (klasse == Klasse.Klassen.Normalbürger)
                 switch (x)

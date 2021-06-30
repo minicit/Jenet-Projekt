@@ -560,7 +560,15 @@ namespace Jenet_Projekt
             fight = null;
             combatPanel.Hide();
             //drawMap();
-            gameStart(currentStage + 1);
+            if (currentStage != 7)
+            {
+                gameStart(currentStage + 1);
+            }
+            else
+            {
+                panelGame.Hide();
+                panelMain.Hide();
+            }
 
         }
 
