@@ -203,6 +203,16 @@ namespace Jenet_Projekt.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Hintergrund_neuseeland {
+            get {
+                object obj = ResourceManager.GetObject("Hintergrund_neuseeland", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap leugnerSpriteTrans {
             get {
                 object obj = ResourceManager.GetObject("leugnerSpriteTrans", resourceCulture);
