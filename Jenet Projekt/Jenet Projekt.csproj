@@ -203,6 +203,7 @@
     <None Include="Resources\GameMusic.wav" />
     <None Include="Resources\MainMenuMusic.wav" />
     <None Include="Resources\Hintergrund_neuseeland.png" />
+    <None Include="Resources\haus.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>

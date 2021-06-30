@@ -166,20 +166,73 @@ namespace Jenet_Projekt
 
                 case 2: //technisch gesehen berlin
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
-                    player.setcoords(6, 3);
-                    enemy[0].setcoords(0, 0);
+                    enemy[1] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+                    enemy[2] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+                    enemy[3] = new GameEntity(Klasse.Klassen.Virus, "yoink");
+
+                    enemy[0].setcoords(0, 2);
+                    enemy[1].setcoords(5, 0);
+                    enemy[2].setcoords(5, 3);
+                    enemy[3].setcoords(7, 5);
+
+                    player.setcoords(9, 3);
+                    
                     currentStage = 2;
                     setBackground(currentStage);
-                    grid[6, 3] = 1;
-                    grid[0, 0] = 2;
-                    grid[5, 3] = 3;
-                    grid[4, 5] = 4;
-                    grid[4, 3] = 4;
-                    grid[5, 2] = 3;
-                    grid[4, 2] = 3;
+
+                    for (int i = 0; i < 4; i++)
+                    { 
+                        for (int j = 4; j < 7; j++)
+                        {
+                            grid[i, j] = 3;
+                        }
+                    }
+
+                    grid[2, 0] = 7;
+                    grid[2, 1] = 8;
+                    grid[3, 1] = 6;
+                    grid[4, 1] = 8;
+                    grid[4, 0] = 7;
+
+                    grid[7, 0] = 7;
+                    grid[7, 1] = 7;
+                    grid[7, 2] = 8;
+                    grid[8, 2] = 6;
+                    grid[9, 2] = 6;
+
+                    grid[0, 3] = 6;
+                    grid[1, 3] = 6;
+                    grid[2, 3] = 8;
+                    grid[2, 4] = 8;
+                    grid[3, 4] = 8;
+                    grid[3, 5] = 8;
+                    grid[4, 5] = 8;
+                    grid[4, 6] = 8;
+
+                    grid[3, 0] = 9;
+                    grid[8, 0] = 9;
+                    grid[9, 0] = 9;
+
+                    grid[6, 1] = 9;
+                    grid[8, 1] = 9;
+
+                    grid[6, 4] = 9;
+                    grid[9, 4] = 9;
+
+                    grid[2, 6] = 9;
+                    grid[5, 6] = 9;
+                    grid[8, 6] = 9;
+
+                    grid[0, 2] = 2;
+                    grid[5, 0] = 2;
+                    grid[5, 3] = 2;
+                    grid[7, 5] = 2;
+
+                    grid[9, 3] = 1;
+
                     break;
 
-                case 3:
+                case 3: // merica
                     /*enemy[0] = new GameEntity(Klasse.Klassen.Virus, "CoVid");
                     enemy[1] = new GameEntity(Klasse.Klassen.Virus, "yeee");
                     enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Corona");
@@ -200,17 +253,17 @@ namespace Jenet_Projekt
                     player.setcoords(5, 4);
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
                     enemy[0].setcoords(5, 2);
-                    currentStage = 4;
+                    currentStage = 3;
                     setBackground(currentStage);
                     break;
-                case 4:
+                case 4: //neuseeland
                     player.setcoords(5, 4);
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
                     enemy[0].setcoords(5, 2);
                     currentStage = 4;
                     setBackground(currentStage);
                     break;
-                case 5:
+                case 5: //china
                     player.setcoords(5, 4);
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
                     enemy[0].setcoords(5, 2);
@@ -262,9 +315,9 @@ namespace Jenet_Projekt
                 for (int j = 0; j < 7; j++)
                 {
                     if (grid[i, j] != 0 && grid[i, j] != 1)
-                        drawEntity(g, spriteHelper.getSprite(i, j, grid, player.getClass()), i, j);
+                        drawEntity(g, spriteHelper.getSprite(i, j, grid, player.getClass(), currentStage), i, j);
                     if (grid[i, j] == 1)
-                        drawEntity(g, spriteHelper.getCombatSprite(player.getClass()), i, j);
+                        drawEntity(g, spriteHelper.getCombatSprite(player.getClass(), player.getClass()), i, j);
                 }
             }
             g.Dispose();
@@ -322,7 +375,7 @@ namespace Jenet_Projekt
                     grid[player.getx(), player.gety()] = 0;
                     grid[xMove, yMove] = 1;
                     refreshField(player.getx(), player.gety());
-                    drawEntity(g, spriteHelper.getCombatSprite(player.getClass()), xMove, yMove);
+                    drawEntity(g, spriteHelper.getCombatSprite(player.getClass(), player.getClass()), xMove, yMove);
                     player.setcoords(xMove, yMove);
                 }
             }

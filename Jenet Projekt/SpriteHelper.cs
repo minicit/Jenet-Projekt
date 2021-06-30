@@ -10,7 +10,7 @@ namespace Jenet_Projekt
     class SpriteHelper
     {
 
-        public Bitmap getSprite(int x, int j, int[,] grid, Klasse.Klassen player)
+        public Bitmap getSprite(int x, int j, int[,] grid, Klasse.Klassen player, int stage)
         {
             switch (grid[x, j])
             {
@@ -26,11 +26,19 @@ namespace Jenet_Projekt
                     return Resources.Resource1.Gebirge;
                 case 5:
                     return Resources.Resource1.deepBatTrans;
+                case 6:
+                    return Resources.Resource1.Straße_horizontal;
+                case 7:
+                    return Resources.Resource1.Straße_vertikal;
+                case 8:
+                    return Resources.Resource1.Straße_Kreuzung_Sprite;
+                case 9:
+                    return Resources.Resource1.haus;
             }
             return null;
         }
 
-        public Bitmap getCombatSprite(Klasse.Klassen player)
+        public Bitmap getCombatSprite(Klasse.Klassen player, Klasse.Klassen chosenClass)
         {
             switch (player)
             {

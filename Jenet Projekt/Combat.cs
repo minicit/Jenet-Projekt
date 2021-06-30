@@ -90,14 +90,14 @@ namespace Jenet_Projekt
 
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
         {
-            g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 170, 600);
+            g.DrawImage(spriteHelper.getCombatSprite(player.getClass(), player.getClass()), 170, 600);
             if (enemy.getClass() == Klasse.Klassen.Bat)
             {
-                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950-250, 40);
+                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass(), player.getClass()), 950-250, 40);
             }
             else
             {
-                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950, 150);
+                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass(),player.getClass()), 950, 150);
             }
         }
 
