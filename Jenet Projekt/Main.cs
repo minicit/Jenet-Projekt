@@ -86,7 +86,7 @@ namespace Jenet_Projekt
             Array.Clear(grid, 0, grid.Length);
             switch (gridNo)
             {
-                case 1:
+                case 1: //tutorial level
                     player.setcoords(5, 4);
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
                     enemy[0].setcoords(5, 2);
@@ -164,7 +164,7 @@ namespace Jenet_Projekt
 
                     break;
 
-                case 2:
+                case 2: //technisch gesehen berlin
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
                     player.setcoords(6, 3);
                     enemy[0].setcoords(0, 0);
@@ -217,7 +217,7 @@ namespace Jenet_Projekt
                     currentStage = 5;
                     setBackground(currentStage);
                     break;
-                case 6:
+                case 6: //endboss level
                     player.setcoords(5, 6);
                     enemy[0] = new GameEntity(Klasse.Klassen.Bat, "OhDearLordPleaseNo");
                     enemy[0].setcoords(4, 3);
@@ -229,25 +229,25 @@ namespace Jenet_Projekt
 
                     for (int i = 0; i < 10; i++)
                     {
-                        grid[i, 0] = 5;
+                        grid[i, 0] = 4;
                     }
 
                     for (int i = 0; i < 7; i++)
                     {
-                        grid[0, i] = 5;
-                        grid[9, i] = 5;
+                        grid[0, i] = 4;
+                        grid[9, i] = 4;
                     }
 
                     for (int i = 0; i < 4; i++)
                     {
-                        grid[i, 5] = 5;
-                        grid[i, 6] = 5;
+                        grid[i, 5] = 4;
+                        grid[i, 6] = 4;
                     }
 
                     for (int i = 6; i < 9; i++)
                     {
-                        grid[i, 5] = 5;
-                        grid[i, 6] = 5;
+                        grid[i, 5] = 4;
+                        grid[i, 6] = 4;
                     }
 
                     break;
