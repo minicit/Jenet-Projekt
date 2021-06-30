@@ -23,13 +23,9 @@ namespace Jenet_Projekt
                 case 3:
                     return Resources.Resource1.forrestSprite;
                 case 4:
-                    return Resources.Resource1.Sprite_0002;
-                case 5:
                     return Resources.Resource1.Gebirge;
-                case 69:
+                case 5:
                     return Resources.Resource1.deepBatTrans;
-                case 16:
-                    return Resources.Resource1.trans;
             }
             return null;
         }
