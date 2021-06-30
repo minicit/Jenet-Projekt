@@ -31,6 +31,7 @@ namespace Jenet_Projekt
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panelGame = new System.Windows.Forms.Panel();
+            this.panelStory = new System.Windows.Forms.Panel();
             this.combatPanel = new System.Windows.Forms.Panel();
             this.panelInv = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
@@ -51,7 +52,7 @@ namespace Jenet_Projekt
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.panelStory = new System.Windows.Forms.Panel();
+            this.backbtn = new System.Windows.Forms.Button();
             this.panelGame.SuspendLayout();
             this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -70,6 +71,15 @@ namespace Jenet_Projekt
             this.panelGame.Name = "panelGame";
             this.panelGame.Size = new System.Drawing.Size(1600, 900);
             this.panelGame.TabIndex = 1;
+            // 
+            // panelStory
+            // 
+            this.panelStory.BackColor = System.Drawing.Color.Green;
+            this.panelStory.Location = new System.Drawing.Point(10, 13);
+            this.panelStory.Name = "panelStory";
+            this.panelStory.Size = new System.Drawing.Size(1250, 875);
+            this.panelStory.TabIndex = 5;
+            this.panelStory.Visible = false;
             // 
             // combatPanel
             // 
@@ -171,6 +181,7 @@ namespace Jenet_Projekt
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.backbtn);
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.tbNameInput);
             this.panel1.Controls.Add(this.btnClassVirologe);
@@ -267,14 +278,15 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // panelStory
+            // backbtn
             // 
-            this.panelStory.BackColor = System.Drawing.Color.Green;
-            this.panelStory.Location = new System.Drawing.Point(10, 13);
-            this.panelStory.Name = "panelStory";
-            this.panelStory.Size = new System.Drawing.Size(1250, 875);
-            this.panelStory.TabIndex = 5;
-            this.panelStory.Visible = false;
+            this.backbtn.Location = new System.Drawing.Point(455, 13);
+            this.backbtn.Name = "backbtn";
+            this.backbtn.Size = new System.Drawing.Size(75, 23);
+            this.backbtn.TabIndex = 5;
+            this.backbtn.Text = "Zurück";
+            this.backbtn.UseVisualStyleBackColor = true;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
             // 
             // Main
             // 
@@ -324,6 +336,7 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Button btnClassLeugner;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel panelStory;
+        private System.Windows.Forms.Button backbtn;
     }
 }
 

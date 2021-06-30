@@ -20,6 +20,7 @@ namespace Jenet_Projekt
         private Eventcaller subject;
         private Panel combatPanel;
         private int[] itemArray;
+        private bool stuffHappening = false;
         public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar, int[] itemArray)
         {
             playerRan = false;
@@ -50,7 +51,7 @@ namespace Jenet_Projekt
             g.Dispose();
         }
 
-        
+        public bool getStuff() { return stuffHappening; }
 
         public void useItem(int type)
         {
@@ -116,7 +117,9 @@ namespace Jenet_Projekt
         {
             Graphics g = combatPanel.CreateGraphics();
             g.DrawImage(sprite, 600, 400);
+            stuffHappening = true;
             System.Threading.Thread.Sleep(1000);
+            stuffHappening = false;
             g.DrawImage(spriteHelper.getBackground(-1), new Rectangle(600, 400, sprite.Width, sprite.Height), new Rectangle(476, 200, sprite.Width, sprite.Height), GraphicsUnit.Point);
         }
 
@@ -136,12 +139,15 @@ namespace Jenet_Projekt
                 player.takeDamageFrom(enemy);
                 if (player.getHealth() > 0)
                     playerbar.Value = (int)player.getHealth();
+                else
+                    playerbar.Value = 0;
                 fightSprite(Resources.Resource1.OOF);
             }
             else
             {
                 fightSprite(Resources.Resource1.Missed);
             }
+            
         }
 
         private void enemyShield()
@@ -160,6 +166,8 @@ namespace Jenet_Projekt
                     enemy.takeDamageFrom(player);
                     if (enemy.getHealth() > 0)
                         enemybar.Value = (int)enemy.getHealth();
+                    else
+                        enemybar.Value = 0;
                     fightSprite(Resources.Resource1.Pow);
                 }
                 else
@@ -224,12 +232,12 @@ namespace Jenet_Projekt
                 setCombatActive(false);
                 subject.PlayerWon(player);
             }
-            if (player.getHealth() <= 0)
+            else if (player.getHealth() <= 0)
             {
                 setCombatActive(false);
                 subject.EnemyWon(enemy);
             }
-            if (playerRan)
+            else if (playerRan)
             {
                 setCombatActive(false);
                 subject.PlayerRan();
