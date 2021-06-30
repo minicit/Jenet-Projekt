@@ -415,6 +415,8 @@ namespace Jenet_Projekt
 
         public void combatFinished(GameEntity winner)
         {
+            soundManager.Stop();
+            soundManager.GameMusic();
             if (winner.getClass() != Klasse.Klassen.Virus)
             {
                 MessageBox.Show(winner.getName() + " won the fight");
@@ -445,6 +447,8 @@ namespace Jenet_Projekt
 
         public void playerRan()
         {
+            soundManager.Stop();
+            soundManager.GameMusic();
             fight = null;
             combatPanel.Hide();
             drawMap();
@@ -621,6 +625,16 @@ namespace Jenet_Projekt
         private void backbtn_Click(object sender, EventArgs e)
         {
             panel1.Hide();
+        }
+
+        private void btnCredits_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Erstellt von Nils, Johanna, Alex, Daniel, Max und Kristoph");
+        }
+
+        private void buttonEndlos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

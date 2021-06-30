@@ -43,6 +43,7 @@ namespace Jenet_Projekt
             this.panelMap = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.backbtn = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.tbNameInput = new System.Windows.Forms.TextBox();
             this.btnClassVirologe = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@ namespace Jenet_Projekt
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.backbtn = new System.Windows.Forms.Button();
             this.panelGame.SuspendLayout();
             this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -193,6 +193,16 @@ namespace Jenet_Projekt
             this.panel1.TabIndex = 4;
             this.panel1.Visible = false;
             // 
+            // backbtn
+            // 
+            this.backbtn.Location = new System.Drawing.Point(455, 13);
+            this.backbtn.Name = "backbtn";
+            this.backbtn.Size = new System.Drawing.Size(75, 23);
+            this.backbtn.TabIndex = 5;
+            this.backbtn.Text = "Zurück";
+            this.backbtn.UseVisualStyleBackColor = true;
+            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
+            // 
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(161, 257);
@@ -248,6 +258,7 @@ namespace Jenet_Projekt
             this.buttonEndlos.TabIndex = 1;
             this.buttonEndlos.Text = "Endlos";
             this.buttonEndlos.UseVisualStyleBackColor = true;
+            this.buttonEndlos.Click += new System.EventHandler(this.buttonEndlos_Click);
             // 
             // btnCredits
             // 
@@ -257,6 +268,7 @@ namespace Jenet_Projekt
             this.btnCredits.TabIndex = 3;
             this.btnCredits.Text = "Credits";
             this.btnCredits.UseVisualStyleBackColor = true;
+            this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
             // 
             // btnHighscore
             // 
@@ -278,16 +290,6 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // backbtn
-            // 
-            this.backbtn.Location = new System.Drawing.Point(455, 13);
-            this.backbtn.Name = "backbtn";
-            this.backbtn.Size = new System.Drawing.Size(75, 23);
-            this.backbtn.TabIndex = 5;
-            this.backbtn.Text = "Zurück";
-            this.backbtn.UseVisualStyleBackColor = true;
-            this.backbtn.Click += new System.EventHandler(this.backbtn_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -300,7 +302,7 @@ namespace Jenet_Projekt
             this.KeyPreview = true;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Corona Quest";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.panelGame.ResumeLayout(false);
             this.panelInv.ResumeLayout(false);
