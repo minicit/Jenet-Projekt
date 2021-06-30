@@ -90,7 +90,14 @@ namespace Jenet_Projekt
         private void drawFight(Graphics g, GameEntity enemy, GameEntity player)
         {
             g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 170, 600);
-            g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950, 150);
+            if (enemy.getClass() == Klasse.Klassen.Bat)
+            {
+                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950-250, 40);
+            }
+            else
+            {
+                g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950, 150);
+            }
         }
 
         private void enemyAction()
@@ -170,7 +177,7 @@ namespace Jenet_Projekt
                 {
                     enemy.takeDamageFrom(player);
                     if (enemy.getHealth() > 0)
-                        enemybar.Value = (int)enemy.getHealth();
+                        enemybar.Value = (int)enemy.getHealth(); //hier gibt es einen Fehler bei Bats
                     fightSprite(Resources.Resource1.Pow);
                 }
                 else

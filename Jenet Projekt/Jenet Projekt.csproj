@@ -187,6 +187,7 @@
     <None Include="Resources\China-Virus.png" />
     <None Include="Resources\Cowboy-Virus.png" />
     <None Include="Resources\Gebirge.png" />
+    <None Include="Resources\batRound.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>

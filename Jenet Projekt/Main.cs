@@ -215,11 +215,38 @@ namespace Jenet_Projekt
                     setBackground(currentStage);
                     break;
                 case 6:
-                    player.setcoords(5, 4);
-                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
-                    enemy[0].setcoords(5, 2);
+                    player.setcoords(5, 6);
+                    enemy[0] = new GameEntity(Klasse.Klassen.Bat, "OhDearLordPleaseNo");
+                    enemy[0].setcoords(4, 3);
+                    
                     currentStage = 6;
                     setBackground(currentStage);
+                    grid[5,6] = 1;
+                    grid[2, 1] = 69;
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        grid[i, 0] = 5;
+                    }
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        grid[0, i] = 5;
+                        grid[9, i] = 5;
+                    }
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        grid[i, 5] = 5;
+                        grid[i, 6] = 5;
+                    }
+
+                    for (int i = 6; i < 9; i++)
+                    {
+                        grid[i, 5] = 5;
+                        grid[i, 6] = 5;
+                    }
+
                     break;
             }
         }
@@ -232,7 +259,7 @@ namespace Jenet_Projekt
                 for (int j = 0; j < 7; j++)
                 {
                     if (grid[i, j] != 0 && grid[i, j] != 1)
-                        drawEntity(g, spriteHelper.getSprite(i, j, grid), i, j);
+                        drawEntity(g, spriteHelper.getSprite(i, j, grid, player.getClass()), i, j);
                     if (grid[i, j] == 1)
                         drawEntity(g, spriteHelper.getCombatSprite(player.getClass()), i, j);
                 }

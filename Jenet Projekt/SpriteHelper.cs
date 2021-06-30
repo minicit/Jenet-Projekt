@@ -10,13 +10,15 @@ namespace Jenet_Projekt
     class SpriteHelper
     {
 
-        public Bitmap getSprite(int x, int j, int[,] grid)
+        public Bitmap getSprite(int x, int j, int[,] grid, Klasse.Klassen player)
         {
             switch (grid[x, j])
             {
                 case 1:
                     return Resources.Resource1.virologeSpriteTrans;
                 case 2:
+                    if (player == Klasse.Klassen.Coronaleugner)
+                        return Resources.Resource1.Verkleidetes_Virus;
                     return Resources.Resource1.virusSpriteTrans;
                 case 3:
                     return Resources.Resource1.forrestSprite;
@@ -57,7 +59,7 @@ namespace Jenet_Projekt
                 case -1:
                     return Resources.Resource1.combatBackgroundMitMenu;
                 case 6:
-                    return Resources.Resource1.Hintergrund_mapGrass;
+                    return Resources.Resource1.batRound;
                 case 5:
                     return Resources.Resource1.Hintergrund_mapGrass;
                 case 4:
