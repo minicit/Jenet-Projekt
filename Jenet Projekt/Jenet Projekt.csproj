@@ -159,6 +159,8 @@
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Story\Virologe Story 7.png" />
+    <None Include="Resources\Story\Normalbürger Story 7.png" />
     <None Include="Resources\Sprites\Empty.png" />
     <None Include="Resources\Sprites\Hochhaus.png" />
     <None Include="Resources\Sprites\Verkleidetes-Virus.png" />
@@ -222,8 +224,7 @@
     <None Include="Resources\Backgrounds\Hintergrund_merica.png" />
     <None Include="Resources\Backgrounds\Hintergrund_stadt.png" />
     <None Include="Resources\sheriffKiwiTrans.png" />
-    <None Include="Resources\Sounds\onHit.wav" />
-    <None Include="Resources\Sounds\onMove.wav" />
+    <None Include="Resources\deadBatTrans.png" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>
