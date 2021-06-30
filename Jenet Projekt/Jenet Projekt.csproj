@@ -222,6 +222,8 @@
     <None Include="Resources\Backgrounds\Hintergrund_merica.png" />
     <None Include="Resources\Backgrounds\Hintergrund_stadt.png" />
     <None Include="Resources\sheriffKiwiTrans.png" />
+    <None Include="Resources\Sounds\onHit.wav" />
+    <None Include="Resources\Sounds\onMove.wav" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>

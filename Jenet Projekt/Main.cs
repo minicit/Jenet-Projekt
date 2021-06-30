@@ -37,7 +37,8 @@ namespace Jenet_Projekt
         StoryManager story = new StoryManager();
         private int[] itemArray = new int[4];
         private SoundManager soundManager = new SoundManager();
-        int highscore = 0;
+        public int highscore = 0;
+        private Highscore score = new Highscore();
 
         public Main()
         {
@@ -79,6 +80,7 @@ namespace Jenet_Projekt
             }
             return instance;
         }
+
         private void initGrid(int gridNo)
         {
             //Schreibt Startpositionen der Gegner / Spieler / Hindernisse in das Array
@@ -342,7 +344,7 @@ namespace Jenet_Projekt
                     currentStage = -3;
                     highscore++;
                     Random random = new Random();
-                    setBackground(random.Next(1,6));
+                    setBackground(-3);
                     for (int i = 0; i < 10; i++)
                     {
                         for(int j = 0; j < 7; j++)
@@ -504,6 +506,7 @@ namespace Jenet_Projekt
                 currentStage = 0;
                 currentStory = 1;
                 listBox1.Items.Clear();
+                score.addScore(highscore, player.getName());
                 player = new GameEntity(Klasse.Klassen.Normalbürger, "Test");
                 combatPanel.Hide();
                 panelGame.Hide();
@@ -693,7 +696,7 @@ namespace Jenet_Projekt
         private void btnHighscore_Click(object sender, EventArgs e)
         {
             // TODO: Set the correct highscore
-            new Highscore(this.player.getName(), 0).ShowDialog();
+            score.ShowDialog();
         }
 
         private void backbtn_Click(object sender, EventArgs e)

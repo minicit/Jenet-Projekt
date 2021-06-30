@@ -86,6 +86,8 @@ namespace Jenet_Projekt
                     return Resources.Resource1.Hintergrund_stadt;
                 case 1://Tutorial Background
                     return Resources.Resource1.Hintergrund_mapGrass;
+                case -3://Endlos Background
+                    return Resources.Resource1.Hintergrund_mapGrass;
                 case 0://Base Background
                     return Resources.Resource1.MapBackground;
             }

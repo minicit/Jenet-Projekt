@@ -8,13 +8,14 @@ using System.Windows.Media;
 
 namespace Jenet_Projekt
 {
-    class SoundManager
+    public class SoundManager
     {
         private SoundPlayer player;
 
         public void Stop()
         {
             player.Stop();
+            player = null;
         }
         public void MainMenuMusic()
         {
@@ -30,14 +31,6 @@ namespace Jenet_Projekt
         {
             SoundPlayer player = new SoundPlayer(Resources.Sounds.CombatMusic);
             player.PlayLooping();
-        }
-        public void OnHit()
-        {
-
-        }
-        public void OnMove()
-        {
-
         }
     }
 }
