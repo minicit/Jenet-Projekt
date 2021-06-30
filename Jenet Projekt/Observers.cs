@@ -11,6 +11,7 @@ namespace Jenet_Projekt
     {
         void PlayerWon(GameEntity subject);
         void EnemyWon(GameEntity subject);
+        void PlayerRan();
     }
 
     public interface IEventcaller
@@ -52,6 +53,14 @@ namespace Jenet_Projekt
                 observer.PlayerWon(player);
             }
         }
+
+        public void PlayerRan()
+        {
+            foreach (var observer in _observers)
+            {
+                observer.PlayerRan();
+            }
+        }
     }
 
     class CombatObserver : IObserver
@@ -68,6 +77,11 @@ namespace Jenet_Projekt
         public void EnemyWon(GameEntity subject)
         {
             Main.getInstance().combatFinished(subject);
+        }
+
+        public void PlayerRan()
+        {
+            Main.getInstance().playerRan();
         }
     }
 }

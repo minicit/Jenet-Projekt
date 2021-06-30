@@ -345,6 +345,13 @@ namespace Jenet_Projekt
             }
         }
 
+        public void playerRan()
+        {
+            fight = null;
+            combatPanel.Hide();
+            drawMap();
+        }
+
         private void startNextStage()
         {
             fight = null;

@@ -12,7 +12,7 @@ namespace Jenet_Projekt
     class Combat
     {
         private SpriteHelper spriteHelper = new SpriteHelper();
-        private bool combatActive;
+        private bool combatActive, playerRan;
         private GameEntity enemy, player;
         private int turn; //zug variable; 1:spieler, 2:Gegner, 3:Kampfende?
         private Random rand = new Random();
@@ -22,6 +22,7 @@ namespace Jenet_Projekt
         private int[] itemArray;
         public void begin( GameEntity emy, GameEntity ply, Panel combatPanel, Eventcaller subject, ProgressBar playerbar, ProgressBar enemybar, int[] itemArray)
         {
+            playerRan = false;
             this.enemy = emy;
             this.player = ply;
             this.playerbar = playerbar;
@@ -90,12 +91,11 @@ namespace Jenet_Projekt
         {
             g.DrawImage(spriteHelper.getCombatSprite(player.getClass()), 170, 600);
             g.DrawImage(spriteHelper.getCombatSprite(enemy.getClass()), 950, 150);
-
         }
 
         private void enemyAction()
         {
-            if(((enemy.getHealth()/enemy.getMaxHealth())*100) > rand.Next(100))
+            if(((enemy.getHealth()/enemy.getMaxHealth())*90) > rand.Next(100))
             {
                 enemyShield();
             }
@@ -123,13 +123,17 @@ namespace Jenet_Projekt
 
         private void enemyAttack()
         {
-            //enemy.setShield(false);
+            enemy.setShield(false);
             if (enemy.doesItHit(enemy, player))
             {
                 player.takeDamageFrom(enemy);
                 if (player.getHealth() > 0)
                     playerbar.Value = (int)player.getHealth();
                 fightSprite(Resources.Resource1.OOF);
+            }
+            else
+            {
+                fightSprite(Resources.Resource1.Missed);
             }
         }
 
@@ -186,17 +190,23 @@ namespace Jenet_Projekt
 
         public void items()
         {
-            useItem(3); //hier button input von user
+            useItem(3); //hier button input von user 1-4
             player.setShield(false);
         }
 
         public void run()
         {
-            //player.setShield(false);
+            player.setShield(false);
             if (player.doesItHit(player, enemy))
+            {
+                playerRan = true;
                 MessageBox.Show("runn");
+            }
             else
+            {
                 MessageBox.Show("you decided to stay. Why?");
+            }
+            combatOverCheck();
         }
 
         private void combatOverCheck()
@@ -211,6 +221,13 @@ namespace Jenet_Projekt
                 setCombatActive(false);
                 subject.EnemyWon(enemy);
             }
+            if (playerRan)
+            {
+                setCombatActive(false);
+                subject.PlayerRan();
+                playerRan = false;
+            }
+
         }
     }
 }
