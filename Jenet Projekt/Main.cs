@@ -37,6 +37,7 @@ namespace Jenet_Projekt
         StoryManager story = new StoryManager();
         private int[] itemArray = new int[4];
         private SoundManager soundManager = new SoundManager();
+        int highscore = 0;
 
         public Main()
         {
@@ -90,6 +91,7 @@ namespace Jenet_Projekt
             switch (gridNo)
             {
                 case 1: //Tutorial
+                    highscore++;
                     player.setcoords(5, 4);
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
                     enemy[0].setcoords(5, 2);
@@ -149,6 +151,7 @@ namespace Jenet_Projekt
 
                 case 2: //Stadt
                     {
+                        highscore++;
                         enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus 1");
                         //enemy[1] = new GameEntity(Klasse.Klassen.Virus, "Virus 2");
                         //enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Virus 3");
@@ -219,6 +222,7 @@ namespace Jenet_Projekt
 
                 case 3: //Berlin
                     {
+                        highscore++;
                         player.setcoords(4, 0);
                         grid[4, 0] = 1;
                         enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
@@ -251,6 +255,7 @@ namespace Jenet_Projekt
                     }
                     break;
                 case 4: //'Murica
+                    highscore++;
                     player.setcoords(0, 3);
                     grid[0, 3] = 1;
                     enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
@@ -279,6 +284,7 @@ namespace Jenet_Projekt
                     break;
 
                 case 5://Neu Seeland
+                    highscore++;
                     player.setcoords(1, 3);
                     grid[1, 3] = 1;
                     grid[1, 2] = 10;
@@ -291,6 +297,7 @@ namespace Jenet_Projekt
                     break;
 
                 case 6: //endboss level
+                    highscore++;
                     player.setcoords(5, 6);
                     enemy[0] = new GameEntity(Klasse.Klassen.Bat, "OhDearLordPleaseNo");
                     enemy[0].setcoords(4, 3);
