@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -91,6 +92,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Sounds.resx</DependentUpon>
     </Compile>
+    <Compile Include="SoundManager.cs" />
     <Compile Include="Spielfeld.cs" />
     <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -197,6 +199,9 @@
     <None Include="Resources\Cowboy-Virus.png" />
     <None Include="Resources\Gebirge.png" />
     <None Include="Resources\batRound.png" />
+    <None Include="Resources\CombatMusic.wav" />
+    <None Include="Resources\GameMusic.wav" />
+    <None Include="Resources\MainMenuMusic.wav" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>
