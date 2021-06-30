@@ -185,7 +185,14 @@ namespace Jenet_Projekt
                 {
                     enemy.takeDamageFrom(player);
                     if (enemy.getHealth() > 0)
-                        enemybar.Value = (int)enemy.getHealth(); //hier gibt es einen Fehler bei Bats
+                    {
+                        try { enemybar.Value = (int)enemy.getHealth(); }
+                        catch (Exception e) 
+                        {
+                            enemybar.Value = enemybar.Maximum;
+                        }
+                    }
+                    //hier gibt es einen Fehler bei Bats
                     fightSprite(Resources.Resource1.Pow);
                 }
                 else

@@ -86,6 +86,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ResourceStory.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Sounds.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sounds.resx</DependentUpon>
+    </Compile>
     <Compile Include="Spielfeld.cs" />
     <Compile Include="Resources\Resource1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +114,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resources\Sounds.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Sounds.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
