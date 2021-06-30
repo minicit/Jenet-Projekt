@@ -200,11 +200,12 @@ namespace Jenet_Projekt
             if (player.doesItHit(player, enemy))
             {
                 playerRan = true;
-                MessageBox.Show("runn");
+                fightSprite(Resources.Resource1.Desinfektionsmittel);
             }
             else
             {
-                MessageBox.Show("you decided to stay. Why?");
+                fightSprite(Resources.Resource1.OOF);
+                enemyAction();
             }
             combatOverCheck();
         }
