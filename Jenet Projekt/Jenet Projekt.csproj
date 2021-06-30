@@ -159,6 +159,7 @@
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Story\Coronaleugner Story 7.png" />
     <None Include="Resources\Story\Virologe Story 7.png" />
     <None Include="Resources\Story\Normalbürger Story 7.png" />
     <None Include="Resources\Sprites\Empty.png" />

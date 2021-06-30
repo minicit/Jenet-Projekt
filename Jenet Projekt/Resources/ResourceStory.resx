@@ -136,6 +136,9 @@
   <data name="Coronaleugner_Story_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>story\coronaleugner story 6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Coronaleugner_Story_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Story\Coronaleugner Story 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Normalbürger_Story_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>story\normalbürger story 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
