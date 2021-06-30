@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>brite_virus_Tst_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -226,6 +229,7 @@
     <None Include="Resources\Backgrounds\Hintergrund_stadt.png" />
     <None Include="Resources\sheriffKiwiTrans.png" />
     <None Include="Resources\deadBatTrans.png" />
+    <Content Include="brite_virus_Tst_icon.ico" />
     <Content Include="Resources\Sprite-0001.png" />
     <Content Include="Resources\Sprite-0002.png" />
   </ItemGroup>
