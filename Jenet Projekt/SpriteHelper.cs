@@ -37,6 +37,8 @@ namespace Jenet_Projekt
                 case 9:
                     return Resources.Resource1.haus;
                 case 10:
+                    if (Main.getInstance().getCurrentStage() == 4)
+                        return Resources.Resource1.sheriffKiwiTrans;
                     return Resources.Resource1.kiwiTrans;
                 case 11:
                     return Resources.Resource1.Hochhaus;
