@@ -16,6 +16,7 @@ namespace Jenet_Projekt
         public UseItem(int[] itemArray)
         {
             InitializeComponent();
+            this.CenterToParent();
             if (itemArray[0] == 0)
                 this.btnItem1.Enabled = false; 
             if (itemArray[1] == 0)

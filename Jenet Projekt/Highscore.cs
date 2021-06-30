@@ -25,34 +25,50 @@ namespace Jenet_Projekt
             this.highscores[this.name] = this.currentHighscore;
             this.updateLbHighscores();
         }
+        public Highscore()
+        {
+            InitializeComponent();
+        }
 
         private void updateLbHighscores()
         {
-            this.lbHighscores.Items.Clear();
+            if(lbHighscores.Items != null)
+                this.lbHighscores.Items.Clear();
             foreach (KeyValuePair<string, int> highscore in this.highscores.OrderByDescending(highscore => highscore.Value))
             {
                 this.lbHighscores.Items.Add($"{highscore.Key}: {highscore.Value}");
             }
         }
 
+        public void addScore(int score, string name)
+        {
+            this.highscores[name] = score;
+            updateLbHighscores();
+        }
         private void btnImport_Click(object sender, EventArgs e)
         {
             try
             {
-                this.highscores = File.ReadAllLines("highscores.txt").Select(highscore => highscore.Split(':')).ToDictionary(
-                    highscore => highscore[0],
-                    highscore => Int32.Parse(highscore[1])
-                );
-                if (this.highscores.ContainsKey(this.name))
+                string[] test = File.ReadAllLines("highscores.txt");
+                foreach (var item in test)
                 {
-                    if (this.highscores[this.name] < this.currentHighscore)
-                    {
-                        this.highscores[this.name] = this.currentHighscore;
-                    } else
-                    {
-                        this.currentHighscore = this.highscores[this.name];
-                    }
+                    string[] score = item.Split(':');
+                    highscores.Add(score[0], Convert.ToInt32(score[1]));
                 }
+                //this.highscores = File.ReadAllLines("highscores.txt").Select(highscore => highscore.Split(':')).ToDictionary(
+                //    highscore => highscore[0],
+                //    highscore => Convert.ToInt32(highscore[1])
+                //);
+                //if (this.highscores.ContainsKey(this.name))
+                //{
+                //    if (this.highscores[this.name] < this.currentHighscore)
+                //    {
+                //        this.highscores[this.name] = this.currentHighscore;
+                //    } else
+                //    {
+                //        this.currentHighscore = this.highscores[this.name];
+                //    }
+                //}
                 this.updateLbHighscores();
             }
             catch (Exception _)

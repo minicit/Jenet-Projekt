@@ -70,6 +70,7 @@
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.lbHighscores);
             this.Name = "Highscore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Highscore";
             this.ResumeLayout(false);
 
