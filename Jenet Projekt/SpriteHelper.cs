@@ -24,7 +24,7 @@ namespace Jenet_Projekt
                     return Resources.Resource1.forrestSprite;
                 case 4:
                     return Resources.Resource1.Gebirge;
-                case 5:
+                case 69:
                     return Resources.Resource1.deepBatTrans;
                 case 6:
                     return Resources.Resource1.Straße_horizontal;
@@ -34,6 +34,10 @@ namespace Jenet_Projekt
                     return Resources.Resource1.Straße_Kreuzung_Sprite;
                 case 9:
                     return Resources.Resource1.haus;
+                case 10:
+                    return Resources.Resource1.kiwiTrans;
+                case 11:
+                    return Resources.Resource1.Hochhaus;
             }
             return null;
         }
@@ -43,7 +47,7 @@ namespace Jenet_Projekt
             switch (player)
             {
                 case Klasse.Klassen.Coronaleugner:
-                    return Resources.Resource1.leugnerSpriteTrans;
+                    return Resources.Resource1.coronaLeugnerJetztaberTrans;
                 case Klasse.Klassen.Normalbürger:
                     return Resources.Resource1.normalboiSpriteTrans;
                 case Klasse.Klassen.Virologe:
@@ -60,21 +64,21 @@ namespace Jenet_Projekt
         {
             switch (x)
             {
-                case -1:
+                case -1://Combat Background
                     return Resources.Resource1.combatBackgroundMitMenu;
-                case 6:
+                case 6://Fledermaus Background
                     return Resources.Resource1.batRound;
-                case 5:
+                case 5://Neuseeland Background
+                    return Resources.Resource1.Hintergrund_neuseeland;
+                case 4://'Murica Background
                     return Resources.Resource1.Hintergrund_mapGrass;
-                case 4:
+                case 3://Berlin Background
                     return Resources.Resource1.Hintergrund_mapGrass;
-                case 3:
+                case 2://Stadt Background
                     return Resources.Resource1.Hintergrund_mapGrass;
-                case 2:
+                case 1://Tutorial Background
                     return Resources.Resource1.Hintergrund_mapGrass;
-                case 1:
-                    return Resources.Resource1.Hintergrund_mapGrass;
-                case 0:
+                case 0://Base Background
                     return Resources.Resource1.MapBackground;
             }
             return null;

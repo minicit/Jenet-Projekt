@@ -66,12 +66,12 @@ namespace Jenet_Projekt
                         break;
                     case 1:
                         MessageBox.Show("Feuerzeug");
-                        fightSprite(Resources.Resource1.Feuerzeug);
+                        fightSprite(Resources.Resource1.Desinfektionsmittel_Feuerzeug);
                         enemy.takeDamage(40);
                         break;
                     case 2:
                         MessageBox.Show("Spritze");
-                        fightSprite(Resources.Resource1.Spritze);
+                        fightSprite(Resources.Resource1.spritze_Item);
                         enemy.setAttack(1);
                         break;
                     case 3:
@@ -168,7 +168,7 @@ namespace Jenet_Projekt
                         enemybar.Value = (int)enemy.getHealth();
                     else
                         enemybar.Value = 0;
-                    fightSprite(Resources.Resource1.Pow);
+                    fightSprite(Resources.Resource1.Sprite_Pow);
                 }
                 else
                 {
@@ -193,7 +193,7 @@ namespace Jenet_Projekt
                         }
                     }
                     //hier gibt es einen Fehler bei Bats
-                    fightSprite(Resources.Resource1.Pow);
+                    fightSprite(Resources.Resource1.Sprite_Pow);
                 }
                 else
                 {
