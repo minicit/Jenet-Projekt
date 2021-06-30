@@ -53,6 +53,7 @@ namespace Jenet_Projekt
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelGame.SuspendLayout();
             this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -181,6 +182,7 @@ namespace Jenet_Projekt
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.backbtn);
             this.panel1.Controls.Add(this.btnConfirm);
             this.panel1.Controls.Add(this.tbNameInput);
@@ -215,7 +217,7 @@ namespace Jenet_Projekt
             // 
             // tbNameInput
             // 
-            this.tbNameInput.Location = new System.Drawing.Point(22, 169);
+            this.tbNameInput.Location = new System.Drawing.Point(60, 165);
             this.tbNameInput.Name = "tbNameInput";
             this.tbNameInput.Size = new System.Drawing.Size(100, 20);
             this.tbNameInput.TabIndex = 3;
@@ -290,6 +292,15 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 168);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Name:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +350,7 @@ namespace Jenet_Projekt
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Panel panelStory;
         private System.Windows.Forms.Button backbtn;
+        private System.Windows.Forms.Label label3;
     }
 }
 

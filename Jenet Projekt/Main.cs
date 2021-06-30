@@ -162,13 +162,13 @@ namespace Jenet_Projekt
                     {
                         highscore++;
                         enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus 1");
-                        //enemy[1] = new GameEntity(Klasse.Klassen.Virus, "Virus 2");
-                        //enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Virus 3");
+                        enemy[1] = new GameEntity(Klasse.Klassen.Virus, "Virus 2");
+                        enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Virus 3");
                         //enemy[3] = new GameEntity(Klasse.Klassen.Virus, "Virus 4");
 
                         enemy[0].setcoords(0, 2);
-                        //enemy[1].setcoords(5, 0);
-                        //enemy[2].setcoords(5, 3);
+                        enemy[1].setcoords(5, 0);
+                        enemy[2].setcoords(5, 3);
                         //enemy[3].setcoords(7, 5);
 
                         player.setcoords(9, 3);
@@ -308,6 +308,7 @@ namespace Jenet_Projekt
                     grid[0, 6] = 10;
                     grid[8, 6] = 10;
                     grid[9, 4] = 10;
+                    grid[8, 0] = 10;
                     currentStage = 5;
                     setBackground(currentStage);
                     break;
@@ -664,9 +665,20 @@ namespace Jenet_Projekt
                         movePlayer(player.getx() + 1, player.gety());
                     }
                 }
-                if (currentStage == 5 && (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down) || currentStage == 7 && (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down))
+                if (currentStage == 5 && (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down))
                 {
                     startNextStage();
+                }
+                if(currentStage == 7 && (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down))
+                {
+                    panelGame.Hide();
+                    panelMain.Show();
+                    panel1.Hide();
+                    soundManager.Stop();
+                    soundManager.MainMenuMusic();
+                    score.addScore( highscore, player.getName());
+                    MessageBox.Show("Glückwunsch! Du hast Corona Quest besiegt");
+                    MessageBox.Show("Dein Score : " + highscore.ToString());
                 }
             }
             else
