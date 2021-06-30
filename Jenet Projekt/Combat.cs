@@ -211,7 +211,10 @@ namespace Jenet_Projekt
 
         public void items()
         {
-            useItem(3); //hier button input von user 1-4
+            using (var form = new UseItem()){
+                useItem(form.returnvalue);
+            }
+
             player.setShield(false);
         }
 
