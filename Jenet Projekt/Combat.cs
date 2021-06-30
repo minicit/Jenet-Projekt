@@ -62,6 +62,7 @@ namespace Jenet_Projekt
                     case 0:
                         MessageBox.Show("Mundschutz");
                         fightSprite(Resources.Resource1.Mundschutz);
+                        Main.getInstance().addtoList("Enemy attack has been lowered");
                         enemy.setAttack(5);
                         break;
                     case 1:
@@ -72,6 +73,7 @@ namespace Jenet_Projekt
                     case 2:
                         MessageBox.Show("Spritze");
                         fightSprite(Resources.Resource1.spritze_Item);
+                        Main.getInstance().addtoList("Enemy attack has been lowered");
                         enemy.setAttack(1);
                         break;
                     case 3:
@@ -79,11 +81,17 @@ namespace Jenet_Projekt
                         fightSprite(Resources.Resource1.Crocs);
                         if (enemy.getClass() == Klasse.Klassen.Bat)
                         {
+                            Main.getInstance().addtoList("Corona wurde mit dem Schuh kaputt gehauen");
                             enemy.setHealth(0);
+                        }
+                        else
+                        {
+                            Main.getInstance().addtoList("Nothing happened");
                         }
                         break;
                 }
                 itemArray[type] -= 1;
+                combatOverCheck();
             }
             Main.getInstance().showItems(itemArray);
         }
