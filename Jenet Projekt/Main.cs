@@ -270,7 +270,7 @@ namespace Jenet_Projekt
                     {
                         for(int j = 0; j < 7; j++)
                         {
-                            if ((i <= 4 || i >= 6) && (j == 1 || j == 2 || j == 5 || j == 6))
+                            if ((i < 4 || i >= 6) && (j == 1 || j == 0 || j == 5 || j == 6))
                                 grid[i, j] = 12;
                         }
                     }
