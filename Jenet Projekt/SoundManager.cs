@@ -15,7 +15,6 @@ namespace Jenet_Projekt
         public void Stop()
         {
             player.Stop();
-            player = null;
         }
         public void MainMenuMusic()
         {

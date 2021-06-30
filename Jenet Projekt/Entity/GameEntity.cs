@@ -114,7 +114,7 @@ namespace Jenet_Projekt
             switch (x)
             {
                 case Klasse.Klassen.Virus:
-                    maxHealth = 2;
+                    maxHealth = 20;
                     health = maxHealth;
                     speed = 7;
                     attack = 8;
@@ -131,14 +131,14 @@ namespace Jenet_Projekt
                     maxHealth = 50;
                     health = maxHealth;
                     speed = 10;
-                    attack = 3;
+                    attack = 6;
                     defence = 5;
                     break;
                 case Klasse.Klassen.Coronaleugner:
                     maxHealth = 20;
                     health = maxHealth;
                     speed = 10;
-                    attack = 1;
+                    attack = 3;
                     defence = 3;
                     break;
                 case Klasse.Klassen.Bat:

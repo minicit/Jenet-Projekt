@@ -295,12 +295,19 @@ namespace Jenet_Projekt
                 case 5://Neu Seeland
                     highscore++;
                     player.setcoords(1, 3);
+                    player.setHealth(player.getMaxHealth());
                     grid[1, 3] = 1;
                     //grid[1, 2] = 10;
                     //grid[2, 2] = 10;
                     grid[2, 3] = 10;
                     grid[2, 4] = 10;
                     grid[1, 4] = 10;
+                    grid[3, 1] = 10;
+                    grid[7, 2] = 10;
+                    grid[5, 5] = 10;
+                    grid[0, 6] = 10;
+                    grid[8, 6] = 10;
+                    grid[9, 4] = 10;
                     currentStage = 5;
                     setBackground(currentStage);
                     break;
