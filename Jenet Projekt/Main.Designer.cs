@@ -43,6 +43,7 @@ namespace Jenet_Projekt
             this.panelMap = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.backbtn = new System.Windows.Forms.Button();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.tbNameInput = new System.Windows.Forms.TextBox();
@@ -53,7 +54,6 @@ namespace Jenet_Projekt
             this.btnCredits = new System.Windows.Forms.Button();
             this.btnHighscore = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.panelGame.SuspendLayout();
             this.panelInv.SuspendLayout();
             this.panelMain.SuspendLayout();
@@ -195,6 +195,15 @@ namespace Jenet_Projekt
             this.panel1.TabIndex = 4;
             this.panel1.Visible = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 168);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Name:";
+            // 
             // backbtn
             // 
             this.backbtn.Location = new System.Drawing.Point(455, 13);
@@ -292,15 +301,6 @@ namespace Jenet_Projekt
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 168);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Name:";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,6 +310,7 @@ namespace Jenet_Projekt
             this.Controls.Add(this.panelMain);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
