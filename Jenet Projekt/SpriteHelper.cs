@@ -44,6 +44,8 @@ namespace Jenet_Projekt
                     return Resources.Resource1.Hochhaus;
                 case 12:
                     return Resources.Resource1.Empty;
+                case 13:
+                    return Resources.Resource1.deadBatTrans;
             }
             return null;
         }
@@ -76,6 +78,7 @@ namespace Jenet_Projekt
             {
                 case -1://Combat Background
                     return Resources.Resource1.combatBackgroundMitMenu;
+                case 7:
                 case 6://Fledermaus Background
                     return Resources.Resource1.batRound;
                 case 5://Neuseeland Background

@@ -338,6 +338,39 @@ namespace Jenet_Projekt
                     }
 
                     break;
+
+                case 7: //you did it fuck yaeay
+                    player.setcoords(4, 3);
+                    grid[4, 3] = 1;
+                    grid[4, 2] = 13;
+                    currentStage = 7;
+                    setBackground(currentStage);
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        grid[i, 0] = 4;
+                    }
+
+                    for (int i = 0; i < 7; i++)
+                    {
+                        grid[0, i] = 4;
+                        grid[9, i] = 4;
+                    }
+
+                    for (int i = 0; i < 4; i++)
+                    {
+                        grid[i, 5] = 4;
+                        grid[i, 6] = 4;
+                    }
+
+                    for (int i = 6; i < 9; i++)
+                    {
+                        grid[i, 5] = 4;
+                        grid[i, 6] = 4;
+                    }
+
+                    break;
+
                 case -2: //Nur für Endless
                     currentStage = -3;
                     highscore++;
@@ -612,7 +645,7 @@ namespace Jenet_Projekt
                         movePlayer(player.getx() + 1, player.gety());
                     }
                 }
-                if (currentStage == 5 && (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down))
+                if (currentStage == 5 && (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down) || currentStage == 7 && (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Up || e.KeyCode == Keys.Down))
                 {
                     startNextStage();
                 }
