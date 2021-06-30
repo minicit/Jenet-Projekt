@@ -38,6 +38,8 @@ namespace Jenet_Projekt
                     return Resources.Resource1.kiwiTrans;
                 case 11:
                     return Resources.Resource1.Hochhaus;
+                case 12:
+                    return Resources.Resource1.Empty;
             }
             return null;
         }
@@ -71,11 +73,11 @@ namespace Jenet_Projekt
                 case 5://Neuseeland Background
                     return Resources.Resource1.Hintergrund_neuseeland;
                 case 4://'Murica Background
-                    return Resources.Resource1.Hintergrund_mapGrass;
+                    return Resources.Resource1.Hintergrund_merica;
                 case 3://Berlin Background
-                    return Resources.Resource1.Hintergrund_mapGrass;
+                    return Resources.Resource1.Hintergrund_berlinCity;
                 case 2://Stadt Background
-                    return Resources.Resource1.Hintergrund_mapGrass;
+                    return Resources.Resource1.Hintergrund_stadt;
                 case 1://Tutorial Background
                     return Resources.Resource1.Hintergrund_mapGrass;
                 case 0://Base Background

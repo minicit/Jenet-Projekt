@@ -192,7 +192,6 @@ namespace Jenet_Projekt
                             enemybar.Value = enemybar.Maximum;
                         }
                     }
-                    //hier gibt es einen Fehler bei Bats
                     fightSprite(Resources.Resource1.Sprite_Pow);
                 }
                 else

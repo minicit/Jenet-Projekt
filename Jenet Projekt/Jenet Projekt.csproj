@@ -150,6 +150,7 @@
     <EmbeddedResource Include="Resources\skizze - Kopie.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Sprites\Empty.png" />
     <None Include="Resources\Sprites\Hochhaus.png" />
     <None Include="Resources\Sprites\Verkleidetes-Virus.png" />
     <None Include="Resources\Sprites\Straße-vertikal.png" />

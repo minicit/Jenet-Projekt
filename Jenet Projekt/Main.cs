@@ -82,6 +82,7 @@ namespace Jenet_Projekt
             // Wert 5 = Haus
             // Wert 10 = Kiwis
             // Wert 11 = Hochhaus
+            // Wert 12 = Empty Sprite
             // Bsp : grid[1,2] = 3; setzt ein Hindernis an die Position X = 1 / Y = 2
             // Erlaubte Positionen X : 0 - 9 
             // Erlaubte Positionen Y : 0 - 6
@@ -146,7 +147,7 @@ namespace Jenet_Projekt
                     }
                     break;
 
-                case 3: //Stadt
+                case 2: //Stadt
                     {
                         enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus 1");
                         //enemy[1] = new GameEntity(Klasse.Klassen.Virus, "Virus 2");
@@ -216,13 +217,16 @@ namespace Jenet_Projekt
                         break;
                     }
 
-                case 2: //Berlin
+                case 3: //Berlin
                     {
                         player.setcoords(4, 0);
                         grid[4, 0] = 1;
                         enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
                         enemy[1] = new GameEntity(Klasse.Klassen.Virus, "Virus");
                         enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+                        enemy[0].setcoords(1, 0);
+                        enemy[1].setcoords(1, 6);
+                        enemy[2].setcoords(6, 6);
                         
                         for (int i = 0; i < 7; i++)
                             grid[0, i] = 11;
@@ -240,13 +244,36 @@ namespace Jenet_Projekt
                         }
                         grid[1, 0] = 2;
                         grid[1, 6] = 2;
-                        grid[6, 6] = 2;
+                        grid[6, 6] = 2; 
+                        
+                        currentStage = 3;
+                        setBackground(currentStage);
                     }
                     break;
                 case 4: //'Murica
-                    player.setcoords(5, 4);
-                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "yoink");
-                    enemy[0].setcoords(5, 2);
+                    player.setcoords(0, 3);
+                    grid[0, 3] = 1;
+                    enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+                    enemy[1] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+                    enemy[2] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+                    enemy[0].setcoords(8, 2);
+                    enemy[1].setcoords(9, 3);
+                    enemy[2].setcoords(8, 4);
+                    
+
+                    for(int i = 0; i < 9; i++)
+                    {
+                        for(int j = 0; j < 7; j++)
+                        {
+                            if ((i <= 4 || i >= 6) && (j == 1 || j == 2 || j == 5 || j == 6))
+                                grid[i, j] = 12;
+                        }
+                    }
+                    grid[8, 2] = 2;
+                    grid[9, 3] = 2;
+                    grid[8, 4] = 2;
+                    grid[5, 0] = 10;
+                    grid[4, 6] = 10;
                     currentStage = 4;
                     setBackground(currentStage);
                     break;
