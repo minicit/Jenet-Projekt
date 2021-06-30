@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,6 +36,7 @@ namespace Jenet_Projekt
         CombatObserver observer = new CombatObserver();
         StoryManager story = new StoryManager();
         private int[] itemArray = new int[4];
+        private SoundManager soundManager = new SoundManager();
 
         public Main()
         {
@@ -42,6 +44,7 @@ namespace Jenet_Projekt
 
             instance = this;
 
+            soundManager.MainMenuMusic();
             subject.Attach(observer);
             panelMain.BackgroundImage = Resources.Resource1.Titlescreen;
             panelGame.BackgroundImage = Resources.Resource1.GamePanelBackground;
@@ -333,6 +336,8 @@ namespace Jenet_Projekt
                         if (fight == null)
                             fight = new Combat();
                         currentfighter = i;
+                        soundManager.Stop();
+                        soundManager.CombatMusic();
                         fight.begin(enemy[i], player, combatPanel, subject, progressBarPlayer, progressBarEnemy, itemArray);
                         break;
                     }
@@ -528,7 +533,8 @@ namespace Jenet_Projekt
                 panel1.Hide();
                 panelGame.Show();
                 lblName.Text = player.getClass().ToString() + " " + player.getName();
-                
+                soundManager.Stop();
+                soundManager.GameMusic();
                 gameStart(1);
             }
             catch(Exception)
