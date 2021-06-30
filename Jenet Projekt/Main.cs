@@ -561,6 +561,7 @@ namespace Jenet_Projekt
             combatPanel.Hide();
             //drawMap();
             gameStart(currentStage + 1);
+
         }
 
         public void addtoList(string ay)

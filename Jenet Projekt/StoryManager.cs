@@ -47,6 +47,8 @@ namespace Jenet_Projekt
                         return Resources.ResourceStory.Normalbürger_Story_5;
                     case 6:
                         return Resources.ResourceStory.Normalbürger_Story_6;
+                    case 7:
+                        return Resources.ResourceStory.Normalbürger_Story_7;
                 }
             if (klasse == Klasse.Klassen.Virologe)
                 switch (x)
@@ -68,6 +70,8 @@ namespace Jenet_Projekt
                         return Resources.ResourceStory.Virologe_Story_5;
                     case 6:
                         return Resources.ResourceStory.Virologe_Story_6;
+                    case 7:
+                        return Resources.ResourceStory.Virologe_Story_7;
                 }
             return null;
 

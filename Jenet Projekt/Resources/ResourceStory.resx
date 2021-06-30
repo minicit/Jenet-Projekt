@@ -154,6 +154,9 @@
   <data name="Normalbürger_Story_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>story\normalbürger story 6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Normalbürger_Story_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Story\Normalbürger Story 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Virologe_Story_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>story\virologe story 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,5 +174,8 @@
   </data>
   <data name="Virologe_Story_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>story\virologe story 6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Virologe_Story_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Story\Virologe Story 7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
