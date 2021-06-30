@@ -23,7 +23,7 @@ namespace Jenet_Projekt
         int[,] grid = new int[10, 7]; // Array speichert Positionen in der Karte
         private int fieldsize = 125; //Größe eines Feldes in px 
         private SpriteHelper spriteHelper = new SpriteHelper();
-        private GameEntity player = new GameEntity(Klasse.Klassen.Normalbürger, "Test");
+        private GameEntity player = new GameEntity(Klasse.Klassen.Virologe, "Test");
         private GameEntity[] enemy;
         private Combat fight = new Combat();
         private int currentfighter;
@@ -52,7 +52,7 @@ namespace Jenet_Projekt
             panelGame.Hide();
             combatPanel.Hide();
             enemy = new GameEntity[5];
-            enemy[0] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+            
             //panelMap.BackgroundImage = Resources.Resource1.MapBackground;
         }
 
@@ -60,8 +60,15 @@ namespace Jenet_Projekt
         {
             panelStory.BackgroundImage = story.getStory(currentStory, player.getClass());
             currentStory++;
-            storyActive = true;
-            panelStory.Show();
+            if (currentStage != -3)
+            {
+                storyActive = true;
+                panelStory.Show();
+            }
+            else
+            {
+                buttonEndlos_Click(this, null);
+            }
         }
 
         public static Main getInstance()
@@ -287,8 +294,8 @@ namespace Jenet_Projekt
                     highscore++;
                     player.setcoords(1, 3);
                     grid[1, 3] = 1;
-                    grid[1, 2] = 10;
-                    grid[2, 2] = 10;
+                    //grid[1, 2] = 10;
+                    //grid[2, 2] = 10;
                     grid[2, 3] = 10;
                     grid[2, 4] = 10;
                     grid[1, 4] = 10;
@@ -330,6 +337,32 @@ namespace Jenet_Projekt
                         grid[i, 6] = 4;
                     }
 
+                    break;
+                case -2: //Nur für Endless
+                    currentStage = -3;
+                    highscore++;
+                    Random random = new Random();
+                    setBackground(random.Next(1,6));
+                    for (int i = 0; i < 10; i++)
+                    {
+                        for(int j = 0; j < 7; j++)
+                        {
+                            int rr = random.Next(3, 12);
+                            int ja = random.Next(0, 5);
+                            if (ja == 0)
+                                grid[i, j] = rr;
+                        }
+                    }
+                    for (int i = 0; i < 3; i++)
+                    {
+                        enemy[i] = new GameEntity(Klasse.Klassen.Virus, "Virus");
+                        int enemyx = random.Next(0, 10);
+                        int enemyy = random.Next(0, 7);
+                        enemy[i].setcoords(enemyx, enemyy);
+                        grid[enemyx, enemyy] = 2;
+                    }
+                    player.setcoords(1, 3);
+                    grid[1, 3] = 1;
                     break;
             }
         }
@@ -675,7 +708,12 @@ namespace Jenet_Projekt
 
         private void buttonEndlos_Click(object sender, EventArgs e)
         {
-
+            panelMain.Hide();
+            panelGame.Show();
+            soundManager.Stop();
+            soundManager.GameMusic();
+            initGrid(-2);
+            drawMap();
         }
     }
 
