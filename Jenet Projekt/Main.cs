@@ -343,6 +343,19 @@ namespace Jenet_Projekt
                 }
                 
             }
+            else
+            {
+                fight = null;
+                currentStage = 0;
+                currentStory = 1;
+                listBox1.Items.Clear();
+                player = new GameEntity(Klasse.Klassen.Normalbürger, "Test");
+                combatPanel.Hide();
+                panelGame.Hide();
+                panelMain.Show();
+                panel1.Hide();
+                MessageBox.Show("You lose");
+            }
         }
 
         public void playerRan()
@@ -446,22 +459,26 @@ namespace Jenet_Projekt
             }
             else
             {
-                if (e.KeyCode == Keys.NumPad1 || e.KeyCode == Keys.D1)
-                {
-                    fight.attack();
-                }
-                else if (e.KeyCode == Keys.NumPad2 || e.KeyCode == Keys.D2)
-                {
-                    fight.shield();
-                }
-                else if (e.KeyCode == Keys.NumPad3 || e.KeyCode == Keys.D3)
-                {
-                    fight.items();
-                }
-                else if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.D4)
-                {
-                    fight.run();
-                }
+                if(fight != null)
+                    if (!fight.getStuff())
+                    {
+                        if (e.KeyCode == Keys.NumPad1 || e.KeyCode == Keys.D1)
+                        {
+                            fight.attack();
+                        }
+                        else if (e.KeyCode == Keys.NumPad2 || e.KeyCode == Keys.D2)
+                        {
+                            fight.shield();
+                        }
+                        else if (e.KeyCode == Keys.NumPad3 || e.KeyCode == Keys.D3)
+                        {
+                            fight.items();
+                        }
+                        else if (e.KeyCode == Keys.NumPad4 || e.KeyCode == Keys.D4)
+                        {
+                            fight.run();
+                        }
+                    }
             }
             if (storyActive && e.KeyCode == Keys.Space)
             {
@@ -479,9 +496,12 @@ namespace Jenet_Projekt
             try
             {
                 player.setName(tbNameInput.Text);
+                
                 panelMain.Hide();
+                panel1.Hide();
                 panelGame.Show();
                 lblName.Text = player.getClass().ToString() + " " + player.getName();
+                
                 gameStart(1);
             }
             catch(Exception)
@@ -510,6 +530,11 @@ namespace Jenet_Projekt
         {
             // TODO: Set the correct highscore
             new Highscore(this.player.getName(), 0).ShowDialog();
+        }
+
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+            panel1.Hide();
         }
     }
 
